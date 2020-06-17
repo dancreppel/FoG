@@ -1,2 +1,2 @@
 # FoG
-Fan of Games
+Fans of Gaming

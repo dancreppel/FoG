@@ -25,7 +25,7 @@ export const signup = user => dispatch => (
   SessionApiUtil.postUser(user)
     .then(
       createdUser => dispatch(receiveCurrentUser(createdUser)),
-      errors => dispatch(receiveErrors(errors))
+      errors => dispatch(receiveErrors(errors.responseJSON))
     )
 );
 
@@ -33,7 +33,7 @@ export const login = user => dispatch => (
   SessionApiUtil.postSession(user)
     .then(
       loggedInUser => dispatch(receiveCurrentUser(loggedInUser)),
-      errors => dispatch(receiveErrors(errors))
+      errors => dispatch(receiveErrors(errors.responseJSON))
     )
 );
 
@@ -41,6 +41,6 @@ export const logout = () => dispatch => (
   SessionApiUtil.deleteSession()
     .then(
       () => dispatch(removeCurrentUser()),
-      errors => dispatch(receiveErrors(errors))
+      errors => dispatch(receiveErrors(errors.responseJSON))
     )
 );

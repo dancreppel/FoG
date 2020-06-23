@@ -1,4 +1,4 @@
-export const postUser = (user) =>
+export const postUser = user =>
   $.ajax({
     method: "POST",
     url: "/api/users/",

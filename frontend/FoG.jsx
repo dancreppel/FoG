@@ -4,7 +4,6 @@ import Root from './components/root';
 import configureStore from './store/store';
 
 // Todo for window testing
-import * as UsersApiUtil from "./util/users_api_util";
 import * as SessionApiUtil from './util/session_api_util';
 
 document.addEventListener( 'DOMContentLoaded', () => {
@@ -16,10 +15,9 @@ document.addEventListener( 'DOMContentLoaded', () => {
   window.getState = store.getState;
 
   window.testUser = { username: 'dan', password: 'password' };
-  window.getUser = UsersApiUtil.getUser;
-  window.postUser = UsersApiUtil.postUser;
-  window.postSession = SessionApiUtil.postSession;
-  window.deleteSession = SessionApiUtil.deleteSession;
+  window.signup = SessionApiUtil.postUser;
+  window.login = SessionApiUtil.postSession;
+  window.logout = SessionApiUtil.deleteSession;
 
   ReactDOM.render(<Root store={store}/>, root)
 });

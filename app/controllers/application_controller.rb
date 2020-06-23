@@ -1,4 +1,7 @@
 class ApplicationController < ActionController::Base
+  # for testing purposes DO NOT FORGET TO REMOVE
+  skip_before_action :verify_authenticity_token
+
   def current_user
     @current_user ||= User.find_by(session_token: session[:session])
   end
@@ -25,6 +28,6 @@ class ApplicationController < ActionController::Base
 
   private 
   def user_params
-    params.require(:user).permit(:username, :email, :password)
+    params.require(:user).permit(:username, :password)
   end
 end

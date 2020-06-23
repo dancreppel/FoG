@@ -2,7 +2,7 @@ class Api::SessionsController < ApplicationController
   before_action :require_login, only: :destroy
 
   def create
-    @user = User.find_by_credentials(user_params.username, user_params.password)
+    @user = User.find_by_credentials(*user_params.values)
     if @user
       login!(@user)
       render :show

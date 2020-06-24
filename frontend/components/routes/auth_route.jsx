@@ -6,7 +6,7 @@ const Auth = ({ path, component: Component, loggedIn, exact }) => (
   <Route 
     path={path}
     exact={exact}
-    render={(props) => (
+    render={ props => (
       loggedIn ? (
         <Redirect to='/' />
       ) : (
@@ -16,7 +16,7 @@ const Auth = ({ path, component: Component, loggedIn, exact }) => (
   />
 );
 
-const MSP = ({ sessionUser }) = ({
+const MSP = ({ sessionUser }) => ({
   loggedIn: Boolean(sessionUser)
 })
 

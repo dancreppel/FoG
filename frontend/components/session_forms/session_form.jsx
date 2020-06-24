@@ -1,5 +1,5 @@
 import React from 'react';
-import SessionErrors from ''
+import SessionErrors from './session_errors';
 
 export default class SessionForm extends React.Component {
   constructor (props) {

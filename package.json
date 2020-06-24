@@ -25,6 +25,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "webpack",
     "start": "webpack --watch --mode=development"
   },
   "repository": {
@@ -37,5 +38,9 @@
   "bugs": {
     "url": "https://github.com/dancreppel/FoG/issues"
   },
-  "homepage": "https://github.com/dancreppel/FoG#readme"
+  "homepage": "https://github.com/dancreppel/FoG#readme",
+  "engines": {
+    "node": "10.13.0",
+    "npm": "6.4.1"
+  }
 }

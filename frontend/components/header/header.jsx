@@ -1,10 +1,13 @@
 import React from 'react'
 import HeaderUserContainer from './header_user_container';
+import { Link } from 'react-router-dom';
 
 const Header = () => (
   <header>
-    <h1>Fans of Gaming</h1>
-    <HeaderUserContainer />
+    <nav>
+      <Link to='/'>Fans of Gaming</Link>
+      <HeaderUserContainer />
+    </nav>
   </header>
 );
 

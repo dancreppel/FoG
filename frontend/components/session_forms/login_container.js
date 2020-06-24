@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import SessionForm from './session_form';
+import LoginForm from './login_form';
 import { login } from '../../actions/session_actions';
 
 const MSP = ({ errors }) => ({
@@ -11,5 +11,5 @@ const MDP = dispatch => ({
   action: user => dispatch(login(user))
 });
 
-const LoginContainer = connect(MSP, MDP)(SessionForm);
+const LoginContainer = connect(MSP, MDP)(LoginForm);
 export default LoginContainer;

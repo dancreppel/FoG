@@ -6,16 +6,11 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find_by(session_token: session[:session_token])
   end
 
-  # def require_login
-    
-  # end
-
   def logged_in?
     !!current_user
   end
 
   def login!(user)
-    debugger
     session[:session_token] = user.reset_session_token!
   end
 

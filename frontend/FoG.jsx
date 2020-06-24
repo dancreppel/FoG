@@ -3,21 +3,13 @@ import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
 
-// Todo for window testing
-import * as SessionActions from './actions/session_actions';
-
 document.addEventListener( 'DOMContentLoaded', () => {
   const root = document.getElementById('root');
-  const store = configureStore();
 
-  // TODO testing store on window
-  window.dispatch = store.dispatch;
-  window.getState = store.getState;
-
-  window.testUser = { username: 'dannn', password: 'password' };
-  window.signup = SessionActions.signup;
-  window.login = SessionActions.login;
-  window.logout = SessionActions.logout;
+  let preloadedState = {};
+  if (window.currentUser) preloadedState = { sessionUser: currentUser }
+  const store = configureStore(preloadedState);
+  delete window.currentUser;
 
   ReactDOM.render(<Root store={store}/>, root)
 });

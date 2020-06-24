@@ -1,4 +1,5 @@
 import React from 'react';
+import SessionErrors from ''
 
 export default class SessionForm extends React.Component {
   constructor (props) {
@@ -22,26 +23,35 @@ export default class SessionForm extends React.Component {
   }
 
   render () {
+    let errors = this.props.errors.map((error, index) => 
+      <SessionErrors error={error} key={'session error ' + index}/>
+    )
+
     return(
-      <form onSubmit={this.handleSubmit}>
-        <label className='formUsername'>FoG account name
-          <input 
-            type="text"
-            value={this.state.username}
-            onChange={this.handleChange('username')}
-          />
-        </label>
+      <>
+        <ul>
+          {errors}
+        </ul>
+        <form onSubmit={this.handleSubmit}>
+          <label className='formUsername'>FoG account name
+            <input 
+              type="text"
+              value={this.state.username}
+              onChange={this.handleChange('username')}
+            />
+          </label>
 
-        <label className='formPassword'>Password
-          <input 
-            type="password"
-            value={this.state.password}
-            onChange={this.handleChange('password')}
-          />
-        </label>
+          <label className='formPassword'>Password
+            <input 
+              type="password"
+              value={this.state.password}
+              onChange={this.handleChange('password')}
+            />
+          </label>
 
-        <button>{this.props.formType}</button>
-      </form>
+          <button>{this.props.formType}</button>
+        </form>
+      </>
     )
   }
 }

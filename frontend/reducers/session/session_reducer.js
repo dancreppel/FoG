@@ -4,24 +4,22 @@ import {
 } from '../../actions/session_actions';
 
 
-const _nullSession = Object.freeze({
-  currentUserId: null
+const _nullSessionUser = Object.freeze({
+  id: null,
+  username: null
 });
 
-const sessionReducer = (state = _nullSession, action) => {
+const sessionUserReducer = (state = _nullSessionUser, action) => {
   Object.freeze(state);
-  let newState = Object({}, state);
 
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
-      debugger;
-      newState.currentUserId = action.user.id;
-      return newState;
+      return action.user;
     case REMOVE_CURRENT_USER:
-      return _nullSession;
+      return _nullSessionUser;
     default:
       return state;
   }
 };
 
-export default sessionReducer;
+export default sessionUserReducer;

@@ -8,8 +8,8 @@ const App = props => (
       <GreetContainer />
     </header>
 
-    <Route path='/login'/>
-    <Route path='/signup'/>
+    {/* <Route path='/login'/>
+    <Route path='/signup'/> */}
   </>
 );
 

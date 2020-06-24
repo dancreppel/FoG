@@ -3,20 +3,14 @@ import {
   REMOVE_CURRENT_USER 
 } from '../../actions/session_actions';
 
-
-const _nullSessionUser = Object.freeze({
-  id: null,
-  username: null
-});
-
-const sessionUserReducer = (state = _nullSessionUser, action) => {
+const sessionUserReducer = (state = null, action) => {
   Object.freeze(state);
 
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
       return action.user;
     case REMOVE_CURRENT_USER:
-      return _nullSessionUser;
+      return null;
     default:
       return state;
   }

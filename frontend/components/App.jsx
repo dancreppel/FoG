@@ -1,12 +1,9 @@
 import React from 'react';
-import GreetContainer from './greet/greet_container';
+import Header from './header/header';
 
-const App = props => (
+const App = () => (
   <>
-    <header>
-      <h1>Fans of Gaming</h1>
-      <GreetContainer />
-    </header>
+    <Header />
 
     {/* <Route path='/login'/>
     <Route path='/signup'/> */}

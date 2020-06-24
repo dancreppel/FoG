@@ -14,7 +14,7 @@ document.addEventListener( 'DOMContentLoaded', () => {
   window.dispatch = store.dispatch;
   window.getState = store.getState;
 
-  window.testUser = { username: 'dann', password: 'password' };
+  window.testUser = { username: 'dannn', password: 'password' };
   window.signup = SessionActions.signup;
   window.login = SessionActions.login;
   window.logout = SessionActions.logout;

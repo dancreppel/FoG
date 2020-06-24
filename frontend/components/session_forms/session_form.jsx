@@ -23,7 +23,7 @@ export default class SessionForm extends React.Component {
 
   render () {
     return(
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <label className='formUsername'>FoG account name
           <input 
             type="text"
@@ -39,6 +39,8 @@ export default class SessionForm extends React.Component {
             onChange={this.handleChange('password')}
           />
         </label>
+
+        <button>{this.props.formType}</button>
       </form>
     )
   }

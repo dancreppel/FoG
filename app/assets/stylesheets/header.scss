@@ -1,4 +1,34 @@
 header {
-  display: flex;
-  justify-content: space-between;
+  
+  nav {
+    width: 950px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .headerDiv {
+    width: 50px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .headerDropDown {
+    position: relative;
+
+    .material-icons {
+      margin: auto;
+      margin-top: 10px;
+    }
+  
+    ul {
+    position: absolute;
+    top: 50px;
+    }
+  }
+
+  .hidden {
+    display: none;
+  }
 }
+

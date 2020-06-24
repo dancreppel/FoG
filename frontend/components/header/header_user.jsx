@@ -1,18 +1,40 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
-const HeaderUser = ({ currentUser, logout }) => (
-  currentUser ? (
-    <div>
-      <h1 className='headerUser'>{currentUser.username}</h1>
-      <span className="material-icons">
-        arrow_drop_down
-        <button className='headerLogout hidden' onClick={logout}>logout</button>
-      </span>
-    </div>
-  ) : (
-    <Link to='/login'>login</Link>
-  )
-);
+export default class HeaderUser extends React.Component {
+  constructor (props) {
+    super(props);
+    this.state = { classVal: 'hidden' };
+    this.handleClick = this.handleClick.bind(this);
+  }
 
-export default HeaderUser;
+  handleClick () {
+    if (this.state.classVal === 'hidden') this.setState({ classVal: ''});
+    else this.setState({ classVal: 'hidden' });
+  }
+
+  render () {
+    let { currentUser, logout } = this.props;
+    let classVal = this.state.classVal;
+    return (
+      currentUser ? (
+        <div className='headerDiv'>
+          <h1 className='headerUser'>{currentUser.username}</h1>
+
+          <div className='headerDropDown'>
+            <i className="material-icons" onClick={this.handleClick}>
+              arrow_drop_down
+            </i>
+            <ul className={classVal}>
+              <a onClick={logout} href="#">Logout:
+                <p>{currentUser.username}</p>
+              </a>
+            </ul>
+          </div>
+        </div>
+      ) : (
+        <Link to='/login'>login</Link>
+      )
+    )
+  }
+}

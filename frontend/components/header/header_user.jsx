@@ -21,16 +21,25 @@ export default class HeaderUser extends React.Component {
         <div className='headerDiv'>
           <h1 className='headerUser'>{currentUser.username}</h1>
 
-          <div className='headerDropDown'>
+          <div className='dropdownDiv'>
             <i className="material-icons" onClick={this.handleClick}>
               arrow_drop_down
             </i>
+
             <ul className={classVal}>
-              <a onClick={logout} href="#">Logout:
-                <span> {currentUser.username}</span>
-              </a>
+              <li>View profile</li>
+              <li>Account details</li>
+              <li className='logoutLi'>
+                <a onClick={logout} href="#">Logout:
+                  <span> {currentUser.username}</span>
+                </a>
+              </li>
+              <li>Preferences</li>
+              <li>Change language</li>
             </ul>
           </div>
+
+          <image></image>
         </div>
       ) : (
         <Link to='/login'>login</Link>

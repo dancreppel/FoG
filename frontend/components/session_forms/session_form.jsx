@@ -29,11 +29,11 @@ export default class SessionForm extends React.Component {
 
     return(
       <>
-        <ul>
+        <ul className='sessionErrors'>
           {errors}
         </ul>
         <form onSubmit={this.handleSubmit}>
-          <label className='formUsername'>FoG account name
+          <label className='sessionUsername'>FoG account name
             <input 
               type="text"
               value={this.state.username}
@@ -41,7 +41,7 @@ export default class SessionForm extends React.Component {
             />
           </label>
 
-          <label className='formPassword'>Password
+          <label className='sessionPassword'>Password
             <input 
               type="password"
               value={this.state.password}
@@ -49,7 +49,7 @@ export default class SessionForm extends React.Component {
             />
           </label>
 
-          <button>{this.props.formType}</button>
+          <button className='sessionSubmit'>{this.props.formType}</button>
         </form>
       </>
     )

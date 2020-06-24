@@ -1,5 +1,5 @@
 class Api::SessionsController < ApplicationController
-  before_action :require_login, only: :destroy
+  # before_action :require_login, only: :destroy
 
   def create
     @user = User.find_by_credentials(*user_params.values)
@@ -12,7 +12,11 @@ class Api::SessionsController < ApplicationController
   end
 
   def destroy
-    logout!
-    render json: {}
+    if logged_in?
+      logout!
+      render json: {}
+    else
+      render json: ['Require login'], status: 422
+    end
   end
 end

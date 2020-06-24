@@ -27,7 +27,7 @@ export default class HeaderUser extends React.Component {
             </i>
             <ul className={classVal}>
               <a onClick={logout} href="#">Logout:
-                <p>{currentUser.username}</p>
+                <span> {currentUser.username}</span>
               </a>
             </ul>
           </div>

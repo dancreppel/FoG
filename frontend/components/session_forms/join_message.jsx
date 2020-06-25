@@ -6,9 +6,7 @@ const JoinMessage = (props) => (
     <ul>
       <li>Buy and download full retail games</li>
       <li>Join the FoG Community</li>
-      <li>Chat with your friends while gaming</li>
       <li>Play your games on any supported platform</li>
-      <li>Play your games offline</li>
       <li>Schedule a game, tournament, or LAN party</li>
       <li>Receive automatic game updates, and more!</li>
     </ul>

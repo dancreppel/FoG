@@ -31,31 +31,37 @@ export default class SessionForm extends React.Component {
       <SessionErrors error={error} key={'session error ' + index}/>
     )
 
-    return(
-      <>
-        <ul className='sessionErrors'>
-          {errors}
-        </ul>
+    let h1 = (this.props.formType === 'Sign In') ? 'Sign In' : 'Create an Account'
+    let message = (this.props.formType === 'Sign In') ? (
+      'To an existing account') : ('')
+
+    return (
+      <div className="sessionDiv">
+        <h1>{h1}</h1>
+        <p>{message}</p>
+        <ul className="sessionErrors">{errors}</ul>
         <form onSubmit={this.handleSubmit}>
-          <label className='sessionUsername'>FoG account name
-            <input 
+          <div className="sessionUsername">
+            <p>FoG account name</p>
+            <input
               type="text"
               value={this.state.username}
-              onChange={this.handleChange('username')}
+              onChange={this.handleChange("username")}
             />
-          </label>
+          </div>
 
-          <label className='sessionPassword'>Password
-            <input 
+          <div className="sessionPassword">
+            <p>Password</p>
+            <input
               type="password"
               value={this.state.password}
-              onChange={this.handleChange('password')}
+              onChange={this.handleChange("password")}
             />
-          </label>
+          </div>
 
-          <button className='sessionSubmit'>{this.props.formType}</button>
+          <button className="sessionSubmit">{this.props.formType}</button>
         </form>
-      </>
-    )
+      </div>
+    );
   }
 }

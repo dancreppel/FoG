@@ -1,0 +1,75 @@
+.loginDiv {
+  background-color:  #33334d;
+  width: 600px;
+  display: flex;
+  margin: auto;
+  margin-top: 20px;
+  justify-content: space-between;
+  color: lightgray;
+
+  h1 {
+    font-size: 23px;
+    font-weight: 1;
+    text-transform: uppercase;
+  }
+}
+
+.sessionDiv {
+  width: 50%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  div {
+    margin: 10px 0px;
+  }
+
+  button {
+    background-color: #67678f;
+    color:cornflowerblue;
+    border: 1px solid lightgrey;
+    border-radius: 2px;
+  }
+
+  button:hover {
+    background-color: #8c8cc2;
+    color: lightblue;
+  }
+}
+
+.createDiv {
+  border-left: lightgray 1px solid;
+  width: 50%;
+  padding: 10px;
+
+  p {
+    padding: 10px 0px;
+  }
+
+  .signupDiv {
+    // margin: auto;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+
+    border: 1px solid lightgrey;
+    background-color: #67678f;
+    border-radius: 2px;
+
+    a {
+      display: block;
+      margin-top: 3px;
+      color:cornflowerblue;
+      text-decoration: none;
+    }
+  }
+
+  .signupDiv:hover {
+    background-color: #8c8cc2;
+    a {
+      color: lightblue;
+    }
+  }
+}
+

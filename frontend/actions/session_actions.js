@@ -52,4 +52,4 @@ export const guestLogin = () => dispatch => {
       (loggedInUser) => dispatch(receiveCurrentUser(loggedInUser)),
       (errors) => dispatch(receiveErrors(errors.responseJSON))
     );
-}
+};

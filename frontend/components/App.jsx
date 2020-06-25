@@ -4,13 +4,17 @@ import { Route } from 'react-router-dom';
 import Header from './header/header';
 import LoginContainer from './session_forms/login_container';
 import SignupContainer from './session_forms/signup_container';
+import JoinMessage from './session_forms/join_message';
 
 const App = () => (
   <>
     <Header />
 
-    <AuthRoute path='/login' component={LoginContainer} />
-    <AuthRoute path='/signup'component={SignupContainer} />
+    <div className='auth'>
+      <AuthRoute path='/login' component={LoginContainer} />
+      <AuthRoute path='/signup'component={SignupContainer} />
+      <JoinMessage />
+    </div>
   </>
 );
 

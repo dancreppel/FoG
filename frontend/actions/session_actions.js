@@ -44,3 +44,12 @@ export const logout = () => dispatch => (
       errors => dispatch(receiveErrors(errors.responseJSON))
     )
 );
+
+export const guestLogin = () => dispatch => {
+  let guest = { username: 'guest', password: 'password' };
+  return SessionApiUtil.postSession(guest)
+    .then(
+      (loggedInUser) => dispatch(receiveCurrentUser(loggedInUser)),
+      (errors) => dispatch(receiveErrors(errors.responseJSON))
+    );
+}

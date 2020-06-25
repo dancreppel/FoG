@@ -42,10 +42,17 @@ header {
 
   .headerDiv {
     width: 50px;
+    height: 35px;
     margin-top: 1px;
     display: flex;
     justify-content: space-between;
   }
+
+  // .headerDiv:hover {
+  //   ul {
+  //     display: block;
+  //   }
+  // }
   
   .dropdownDiv {
     position: relative;
@@ -87,6 +94,8 @@ header {
     }
   }
 
+
+
   .hidden {
     display: none;
   }
@@ -102,7 +111,6 @@ header {
     position: relative;
     
     div, li {
-      ;
       // margin: 10px 0px;
       color: lightgray;
       font-size: 20px;

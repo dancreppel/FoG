@@ -6,7 +6,11 @@ export default class HeaderUser extends React.Component {
     super(props);
     this.state = { classVal: 'hidden' };
     this.handleClick = this.handleClick.bind(this);
-    this.handleLogout = this.handleLogout.bind(this);
+
+    // exit out of drop down anytime i click outside of drop down
+    document.body.addEventListener("click", (e) => {
+      this.setState({ classVal: "hidden" });
+    });
   }
 
   handleClick () {
@@ -14,14 +18,11 @@ export default class HeaderUser extends React.Component {
     else this.setState({ classVal: 'hidden' });
   }
 
-  handleLogout () {
-    this.props.logout()
-      .then(() => this.setState({ classVal: "hidden" }));
-  }
-
   render () {
-    let { currentUser } = this.props;
+    let { currentUser, logout } = this.props;
     let classVal = this.state.classVal;
+    
+
     return currentUser ? (
       <div className="headerDiv">
         <h1 className="username">{currentUser.username}</h1>
@@ -35,7 +36,7 @@ export default class HeaderUser extends React.Component {
             <li>View profile</li>
             <li>Account details</li>
             <li className="logoutLi">
-              <a onClick={this.handleLogout} href="#">
+              <a onClick={logout} href="#">
                 Logout:
                 <span className="username"> {currentUser.username}</span>
               </a>
@@ -47,9 +48,12 @@ export default class HeaderUser extends React.Component {
         <img src="/assets/incognito.jpg" alt="profile picture" />
       </div>
     ) : (
-      <Link className="loginLink" to="/login">
-        login
-      </Link>
+      <div className='loginLinks'>
+        <Link className="loginLink" to="/login">
+          login
+        </Link>
+
+      </div>
     );
   }
 }

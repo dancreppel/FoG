@@ -17,6 +17,8 @@ class User < ApplicationRecord
   attr_reader :password
   after_initialize :ensure_session_token
 
+  has_one_attached :photo
+
   def self.find_by_credentials(username, password)
     user = self.find_by(username: username)
     return user if user && user.is_password?(password)

@@ -10,7 +10,7 @@ const JoinMessage = (props) => (
       <li>Schedule a game, tournament, or LAN party</li>
       <li>Receive automatic game updates, and more!</li>
     </ul>
-    <img src="assets/tarkov.jpg" alt="game image"/>
+    <img src="assets/joinGames.png" alt="game image"/>
   </aside>
 );
 

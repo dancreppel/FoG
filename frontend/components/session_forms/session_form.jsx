@@ -31,12 +31,13 @@ export default class SessionForm extends React.Component {
       <SessionErrors error={error} key={'session error ' + index}/>
     )
 
-    let h1 = (this.props.formType === 'Sign In') ? 'Sign In' : 'Create an Account'
-    let message = (this.props.formType === 'Sign In') ? (
+    let h1 = (this.props.formType === 'signin') ? 'Sign In' : 'Create an Account'
+    let button = (this.props.formType === 'signin') ? 'Sign In' : 'Join FoG'
+    let message = (this.props.formType === 'signin') ? (
       'To an existing account') : ('')
 
     return (
-      <div className="sessionDiv">
+      <div className={"sessionDiv " + this.props.formType}>
         <h1>{h1}</h1>
         <p>{message}</p>
         <ul className="sessionErrors">{errors}</ul>
@@ -59,7 +60,7 @@ export default class SessionForm extends React.Component {
             />
           </div>
 
-          <button className="sessionSubmit">{this.props.formType}</button>
+          <button className="sessionSubmit">{button}</button>
         </form>
       </div>
     );

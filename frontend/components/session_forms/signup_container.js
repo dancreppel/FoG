@@ -4,7 +4,7 @@ import { signup } from '../../actions/session_actions';
 import { clearErrors } from '../../actions/errors_actions';
 
 const MSP = ({ errors }) => ({
-  formType: 'Join FoG',
+  formType: 'signup',
   errors: errors.session
 });
 

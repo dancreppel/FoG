@@ -19,7 +19,7 @@ export default class HeaderUser extends React.Component {
   }
 
   render () {
-    let { currentUser, logout } = this.props;
+    let { currentUser, logout, guestLogin } = this.props;
     let classVal = this.state.classVal;
     
 
@@ -48,11 +48,12 @@ export default class HeaderUser extends React.Component {
         <img src="/assets/incognito.jpg" alt="profile picture" />
       </div>
     ) : (
-      <div className='loginLinks'>
+      <div className="loginLinks">
+        <button onClick={guestLogin}>Guest Login</button>
+        <p>Or</p>
         <Link className="loginLink" to="/login">
           login
         </Link>
-
       </div>
     );
   }

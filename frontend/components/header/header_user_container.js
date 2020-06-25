@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { logout } from '../../actions/session_actions';
+import { logout, guestLogin } from '../../actions/session_actions';
 import HeaderUser from './header_user';
 
 const MSP = ({ sessionUser }) => ({
@@ -7,7 +7,8 @@ const MSP = ({ sessionUser }) => ({
 });
 
 const MDP = dispatch => ({
-  logout: () => dispatch(logout())
+  logout: () => dispatch(logout()),
+  guestLogin: () => dispatch(guestLogin())
 });
 
 const HeaderUserContainer = connect(MSP, MDP)(HeaderUser);

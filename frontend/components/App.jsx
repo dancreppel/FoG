@@ -12,8 +12,9 @@ const App = () => (
 
     <div className='auth'>
       <AuthRoute path='/login' component={LoginContainer} />
+      <AuthRoute path='/login' component={JoinMessage} />
       <AuthRoute path='/signup'component={SignupContainer} />
-      <JoinMessage />
+      <AuthRoute path='/signup' component={JoinMessage} />
     </div>
   </>
 );

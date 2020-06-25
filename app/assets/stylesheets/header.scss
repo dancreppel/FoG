@@ -30,7 +30,7 @@ header {
   .username {
     // margin: auto 0px;
     color: lightgrey;
-    font-size: 18px;
+    font-size: 16px;
   }
 
   nav {
@@ -42,6 +42,7 @@ header {
 
   .headerDiv {
     width: 50px;
+    margin-top: 1px;
     display: flex;
     justify-content: space-between;
   }
@@ -62,7 +63,7 @@ header {
       min-width: 150px;
       top: 35px;
       right: 10px;
-      box-shadow: 2px 2px 2px 2px #1f1f2ee3;
+      box-shadow: 1px 1px 5px 5px #1f1f2ee3;
 
       li {
         padding: 0px 5px;
@@ -90,17 +91,44 @@ header {
     display: none;
   }
 
+
+  // nav items store, community, about, support
   .navItems {
     width: 350px;
-    height: 25px;
+    height: 45px;
     display: flex;
     justify-content: space-between;
-    align-self: center;
-
-    li {
+    align-self: flex-end;
+    position: relative;
+    
+    div, li {
+      ;
+      // margin: 10px 0px;
       color: lightgray;
       font-size: 20px;
       cursor: pointer;
+    }
+
+    div:hover, li:hover {
+      color: whitesmoke;
+    }
+
+    .dropdown {
+      position: absolute;
+      display: none;
+      background-color: #33334d;
+      width: 110px;
+      box-shadow: 1px 1px 5px 5px #1f1f2ee3;
+      
+
+      li {
+        font-size: 16px;
+        padding: 5px;
+      }
+    }
+
+    div:hover .dropdown {
+      display: block;
     }
   }
 }

@@ -6,6 +6,7 @@ export default class HeaderUser extends React.Component {
     super(props);
     this.state = { classVal: 'hidden' };
     this.handleClick = this.handleClick.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
   }
 
   handleClick () {
@@ -13,8 +14,13 @@ export default class HeaderUser extends React.Component {
     else this.setState({ classVal: 'hidden' });
   }
 
+  handleLogout () {
+    this.props.logout()
+      .then(() => this.setState({ classVal: "hidden" }));
+  }
+
   render () {
-    let { currentUser, logout } = this.props;
+    let { currentUser } = this.props;
     let classVal = this.state.classVal;
     return currentUser ? (
       <div className="headerDiv">
@@ -29,7 +35,7 @@ export default class HeaderUser extends React.Component {
             <li>View profile</li>
             <li>Account details</li>
             <li className="logoutLi">
-              <a onClick={logout} href="#">
+              <a onClick={this.handleLogout} href="#">
                 Logout:
                 <span className="username"> {currentUser.username}</span>
               </a>

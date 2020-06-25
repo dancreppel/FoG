@@ -16,33 +16,34 @@ export default class HeaderUser extends React.Component {
   render () {
     let { currentUser, logout } = this.props;
     let classVal = this.state.classVal;
-    return (
-      currentUser ? (
-        <div className='headerDiv'>
-          <h1 className='headerUser'>{currentUser.username}</h1>
+    return currentUser ? (
+      <div className="headerDiv">
+        <h1 className="username">{currentUser.username}</h1>
 
-          <div className='dropdownDiv'>
-            <i className="material-icons" onClick={this.handleClick}>
-              arrow_drop_down
-            </i>
+        <div className="dropdownDiv">
+          <i className="material-icons" onClick={this.handleClick}>
+            arrow_drop_down
+          </i>
 
-            <ul className={classVal}>
-              <li>View profile</li>
-              <li>Account details</li>
-              <li className='logoutLi'>
-                <a onClick={logout} href="#">Logout:
-                  <span> {currentUser.username}</span>
-                </a>
-              </li>
-              <li>Preferences</li>
-              <li>Change language</li>
-            </ul>
-          </div>
-
+          <ul className={classVal}>
+            <li>View profile</li>
+            <li>Account details</li>
+            <li className="logoutLi">
+              <a onClick={logout} href="#">
+                Logout:
+                <span className="username"> {currentUser.username}</span>
+              </a>
+            </li>
+            <li>Preferences</li>
+            <li>Change language</li>
+          </ul>
         </div>
-      ) : (
-        <Link to='/login'>login</Link>
-      )
-    )
+        <img src="/assets/incognito.jpg" alt="profile picture" />
+      </div>
+    ) : (
+      <Link className="loginLink" to="/login">
+        login
+      </Link>
+    );
   }
 }

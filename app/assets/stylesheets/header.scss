@@ -1,5 +1,36 @@
 header {
-  
+  background-color:  #33334d;
+
+  a { 
+    text-decoration: none;
+    color: lightgrey;
+  }
+
+  .loginLink {
+    height: 25px;
+  }
+
+  .loginLink:hover {
+    color: whitesmoke;
+    }
+
+  .logo {
+    margin: auto 0px;
+    font-size: 50px;
+  }
+
+  img {
+    box-shadow: 1px 1px 1px 1px #1f1f2e1f;
+    width: 35px;
+    height: 35px;
+  }
+
+  .username {
+    // margin: auto 0px;
+    color: lightgrey;
+    font-size: 18px;
+  }
+
   nav {
     width: 950px;
     margin: auto;
@@ -15,30 +46,42 @@ header {
   
   .dropdownDiv {
     position: relative;
+    // margin: auto;
 
     .material-icons {
-      margin: auto;
-      margin-top: 10px;
+      color: lightgrey;
+      margin-top: 3px;
+      cursor: pointer;
     }
   
     ul {
-      border: 1px solid black;
+      background-color: #33334d;
       position: absolute;
-      // display: inline-block;
       min-width: 150px;
       top: 35px;
       right: 10px;
+      box-shadow: 2px 2px 2px 2px #1f1f2ee3;
 
       li {
         padding: 0px 5px;
+        cursor: pointer;
+        color: lightgrey;
+
+        a {
+          text-decoration: none;
+          color: inherit;
+        }
+
+        span {
+          color: cornflowerblue;
+        }
       }
-    }
 
-    a {
-      display: block;
-    }
+      li:hover {
+        color: whitesmoke;
+      }
 
-    
+    }
   }
 
   .hidden {

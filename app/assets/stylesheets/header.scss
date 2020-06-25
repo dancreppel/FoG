@@ -1,6 +1,8 @@
 header {
+  // header properties
   background-color:  #33334d;
 
+  // a tag properties
   a { 
     text-decoration: none;
     color: lightgrey;
@@ -86,6 +88,20 @@ header {
 
   .hidden {
     display: none;
+  }
+
+  .navItems {
+    width: 350px;
+    height: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+
+    li {
+      color: lightgray;
+      font-size: 20px;
+      cursor: pointer;
+    }
   }
 }
 

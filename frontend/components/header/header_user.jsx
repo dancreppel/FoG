@@ -39,7 +39,6 @@ export default class HeaderUser extends React.Component {
             </ul>
           </div>
 
-          <image></image>
         </div>
       ) : (
         <Link to='/login'>login</Link>

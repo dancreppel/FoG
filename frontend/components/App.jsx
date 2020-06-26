@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import Header from './header/header';
-import Session from './session_forms/session';
+import Session from './session';
 
 const App = () => (
   <>

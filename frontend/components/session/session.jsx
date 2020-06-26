@@ -1,8 +1,8 @@
 import React from 'react';
-import AuthRoute from './routes/auth_route';
-import LoginContainer from './session_forms/login_container';
-import SignupContainer from './session_forms/signup_container';
-import JoinMessage from './session_forms/join_message';
+import AuthRoute from '../routes/auth_route';
+import LoginContainer from './login_container';
+import SignupContainer from './signup_container';
+import JoinMessage from './join_message';
 
 const Session = () => (
   <div className='auth'>

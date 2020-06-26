@@ -9045,3 +9045,12 @@ Processing by Api::SessionsController#destroy as JSON
 Completed 200 OK in 67ms (Views: 0.1ms | ActiveRecord: 63.1ms)
 
 
+Started GET "/" for ::1 at 2020-06-26 11:57:59 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 21ms (Views: 20.1ms | ActiveRecord: 0.4ms)
+
+

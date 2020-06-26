@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   # for testing purposes DO NOT FORGET TO REMOVE
-  skip_before_action :verify_authenticity_token
+  # skip_before_action :verify_authenticity_token
   helper_method :current_user, :logged_in?
 
   def current_user

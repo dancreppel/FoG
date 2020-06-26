@@ -1,7 +1,7 @@
 import React from 'react';
 
-const TestImage = ({ src }) => (
+const TestSlide = ({ src }) => (
   <img src={`test_images/${src}`} alt="gameImage"/>
 )
 
-export default TestImage;
+export default TestSlide;

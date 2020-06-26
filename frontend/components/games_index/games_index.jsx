@@ -1,10 +1,10 @@
 import React from 'react';
-import Carousel from '../carousel/carousel';
+import Slider from '../slider/slider';
 
 const GamesIndex = () => (
   <div className='gamesIndex'>
     <h1>Games Index Page</h1>
-    <Carousel />
+    <Slider />
   </div>
 );
 

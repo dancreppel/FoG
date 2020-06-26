@@ -4,7 +4,7 @@ import LoginContainer from './login_container';
 import SignupContainer from './signup_container';
 import JoinMessage from './join_message';
 
-const Session = () => (
+const SessionRoutes = () => (
   <div className='auth'>
     <AuthRoute path='/login' component={LoginContainer} />
     <AuthRoute path='/login' component={JoinMessage} />
@@ -13,4 +13,4 @@ const Session = () => (
   </div>
 )
 
-export default Session;
+export default SessionRoutes;

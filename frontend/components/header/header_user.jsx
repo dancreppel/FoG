@@ -45,7 +45,8 @@ export default class HeaderUser extends React.Component {
             <li>Change language</li>
           </ul>
         </div>
-        <img src="/assets/incognito.jpg" alt="profile picture" />
+        {/* <img className='profilePicture' src="/assets/incognito.jpg" alt="profile picture" /> */}
+        <div className='profilePicture'/>
       </div>
     ) : (
       <div className="loginLinks">

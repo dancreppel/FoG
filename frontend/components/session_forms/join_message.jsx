@@ -9,7 +9,8 @@ const JoinMessage = (props) => (
       <li>Play your games on any supported platform</li>
       <li>Receive automatic game updates, and more!</li>
     </ul>
-    <img src="assets/joinGames.png" alt="game image"/>
+    {/* <img src="assets/joinGames.png" alt="game image"/> */}
+    <div className='joinPhoto'/>
   </aside>
 );
 

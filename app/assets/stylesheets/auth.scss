@@ -26,9 +26,13 @@
       padding-left: 20px;
     }
 
-    img {
-      width: 240px;
-      height: 135px;
+    .joinPhoto {
+      $width: 240px;
+      $height: 135px;
+      background: asset-url('joinGames.png');
+      background-size: $width $height;
+      width: $width;
+      height: $height;
       margin: auto;
     }
   }

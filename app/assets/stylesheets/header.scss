@@ -62,8 +62,13 @@ header {
     font-size: 50px;
   }
 
-  img {
-    box-shadow: 1px 1px 1px 1px #1f1f2e1f;
+  .profilePicture {
+    display: inline-block;
+    background: asset-url('incognito.jpg');
+    background-size: 35px 35px;
+    cursor: pointer;
+    // box-shadow: 1px 1px 1px 1px #1f1f2e1f;
+    border: none;
     width: 35px;
     height: 35px;
   }
@@ -82,9 +87,9 @@ header {
   }
 
   .headerDiv {
-    width: 50px;
+    // width: 50px;
     height: 35px;
-    margin-top: 1px;
+    margin-top: 2px;
     display: flex;
     justify-content: space-between;
   }

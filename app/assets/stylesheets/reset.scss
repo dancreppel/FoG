@@ -12,7 +12,9 @@ ol[class] {
 }
 
 /* Remove default margin */
+// Add font-family
 body,
+div,
 h1,
 h2,
 h3,
@@ -27,7 +29,8 @@ blockquote,
 dl,
 dd {
   margin: 0;
-  font-family: 'Oxanium', cursive;
+  // font-family: inherit;
+  font-family: 'Oxanium';
 }
 
 /* Set core body defaults */

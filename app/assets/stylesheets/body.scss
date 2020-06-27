@@ -1,7 +1,11 @@
 body {
-  background-color: #67678f;
+  // font-family: 'Oxanium', cursive;
+  $light: #1b2838; 
+  background-color: $light;
+  color: lightgrey;
 
   button {
     cursor: pointer;
   }
+
 }

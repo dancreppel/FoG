@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 const Header = () => (
   <header>
     <nav>
-      <Link className='logo' to='/'>F.o.G.</Link>
+      <Link className='logo' to='/'>FoG</Link>
       <ul className='navItems'>
-        <div>Store
+        {/* <div>Store
           <ul className='store dropdown'>
             <li>Featured</li>
             <li>Wishlist</li>
@@ -25,7 +25,10 @@ const Header = () => (
           </ul>
         </div>
         <li>About</li>
-        <li>Support</li>
+        <li>Support</li> */}
+        <li>Github</li>
+        <li>LinkedIn</li>
+        <li>Resume</li>
       </ul>
       <HeaderUserContainer />
     </nav>

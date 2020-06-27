@@ -9,7 +9,10 @@ export default class HeaderUser extends React.Component {
 
     // exit out of drop down anytime i click outside of drop down
     document.body.addEventListener("click", (e) => {
-      this.setState({ classVal: "hidden" });
+      let dropdown = Array.from(document.getElementsByClassName('userDropdown'));
+      if (!dropdown.includes(e.target)) {
+        this.setState({ classVal: "hidden" });
+      }
     });
   }
 
@@ -25,28 +28,32 @@ export default class HeaderUser extends React.Component {
 
     return currentUser ? (
       <div className="headerDiv">
-        <h1 className="username">{currentUser.username}</h1>
 
-        <div className="dropdownDiv">
-          <i className="material-icons" onClick={this.handleClick}>
+        <div className="userDropdown" onClick={this.handleClick}>
+
+          <h1 className="userDropdown username">{currentUser.username}</h1>
+
+          <i className="userDropdown material-icons" >
             arrow_drop_down
           </i>
 
           <ul className={classVal}>
-            <li>View profile</li>
-            <li>Account details</li>
+            <li>Github</li>
+            <li>LinkedIn</li>
+            <li>Resume</li>
             <li className="logoutLi">
               <a onClick={logout} href="#">
                 Logout:
                 <span className="username"> {currentUser.username}</span>
               </a>
             </li>
-            <li>Preferences</li>
-            <li>Change language</li>
           </ul>
+
         </div>
+
         {/* <img className='profilePicture' src="/assets/incognito.jpg" alt="profile picture" /> */}
         <div className='profilePicture'/>
+
       </div>
     ) : (
       <div className="loginLinks">

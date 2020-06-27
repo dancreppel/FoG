@@ -1,7 +1,7 @@
 import React from 'react';
 
 const TestSlide = ({ src }) => (
-  <img src={`test_images/${src}`} alt="gameImage"/>
+  <img src={`/assets/test_images/${src}`} alt="gameImage"/>
 )
 
 export default TestSlide;

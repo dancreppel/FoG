@@ -1,6 +1,10 @@
 header {
   // header properties
-  background-color:  #33334d;
+  $black: #171a21; 
+  $light: #1b2838;
+  $button: #253c58;
+  $button-hover: #2e5788;
+  background-color:  $black;
 
   // a tag properties
   a { 
@@ -24,9 +28,10 @@ header {
     }
 
     button {
-      background-color: #67678f;
-      color:cornflowerblue;
-      border: 1px solid lightgrey;
+      background-color: $button;
+      color:lightblue;
+      // border: 1px solid lightgrey;
+      border: none;
       border-radius: 2px;
       margin-top: 2px;
       // margin: 1px 5px;
@@ -34,26 +39,25 @@ header {
     }
 
     button:hover {
-      background-color: #8c8cc2;
-      color: lightblue;
+      background-color: $button-hover;
+      color: whitesmoke;
       
     }
 
     .loginLink {
       display: block;
-      border: 1px solid lightgrey;
-      background-color: #67678f;
-      color:cornflowerblue;
+      background-color: $button;
+      line-height: 30px;
+      color:lightblue;
       border-radius: 2px;
       padding: 0px 5px;
-
       margin: auto;
       height: 30px;
     }
   
     .loginLink:hover {
-      background-color: #8c8cc2;
-      color: lightblue;
+      background-color: $button-hover;
+      color: whitesmoke;
       }
   }
 
@@ -76,7 +80,9 @@ header {
   .username {
     // margin: auto 0px;
     color: lightgrey;
-    font-size: 16px;
+    font-size: 18px;
+    vertical-align: middle;
+    cursor: pointer;
   }
 
   nav {
@@ -89,7 +95,7 @@ header {
   .headerDiv {
     // width: 50px;
     height: 35px;
-    margin-top: 2px;
+    margin-top: 3px;
     display: flex;
     justify-content: space-between;
   }
@@ -100,8 +106,16 @@ header {
   //   }
   // }
   
-  .dropdownDiv {
+  .userDropdown {
     position: relative;
+    display: flex;
+    
+    &:hover {
+      h1, i {
+        color: whitesmoke;
+      }
+    }
+
     // margin: auto;
 
     .material-icons {
@@ -111,12 +125,12 @@ header {
     }
   
     ul {
-      background-color: #33334d;
+      background-color: $black;
       position: absolute;
       min-width: 150px;
       top: 35px;
       right: 10px;
-      box-shadow: 1px 1px 5px 5px #1f1f2ee3;
+      box-shadow: 1px 1px 5px 5px $black;
 
       li {
         padding: 0px 5px;
@@ -131,11 +145,15 @@ header {
         span {
           color: cornflowerblue;
         }
+
+        &:hover {
+          color: whitesmoke;
+        }
       }
 
-      li:hover {
-        color: whitesmoke;
-      }
+      // li:hover {
+      //   color: whitesmoke;
+      // }
 
     }
   }
@@ -170,9 +188,9 @@ header {
     .dropdown {
       position: absolute;
       display: none;
-      background-color: #33334d;
+      background-color: $black;
       width: 110px;
-      box-shadow: 1px 1px 5px 5px #1f1f2ee3;
+      box-shadow: 1px 1px 5px 5px $black;
       
 
       li {

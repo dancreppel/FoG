@@ -9,7 +9,9 @@
     <%= javascript_include_tag 'application' %>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <% if logged_in? %><link href="https://fonts.googleapis.com/css2?family=Oxanium&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium&display=swap" rel="stylesheet">
+
+    <% if logged_in? %>
     <script>
       window.currentUser = <%= render(
                               'api/users/user.json.jbuilder', 

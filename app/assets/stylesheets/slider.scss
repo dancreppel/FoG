@@ -21,15 +21,18 @@ $button-hover: #2e5788;
 .sliderDiv {
   width: 900px;
   margin: auto;
+  overflow: hidden;
 }
 
 .slider {
   display: flex;
   height: 300px;
-  overflow-x: hidden;
+
   img {
     width: 500px;
   }
+
+  transform: translate(-50%);
 
   // @extend %slider;
 }
@@ -53,12 +56,12 @@ $button-hover: #2e5788;
     }
   }
 
-  .scroller {
+  .scrollbar {
     width: 89%;
     background: $black;
     border-radius: 5px;
 
-    .scroll {
+    .scroller {
       width: 10%;
       height: 100%;
       border-radius: 5px;

@@ -42,8 +42,8 @@ export default class Slider extends React.Component {
               arrow_left
           </div>
 
-          <div className='scroller'>
-            <div className='scroll'></div>
+          <div className='scrollbar'>
+            <div className='scroller'></div>
           </div>
 
           <div className='goRight material-icons' onClick={this.goRight}>

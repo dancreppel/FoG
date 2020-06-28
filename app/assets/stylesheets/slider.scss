@@ -1,0 +1,80 @@
+$black: #171a21;
+$button: #253c58;
+$button-hover: #2e5788;
+
+// %slider {
+//   display: flex;
+//   height: 300px;
+//   overflow-x: hidden;
+// }
+
+%button {
+  color: cornflowerblue;
+  background-color: $button;
+}
+
+%button-hover {
+  background-color: $button-hover;
+  color: lightgrey;
+}
+
+.sliderDiv {
+  width: 900px;
+  margin: auto;
+}
+
+.slider {
+  display: flex;
+  height: 300px;
+  overflow-x: hidden;
+  img {
+    width: 500px;
+  }
+
+  // @extend %slider;
+}
+
+.sliderButtons {
+  display: flex;
+  justify-content: space-between;
+  height: 25px;
+  margin: 5px 0px;
+
+  .goRight, .goLeft {
+    width: 5%;
+    @extend %button;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover, &:hover {
+      @extend %button-hover;
+    }
+  }
+
+  .scroller {
+    width: 89%;
+    background: $black;
+    border-radius: 5px;
+
+    .scroll {
+      width: 10%;
+      height: 100%;
+      border-radius: 5px;
+      @extend %button;
+      cursor: grab;
+
+      // testing transitions
+      &:active {
+        cursor: grabbing;
+        transition-duration: .25s;
+        transform: translateX(300%);
+      }
+
+      &:hover {
+        @extend%button-hover;
+      }
+    }
+  }
+}

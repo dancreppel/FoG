@@ -25,15 +25,31 @@ export default class Slider extends React.Component {
     ];
 
     let items = sources.map((source, index) => 
-      <TestSlide key={'slide' + index} src={source} />
+      <TestSlide key={'slide' + index} src={source} data-index={index}/>
     );
 
     return(
-      <div className='slider'>
+      <div className='sliderDiv'>
         <h2>Slider Goes Here</h2>
-        <button className='goLeft' onClick={this.goLeft}></button>
-        {items}
-        <button className='goRight'></button>
+
+        <div className='slider'>
+          {items}
+        </div>
+
+        <div className='sliderButtons'>
+
+          <div className='goLeft material-icons' onClick={this.goLeft}>
+              arrow_left
+          </div>
+
+          <div className='scroller'>
+            <div className='scroll'></div>
+          </div>
+
+          <div className='goRight material-icons' onClick={this.goRight}>
+              arrow_right
+          </div>
+        </div>
       </div>
     )
   }

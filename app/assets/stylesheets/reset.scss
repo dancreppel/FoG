@@ -71,6 +71,15 @@ select {
   font: inherit;
 }
 
+// remove borders for buttons
+button {
+  border: none;
+
+  &:active {
+    border: none;
+  }
+}
+
 /* Remove all animations and transitions for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   * {

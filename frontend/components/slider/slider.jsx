@@ -11,6 +11,8 @@ export default class Slider extends React.Component {
 
     this.goLeft = this.goLeft.bind(this);
     this.goRight = this.goRight.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+
     this.height = 70;
     this.width = 120;
     this.sources = [
@@ -28,7 +30,12 @@ export default class Slider extends React.Component {
     this.conLen = this.width * this.sources.length;
   }
 
+  componentDidMount () {
+    
+  }
+
   goLeft () {
+    // for slider
     let { index, delta } = this.state;
 
     if (index > 0) index -= 1;
@@ -42,6 +49,7 @@ export default class Slider extends React.Component {
   }
 
   goRight () {
+    // for slider
     let { index, delta } = this.state;
 
     if (index === (this.sources.length - 1)) index = 0;
@@ -54,29 +62,46 @@ export default class Slider extends React.Component {
     this.setState({ index, delta })
   }
 
+  handleClick (e) {
+    let index = Number(e.target.dataset.index);
+    this.setState({ index });
+  }
+
+  mousedownEvent () {
+    document.getElementsByClassName('scroller')
+  }
+
   render () {
     let items = this.sources.map((source, index) => 
       <TestSlide 
         key={'slide' + index} 
         src={source} 
         selected={(this.state.index === index) ? true : false}
+        index={index}
         height={this.height}
         width={this.width}
       />
     );
 
-    let delta = this.state.delta;
-    // let delta = -600
+    let { index, delta } = this.state;
+    // let delta = 30;
+
+    let mainImg = this.sources[index];
 
     return(
       <div 
         className='sliderDiv'
-        
       >
         <h2>Slider Goes Here!!!</h2>
 
+        <img 
+          className='main-image'
+          src={`/assets/test_images/${mainImg}`} 
+          alt="mainImage"/>
+
         <div 
           className='slider' 
+          onClick={this.handleClick}
           style={{ transform: `translate(${delta}px)` }}
         >
           {items}
@@ -89,7 +114,10 @@ export default class Slider extends React.Component {
           </div>
 
           <div className='scrollbar'>
-            <div className='scroller'></div>
+            <div 
+              className='scroller' 
+              style={{ transform: `translate(${index*100}%)` }}
+            ></div>
           </div>
 
           <div className='goRight material-icons' onClick={this.goRight}>

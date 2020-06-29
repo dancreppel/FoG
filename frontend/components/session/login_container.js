@@ -10,8 +10,7 @@ const MSP = ({ errors }) => ({
 
 const MDP = dispatch => ({
   action: user => dispatch(login(user)),
-  clearErrors: () => dispatch(clearErrors())
-});
+  clearErrors: () => dispatch(clearErrors()) });
 
 const LoginContainer = connect(MSP, MDP)(LoginForm);
 export default LoginContainer;

@@ -22,9 +22,35 @@ $button-hover: #2e5788;
   width: 600px;
   margin: auto;
   overflow: hidden;
+
+  img { 
+    cursor: pointer;
+    // position: relative;
+  }
+}
+
+// create transition zoom effect on hover
+img{
+  opacity: 0.85;
+  transition-duration: .2s;
+  transform: scale(0.99);
+
+  &:hover {
+    opacity: 1;
+    border: none;
+    transform: scale(1);
+    z-index: 10;
+    overflow: visible;
+  }
+}
+
+.main-image {
+  width: 600px;
+  height: 350px;
 }
 
 .slider {
+  z-index: -1;
   display: flex;
   transition-duration: 0.5s;
   // height is determined by slider.jsx component
@@ -65,14 +91,15 @@ $button-hover: #2e5788;
       height: 100%;
       border-radius: 5px;
       @extend %button;
-      cursor: grab;
+      transition-duration: .50s;
+      // cursor: grab;
 
       // testing transitions
-      &:active {
-        cursor: grabbing;
-        transition-duration: .25s;
-        transform: translateX(300%);
-      }
+      // &:active {
+      //   cursor: grabbing;
+      //   transition-duration: .25s;
+      //   transform: translateX(300%);
+      // }
 
       &:hover {
         @extend%button-hover;

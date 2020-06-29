@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 2020_06_29_215738) do
     t.string "developer", null: false
     t.string "publisher", null: false
     t.date "release_date", null: false
+    t.float "price", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["title"], name: "index_games_on_title"

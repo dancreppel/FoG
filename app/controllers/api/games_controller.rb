@@ -1,6 +1,6 @@
 class Api::GamesController < ApplicationController
   def show
-    @game = Game.find_by(id: params[:id])
+    @game = Game.with_attached_photos.find_by(id: params[:id])
 
     if @game 
       render :show

@@ -56,9 +56,6 @@ img{
   transition-duration: 0.5s;
   // height is determined by slider.jsx component
 
-  img {
-    
-  }
 
   .selected {
     border: 2px solid white;
@@ -69,34 +66,48 @@ img{
 .sliderButtons {
   display: flex;
   justify-content: space-between;
-  height: 25px;
-  margin: 5px 0px;
+  align-items: center;
+  // height: 25px;
+  
+  // margin: 5px 0px;
 
   .goRight, .goLeft {
+    height: 15px;
     width: 5%;
     @extend %button;
     border: none;
     border-radius: 5px;
     text-align: center;
+    line-height: 15px;
     cursor: pointer;
 
     &:hover, &:hover {
       @extend %button-hover;
     }
+
+    
   }
 
-  .scrollbar {
-    width: 89%;
-    background: $black;
+  .tabsBar {
+    width: 80%;
     border-radius: 5px;
 
-    .scroller {
-      width: 10%;
-      height: 100%;
+    .tabs {
+      margin: auto;
+      height: 25px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+    
+    .tab {
+      width: 25px;
+      height: 15px;
       border-radius: 5px;
-      @extend %button;
+      background: $black;
+      // @extend %button;
       transition-duration: .50s;
-      cursor: grab;
+      cursor: pointer;
 
       // testing transitions
       // &:active {
@@ -105,8 +116,12 @@ img{
       //   transform: translateX(300%);
       // }
 
+      &.selected {
+        @extend %button;
+      }
+
       &:hover {
-        @extend%button-hover;
+        @extend %button-hover;
       }
     }
   }

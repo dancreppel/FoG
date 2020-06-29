@@ -36,14 +36,6 @@ export default class Slider extends React.Component {
 
   }
 
-  componentDidMount () {
-    this.scrolling = false;
-    // setting event handlers for scrollbar
-    this.mousedownEvent();
-    this.mousemoveEvent();
-    this.mouseupEvent();
-  }
-
   goLeft () {
     // for slider
     let { index, delta } = this.state;
@@ -54,7 +46,7 @@ export default class Slider extends React.Component {
 
     // move slide right by an image length in percentage relative to container width
     if (index === length - 1) delta = 100 - this.conLen;
-    else if (delta !== 0 && index < length - 5) delta += 20;
+    else if (delta !== 0) delta += 20;
 
     this.setState({ index, delta });
   }
@@ -76,31 +68,17 @@ export default class Slider extends React.Component {
 
   handleClick (e) {
     let index = Number(e.target.dataset.index);
-    this.setState({ index });
-  }
 
-  mousedownEvent () {
-    document.querySelector(".scroller").addEventListener('mousedown', (e) => {
-      this.scrolling = true;
-      this.ref = e.clientX;
-    });
-  }
+    // reposition slider for selected
+    let delta;
+    if (index < this.sources.length - 5) delta = 0 - this.shift * index;
+    else delta = 100 - this.conLen;
+    
 
-  mousemoveEvent () {
-    document.querySelector('.scrollbar').addEventListener('mousemove', (e) => {
-      if (this.scrolling) {
-        this.offset = e.clientX - this.ref;
-        console.log(this.offset);
-        let delta = this.offset + this.state.delta;
-        this.setState({ delta: delta/2 })
-      }
-    });
-  }
 
-  mouseupEvent () {
-    document.querySelector(".scrollbar").addEventListener("mouseup", (e) => {
-      this.scrolling = false;
-    });
+    // if (delta > )
+
+    this.setState({ index, delta });
   }
 
   render () {
@@ -116,23 +94,35 @@ export default class Slider extends React.Component {
     );
 
     let { index, delta } = this.state;
-    // delta = -100;
+    let length = this.sources.length;
 
     let mainImg = this.sources[index];
 
     // scroller translation logic
-    let length = this.sources.length;
-    let scrollbarWidth = 0.89 * this.containerWidth;
-    let scrollDelta = delta / 100 * scrollbarWidth;
-    // scrollDelta = -scrollbarWidth * 10;
-    if (index >= length - 5) scrollDelta = -900;
-    console.log(scrollDelta);
-    console.log(index);
+    // let length = this.sources.length;
+    // let scrollbarWidth = 0.89 * this.containerWidth;
+    // let scrollDelta = delta / 100 * scrollbarWidth;
+    // if (index >= length - 5) scrollDelta = -900;
 
-    let scrollerStyle = { transform: `translate(${-scrollDelta}%)` };
+    // let scrollerStyle = { transform: `translate(${-scrollDelta}%)` };
 
     // if (this.scrolling) scrollerStyle = { transform: `translate(${delta}px)` };
     // else scrollerStyle = { transform: `translate(${index * 100}%)` };
+
+    let tabs = this.sources.map(( _, index) => {
+      let selected = (this.state.index === index)
+        ? ' selected'
+        : ''
+
+      return (
+        <div
+          onClick={this.handleClick}
+          className={"tab" + selected}
+          key={"tab" + index}
+          data-index={index}
+        ></div>
+      );
+    });
 
     return(
       <div 
@@ -157,20 +147,26 @@ export default class Slider extends React.Component {
 
         <div className='sliderButtons'>
 
-          <div className='goLeft material-icons' onClick={this.goLeft}>
-              arrow_left
-          </div>
+          <span className='goLeft material-icons' onClick={this.goLeft}>
+            arrow_left
+          </span>
 
-          <div className='scrollbar'>
+          {/* <div className='scrollbar'>
             <div 
               className='scroller' 
               style={scrollerStyle}
             ></div>
+          </div> */}
+
+          <div className='tabsBar'>
+            <div className='tabs' style={{width: `${length * 30}px`}}>
+              {tabs}
+            </div>
           </div>
 
-          <div className='goRight material-icons' onClick={this.goRight}>
-              arrow_right
-          </div>
+          <span className='goRight material-icons' onClick={this.goRight}>
+            arrow_right
+          </span>
         </div>
       </div>
     )

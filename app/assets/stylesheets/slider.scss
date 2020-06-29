@@ -101,9 +101,9 @@ img{
     }
     
     .tab {
-      width: 25px;
-      height: 15px;
-      border-radius: 5px;
+      width: 15px;
+      height: 10px;
+      border-radius: 3px;
       background: $button;
       // @extend %button;
       transition-duration: .50s;

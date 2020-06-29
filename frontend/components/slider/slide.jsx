@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TestSlide = (props) => {
+const Slide = (props) => {
   let selected = (props.selected === true) ? 'selected' : '';
 
   return (
@@ -20,5 +20,5 @@ const TestSlide = (props) => {
   )
 }
 
-export default TestSlide;
+export default Slide;
 

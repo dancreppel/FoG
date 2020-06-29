@@ -1,5 +1,5 @@
 import React from 'react';
-import TestSlide from './test_slide';
+import Slide from './slide';
 
 export default class Slider extends React.Component {
   constructor (props) {
@@ -83,7 +83,7 @@ export default class Slider extends React.Component {
 
   render () {
     let items = this.sources.map((source, index) => 
-      <TestSlide 
+      <Slide 
         key={'slide' + index} 
         src={source} 
         selected={(this.state.index === index) ? true : false}
@@ -97,17 +97,6 @@ export default class Slider extends React.Component {
     let length = this.sources.length;
 
     let mainImg = this.sources[index];
-
-    // scroller translation logic
-    // let length = this.sources.length;
-    // let scrollbarWidth = 0.89 * this.containerWidth;
-    // let scrollDelta = delta / 100 * scrollbarWidth;
-    // if (index >= length - 5) scrollDelta = -900;
-
-    // let scrollerStyle = { transform: `translate(${-scrollDelta}%)` };
-
-    // if (this.scrolling) scrollerStyle = { transform: `translate(${delta}px)` };
-    // else scrollerStyle = { transform: `translate(${index * 100}%)` };
 
     let tabs = this.sources.map(( _, index) => {
       let selected = (this.state.index === index)
@@ -159,7 +148,7 @@ export default class Slider extends React.Component {
           </div> */}
 
           <div className='tabsBar'>
-            <div className='tabs' style={{width: `${length * 30}px`}}>
+            <div className='tabs' style={{width: `${length * 20}px`}}>
               {tabs}
             </div>
           </div>

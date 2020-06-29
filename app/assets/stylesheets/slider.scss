@@ -28,6 +28,12 @@ $button-hover: #2e5788;
   display: flex;
   transition-duration: 0.5s;
   // height is determined by slider.jsx component
+
+
+  .selected {
+    border: 2px solid white;
+    padding: 1px;
+  }
 }
 
 .sliderButtons {

@@ -25,7 +25,7 @@ export default class Slider extends React.Component {
       'starwars.jpg',
       'MapleStory2.jpg'
     ]
-    this.containerLength = this.width * this.sources.length;
+    this.conLen = this.width * this.sources.length;
   }
 
   goLeft () {
@@ -36,7 +36,7 @@ export default class Slider extends React.Component {
 
     // move slide right by an image length
     if (delta !== 0) delta += this.width;
-    else delta = -(this.containerLength / 2);
+    else delta = -(this.conLen / 2);
     this.setState({ index, delta });
   }
 
@@ -47,8 +47,8 @@ export default class Slider extends React.Component {
     else index += 1;
 
     // move slide left by an image length
-    if (delta === -(this.containerLength / 2)) delta = 0;
-    else delta = this.state.delta - this.width;
+    if (index === 0) delta = 0;
+    else if (delta > -(this.conLen/2)) delta -= this.width;
 
     this.setState({ index, delta })
   }
@@ -58,7 +58,7 @@ export default class Slider extends React.Component {
       <TestSlide 
         key={'slide' + index} 
         src={source} 
-        data-index={index}
+        selected={(this.state.index === index) ? true : false}
         height={this.height}
         width={this.width}
       />

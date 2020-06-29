@@ -28,7 +28,7 @@ export default class Slider extends React.Component {
       'starwars.jpg',
       'MapleStory2.jpg'
     ]
-
+    
     // for determining the length of slider interms of percentage compared to 
     // container width
     this.shift = (this.width / this.containerWidth) * 100
@@ -47,17 +47,14 @@ export default class Slider extends React.Component {
   goLeft () {
     // for slider
     let { index, delta } = this.state;
+    let length = this.sources.length;
 
     if (index > 0) index -= 1;
     else index = this.sources.length - 1;
 
-    // move slide right by an image length
-    // if (index === this.sources.length - 1) delta = -(this.conLen / 2);
-    // else if (delta !== 0) delta += this.width;
-
-    // use percentages instead of px
-    if (index === this.sources.length - 1) delta = 100 - this.conLen;
-    else if (delta !== 0) delta += 20;
+    // move slide right by an image length in percentage relative to container width
+    if (index === length - 1) delta = 100 - this.conLen;
+    else if (delta !== 0 && index < length - 5) delta += 20;
 
     this.setState({ index, delta });
   }
@@ -69,9 +66,9 @@ export default class Slider extends React.Component {
     if (index === (this.sources.length - 1)) index = 0;
     else index += 1;
 
-    // move slide left by an image length
+   // move slide right by an image length in percentage relative to container width
     if (index === 0) delta = 0;
-    else if (delta > -(this.conLen/2)) delta -= this.shift;
+    else if (delta > (100 - this.conLen)) delta -= this.shift;
 
 
     this.setState({ index, delta })
@@ -123,10 +120,19 @@ export default class Slider extends React.Component {
 
     let mainImg = this.sources[index];
 
-    let scrollerStyle;
+    // scroller translation logic
+    let length = this.sources.length;
+    let scrollbarWidth = 0.89 * this.containerWidth;
+    let scrollDelta = delta / 100 * scrollbarWidth;
+    // scrollDelta = -scrollbarWidth * 10;
+    if (index >= length - 5) scrollDelta = -900;
+    console.log(scrollDelta);
+    console.log(index);
 
-    if (this.scrolling) scrollerStyle = { transform: `translate(${delta}px)` };
-    else scrollerStyle = { transform: `translate(${index * 100}%)` };
+    let scrollerStyle = { transform: `translate(${-scrollDelta}%)` };
+
+    // if (this.scrolling) scrollerStyle = { transform: `translate(${delta}px)` };
+    // else scrollerStyle = { transform: `translate(${index * 100}%)` };
 
     return(
       <div 

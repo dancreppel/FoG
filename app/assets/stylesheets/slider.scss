@@ -19,12 +19,13 @@ $button-hover: #2e5788;
 }
 
 .sliderDiv {
-  width: 600px;
+  // width: 600px;
   margin: auto;
   overflow: hidden;
 
   img { 
     cursor: pointer;
+    object-fit: cover;
     // position: relative;
   }
 }
@@ -55,6 +56,9 @@ img{
   transition-duration: 0.5s;
   // height is determined by slider.jsx component
 
+  img {
+    
+  }
 
   .selected {
     border: 2px solid white;
@@ -92,7 +96,7 @@ img{
       border-radius: 5px;
       @extend %button;
       transition-duration: .50s;
-      // cursor: grab;
+      cursor: grab;
 
       // testing transitions
       // &:active {

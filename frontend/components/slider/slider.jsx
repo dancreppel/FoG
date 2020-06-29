@@ -6,13 +6,14 @@ export default class Slider extends React.Component {
     super(props);
     this.state = {
       index: 0,
-      delta: 0
+      delta: 0,
     };
 
     this.goLeft = this.goLeft.bind(this);
     this.goRight = this.goRight.bind(this);
     this.handleClick = this.handleClick.bind(this);
 
+    this.containerWidth = 600;
     this.height = 70;
     this.width = 120;
     this.sources = [
@@ -27,11 +28,20 @@ export default class Slider extends React.Component {
       'starwars.jpg',
       'MapleStory2.jpg'
     ]
-    this.conLen = this.width * this.sources.length;
+
+    // for determining the length of slider interms of percentage compared to 
+    // container width
+    this.shift = (this.width / this.containerWidth) * 100
+    this.conLen =  this.shift * this.sources.length;
+
   }
 
   componentDidMount () {
-    
+    this.scrolling = false;
+    // setting event handlers for scrollbar
+    this.mousedownEvent();
+    this.mousemoveEvent();
+    this.mouseupEvent();
   }
 
   goLeft () {
@@ -42,8 +52,12 @@ export default class Slider extends React.Component {
     else index = this.sources.length - 1;
 
     // move slide right by an image length
-    if (index === this.sources.length - 1) delta = -(this.conLen / 2);
-    else if (delta !== 0) delta += this.width;
+    // if (index === this.sources.length - 1) delta = -(this.conLen / 2);
+    // else if (delta !== 0) delta += this.width;
+
+    // use percentages instead of px
+    if (index === this.sources.length - 1) delta = 100 - this.conLen;
+    else if (delta !== 0) delta += 20;
 
     this.setState({ index, delta });
   }
@@ -57,7 +71,8 @@ export default class Slider extends React.Component {
 
     // move slide left by an image length
     if (index === 0) delta = 0;
-    else if (delta > -(this.conLen/2)) delta -= this.width;
+    else if (delta > -(this.conLen/2)) delta -= this.shift;
+
 
     this.setState({ index, delta })
   }
@@ -68,7 +83,27 @@ export default class Slider extends React.Component {
   }
 
   mousedownEvent () {
-    document.getElementsByClassName('scroller')
+    document.querySelector(".scroller").addEventListener('mousedown', (e) => {
+      this.scrolling = true;
+      this.ref = e.clientX;
+    });
+  }
+
+  mousemoveEvent () {
+    document.querySelector('.scrollbar').addEventListener('mousemove', (e) => {
+      if (this.scrolling) {
+        this.offset = e.clientX - this.ref;
+        console.log(this.offset);
+        let delta = this.offset + this.state.delta;
+        this.setState({ delta: delta/2 })
+      }
+    });
+  }
+
+  mouseupEvent () {
+    document.querySelector(".scrollbar").addEventListener("mouseup", (e) => {
+      this.scrolling = false;
+    });
   }
 
   render () {
@@ -84,13 +119,19 @@ export default class Slider extends React.Component {
     );
 
     let { index, delta } = this.state;
-    // let delta = 30;
+    // delta = -100;
 
     let mainImg = this.sources[index];
+
+    let scrollerStyle;
+
+    if (this.scrolling) scrollerStyle = { transform: `translate(${delta}px)` };
+    else scrollerStyle = { transform: `translate(${index * 100}%)` };
 
     return(
       <div 
         className='sliderDiv'
+        style={{ width: `${this.containerWidth}px` }}
       >
         <h2>Slider Goes Here!!!</h2>
 
@@ -103,6 +144,7 @@ export default class Slider extends React.Component {
           className='slider' 
           onClick={this.handleClick}
           style={{ transform: `translate(${delta}px)` }}
+          style={{ transform: `translate(${delta}%)` }}
         >
           {items}
         </div>
@@ -116,7 +158,7 @@ export default class Slider extends React.Component {
           <div className='scrollbar'>
             <div 
               className='scroller' 
-              style={{ transform: `translate(${index*100}%)` }}
+              style={scrollerStyle}
             ></div>
           </div>
 

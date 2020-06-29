@@ -6,7 +6,7 @@ const TestSlide = (props) => {
   return (
 
     <img 
-      className={selected}
+      className={'slide ' + selected}
       data-index={props.index}
       src={`/assets/test_images/${props.src}`} 
       alt="gameImage"

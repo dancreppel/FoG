@@ -35,8 +35,9 @@ export default class Slider extends React.Component {
     else index = this.sources.length - 1;
 
     // move slide right by an image length
-    if (delta !== 0) delta += this.width;
-    else delta = -(this.conLen / 2);
+    if (index === this.sources.length - 1) delta = -(this.conLen / 2);
+    else if (delta !== 0) delta += this.width;
+
     this.setState({ index, delta });
   }
 

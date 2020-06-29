@@ -19,22 +19,15 @@ $button-hover: #2e5788;
 }
 
 .sliderDiv {
-  width: 900px;
+  width: 600px;
   margin: auto;
   overflow: hidden;
 }
 
 .slider {
   display: flex;
-  height: 300px;
-
-  img {
-    width: 500px;
-  }
-
-  transform: translate(-50%);
-
-  // @extend %slider;
+  transition-duration: 0.5s;
+  // height is determined by slider.jsx component
 }
 
 .sliderButtons {

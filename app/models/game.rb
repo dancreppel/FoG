@@ -3,4 +3,8 @@ class Game < ApplicationRecord
   validates :title, presence: true, uniqueness: true;
 
   has_many_attached :photos
+
+  has_many :games_genres, dependent: :destroy
+
+  has_many :games, through: :games_genres
 end

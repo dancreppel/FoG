@@ -18,12 +18,6 @@ Genre.create(name: 'action')
 Genre.create(name: 'shooter')
 Genre.create(name: 'rpg')
 
-GamesGenre.destroy_all
-
-GamesGenre.create(game_id: 1, genre_id: 1)
-GamesGenre.create(game_id: 1, genre_id: 2)
-GamesGenre.create(game_id: 1, genre_id: 3)
-
 Game.destroy_all
 
 # Seed Escape From Tarkov
@@ -70,3 +64,9 @@ eft10 = open("https://fog-seed.s3-us-west-1.amazonaws.com/Escape+From+Tarkov/eft
 eft.photos.attach( io: eft10, filename: 'eft-10.jpg' )
 
 eft.save!
+
+GamesGenre.destroy_all
+
+GamesGenre.create(game_id: 1, genre_id: 1)
+GamesGenre.create(game_id: 1, genre_id: 2)
+GamesGenre.create(game_id: 1, genre_id: 3)

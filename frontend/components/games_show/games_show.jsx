@@ -8,12 +8,12 @@ export default class GamesShow extends React.Component {
   }
 
   componentDidMount () {
-    if (!this.props.game) this.props.fetchGame(this.props.match.params.id)
+    this.props.fetchGame(this.props.match.params.id)
   }
 
   render () {
-    // prevent render if game doesnt exist
-    if (!this.props.game) return null;
+    // prevent render if game info hasn't been retrieved
+    if (!this.props.game.photoUrls) return null;
     
     return (
       <div className='games-show'>

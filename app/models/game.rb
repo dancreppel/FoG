@@ -6,5 +6,5 @@ class Game < ApplicationRecord
 
   has_many :games_genres, dependent: :destroy
 
-  has_many :games, through: :games_genres
+  has_many :genres, through: :games_genres
 end

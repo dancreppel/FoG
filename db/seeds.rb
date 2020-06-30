@@ -12,6 +12,18 @@ User.destroy_all
 
 User.create(username: 'guest', password: 'password');
 
+Genre.destroy_all
+
+Genre.create(name: 'action')
+Genre.create(name: 'shooter')
+Genre.create(name: 'rpg')
+
+GamesGenre.destroy_all
+
+GamesGenre.create(game_id: 1, genre_id: 1)
+GamesGenre.create(game_id: 1, genre_id: 2)
+GamesGenre.create(game_id: 1, genre_id: 3)
+
 Game.destroy_all
 
 # Seed Escape From Tarkov

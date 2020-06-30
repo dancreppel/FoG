@@ -18978,3 +18978,32 @@ Migrating to CreateGamesGenres (20200630055306)
   ↳ bin/rails:9
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (1.0ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "action"], ["created_at", "2020-06-30 06:09:32.684378"], ["updated_at", "2020-06-30 06:09:32.684378"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (0.3ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "shooter"], ["created_at", "2020-06-30 06:09:32.697618"], ["updated_at", "2020-06-30 06:09:32.697618"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (0.3ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "rpg"], ["created_at", "2020-06-30 06:09:35.404634"], ["updated_at", "2020-06-30 06:09:35.404634"]]
+  [1m[35m (62.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGamesGenre Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "games_genres" WHERE "games_genres"."game_id" = $1 AND "games_genres"."genre_id" = $2 LIMIT $3[0m  [["game_id", 1], ["genre_id", 1], ["LIMIT", 1]]
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGamesGenre Create (0.3ms)[0m  [1m[32mINSERT INTO "games_genres" ("game_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["game_id", 1], ["genre_id", 1], ["created_at", "2020-06-30 06:11:01.372980"], ["updated_at", "2020-06-30 06:11:01.372980"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGamesGenre Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "games_genres" WHERE "games_genres"."game_id" = $1 AND "games_genres"."genre_id" = $2 LIMIT $3[0m  [["game_id", 1], ["genre_id", 2], ["LIMIT", 1]]
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGamesGenre Create (0.2ms)[0m  [1m[32mINSERT INTO "games_genres" ("game_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["game_id", 1], ["genre_id", 2], ["created_at", "2020-06-30 06:11:01.384883"], ["updated_at", "2020-06-30 06:11:01.384883"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGamesGenre Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "games_genres" WHERE "games_genres"."game_id" = $1 AND "games_genres"."genre_id" = $2 LIMIT $3[0m  [["game_id", 1], ["genre_id", 3], ["LIMIT", 1]]
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mGamesGenre Create (0.2ms)[0m  [1m[32mINSERT INTO "games_genres" ("game_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["game_id", 1], ["genre_id", 3], ["created_at", "2020-06-30 06:11:02.650759"], ["updated_at", "2020-06-30 06:11:02.650759"]]
+  [1m[35m (62.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mGamesGenre Load (0.3ms)[0m  [1m[34mSELECT "games_genres".* FROM "games_genres"[0m

@@ -26,22 +26,17 @@ $button-hover: #2e5788;
   img { 
     cursor: pointer;
     object-fit: cover;
-    // position: relative;
-  }
-}
+    opacity: 0.85;
+    transition-duration: .2s;
+    transform: scale(0.99);
 
-// create transition zoom effect on hover
-img{
-  opacity: 0.85;
-  transition-duration: .2s;
-  transform: scale(0.99);
-
-  &:hover {
+    &:hover {
     opacity: 1;
     border: none;
     transform: scale(1);
     z-index: 10;
     overflow: visible;
+    }
   }
 }
 

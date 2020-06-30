@@ -2,9 +2,11 @@
   width: 900px;
   margin: auto;
   margin-top: 20px;
+  
 
   h2 {
     padding: 10px 3px;
+    font-weight: 10;
   }
 }
 
@@ -14,4 +16,24 @@
 
 .game-info {
   width: 300px;
+  margin: 0px 5px;
+  font-size: 16px;
+
+  .game-description {
+    padding: 3px;
+  }
+
+  .game-info-row {
+    padding: 3px;
+    display: flex;
+  }
+
+  .game-field {
+    width: 110px; 
+    margin-right: 5px;
+  }
+
+  .game-data {
+    color: cornflowerblue;
+  }
 }

@@ -14,6 +14,7 @@ export default class GamesShow extends React.Component {
   render () {
     // prevent render if game doesnt exist
     if (!this.props.game) return null;
+    
     return (
       <div className='games-show'>
         <h2 className='game-title'>{this.props.game.title}</h2>

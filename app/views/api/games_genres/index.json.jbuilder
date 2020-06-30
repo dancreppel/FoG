@@ -1,0 +1,1 @@
+json.extract! @games_genres, :id, :game_id, :genre_id

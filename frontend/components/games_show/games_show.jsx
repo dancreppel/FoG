@@ -14,7 +14,7 @@ export default class GamesShow extends React.Component {
   render () {
     // prevent render if game info hasn't been retrieved
     if (!this.props.game.photoUrls) return null;
-    
+    debugger;
     return (
       <div className='games-show'>
         <h2 className='game-title'>{this.props.game.title}</h2>

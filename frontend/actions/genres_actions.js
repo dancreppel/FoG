@@ -1,4 +1,4 @@
-import getGenres from '../util/genres_api_util'
+import {getGenres} from '../util/genres_api_util'
 
 export const RECEIVE_GENRES = 'RECEIVE_GENRES';
 

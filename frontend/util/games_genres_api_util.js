@@ -1,4 +1,4 @@
-export default getGamesGenres = () =>
+export const getGamesGenres = () =>
   $.ajax({
     url: "/api/games_genres",
   });

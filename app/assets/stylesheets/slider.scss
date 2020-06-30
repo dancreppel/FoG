@@ -19,7 +19,7 @@ $button-hover: #2e5788;
 }
 
 .sliderDiv {
-  // width: 600px;
+  width: 600px;
   margin: auto;
   overflow: hidden;
 
@@ -32,7 +32,7 @@ $button-hover: #2e5788;
 
     &:hover {
     opacity: 1;
-    border: none;
+    // border: none;
     transform: scale(1);
     z-index: 10;
     overflow: visible;
@@ -46,6 +46,7 @@ $button-hover: #2e5788;
 }
 
 .slider {
+  width: 600px;
   z-index: -1;
   display: flex;
   transition-duration: 0.5s;
@@ -54,8 +55,12 @@ $button-hover: #2e5788;
 
   .selected {
     border: 2px solid white;
-    padding: 1px;
+    // padding: 1px;
   }
+}
+
+.slide {
+  margin: none;
 }
 
 .sliderButtons {
@@ -84,7 +89,7 @@ $button-hover: #2e5788;
   }
 
   .tabsBar {
-    width: 80%;
+    width: 85%;
     border-radius: 5px;
 
     .tabs {
@@ -96,7 +101,7 @@ $button-hover: #2e5788;
     }
     
     .tab {
-      width: 15px;
+      // width: 15px;
       height: 10px;
       border-radius: 3px;
       background: $button;

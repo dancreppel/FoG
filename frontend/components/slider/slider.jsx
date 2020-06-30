@@ -106,24 +106,22 @@ export default class Slider extends React.Component {
         <div
           onClick={this.handleClick}
           className={"tab" + selected}
+          style={{width: `${100 / length - 1}%` }}
           key={"tab" + index}
           data-index={index}
         ></div>
       );
     });
 
-    return(
-      <div 
-        className='sliderDiv'
-        style={{ width: `${this.containerWidth}px` }}
+    return (
+      <div
+        className="sliderDiv"
+        style={{ width: `${this.containerWidth + 5}px` }}
       >
-        <img 
-          className='main-image'
-          src={`${mainImg}`} 
-          alt="mainImage"/>
+        <img className="main-image" src={`${mainImg}`} alt="mainImage" />
 
-        <div 
-          className='slider' 
+        <div
+          className="slider"
           onClick={this.handleClick}
           style={{ transform: `translate(${delta}px)` }}
           style={{ transform: `translate(${delta}%)` }}
@@ -131,24 +129,22 @@ export default class Slider extends React.Component {
           {items}
         </div>
 
-        <div className='sliderButtons'>
-
-          <span className='goLeft material-icons' onClick={this.goLeft}>
+        <div className="sliderButtons">
+          <span className="goLeft material-icons" onClick={this.goLeft}>
             arrow_left
           </span>
 
-          <div className='tabsBar'>
-            <div className='tabs' style={{width: `${length * 20}px`}}>
-              {tabs}
-            </div>
+          <div className="tabsBar">
+            {/* style={{ width: `${length * 20}px` }} */}
+            <div className="tabs">{tabs}</div>
           </div>
 
-          <span className='goRight material-icons' onClick={this.goRight}>
+          <span className="goRight material-icons" onClick={this.goRight}>
             arrow_right
           </span>
         </div>
       </div>
-    )
+    );
   }
 }
 

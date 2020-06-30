@@ -1,6 +1,6 @@
 import {getGamesGenres} from "../util/games_genres_api_util";
 
-export const RECEIVE_GAMES_GENRES = "RECEIVE_GENRES";
+export const RECEIVE_GAMES_GENRES = "RECEIVE_GAMES_GENRES";
 
 export const receiveGamesGenres = (gamesGenres) => ({
   type: RECEIVE_GAMES_GENRES,

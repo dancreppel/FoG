@@ -1,3 +1,6 @@
+$button: #253c58;
+$button-hover: #2e5788;
+
 .games-show {
   width: 900px;
   margin: auto;
@@ -17,23 +20,45 @@
 .game-info {
   width: 300px;
   margin: 0px 5px;
-  font-size: 16px;
+  font-size: 14px;
+  
+  .game-description {
+    font-size: 16px;
+  }
 
   p {
     padding: 3px;
   }
 
   .game-info-row {
-    padding: 3px;
+    padding: 5px 3px;
     display: flex;
   }
 
   .game-field {
-    width: 110px; 
+    width: 120px; 
     margin-right: 5px;
+    color: grey;
+    text-transform: uppercase;
   }
 
   .game-data {
-    color: cornflowerblue;
+    color: lightskyblue;
+  }
+
+  .game-tags {
+    
+    button {
+      color: lightskyblue;
+      border-radius: 3px;
+      padding: 1px 5px;
+      margin: 3px;
+      background: $button;
+
+      &:hover {
+        background: $button-hover;
+        color: lightcyan;
+      }
+    }
   }
 }

@@ -26,8 +26,8 @@ const GameInfo = ({ game, genres }) => {
         <div className="game-data">{game.publisher}</div>
       </div>
 
-      <p className='game-genres'>Genres:</p>
-      <div className='tags'>
+      <p className='game-field'>Genres:</p>
+      <div className='game-tags'>
         {tags}
       </div>
     </div>

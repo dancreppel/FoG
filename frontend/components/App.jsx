@@ -14,7 +14,6 @@ const App = () => (
     <SessionRoutes />
     {/* <Route exact path='/' component={GamesIndex} /> */}
     <Route path='/games/:id' component={GameShowContainer} />
-    <Slider />
   </>
 );
 

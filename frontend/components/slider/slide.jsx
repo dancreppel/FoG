@@ -8,7 +8,7 @@ const Slide = (props) => {
     <img 
       className={'slide ' + selected}
       data-index={props.index}
-      src={`/assets/test_images/${props.src}`} 
+      src={`${props.src}`} 
       alt="gameImage"
       style = {
         {

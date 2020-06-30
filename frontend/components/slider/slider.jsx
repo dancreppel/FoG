@@ -16,18 +16,21 @@ export default class Slider extends React.Component {
     this.containerWidth = 600;
     this.height = 70;
     this.width = 120;
-    this.sources = [
-      'doom_eternal.jpg',
-      'eft.jpg',
-      'hearthstone.jpeg',
-      'apex_legends.jpg',
-      'beat_saber.jpg',
-      'cyberpunk.png',
-      'halo.png',
-      'overwatch.jpg',
-      'starwars.jpg',
-      'MapleStory2.jpg'
-    ]
+    this.sources = props.photoUrls.slice(1);
+
+    // *for testing
+    // this.sources = [
+    //   'doom_eternal.jpg',
+    //   'eft.jpg',
+    //   'hearthstone.jpeg',
+    //   'apex_legends.jpg',
+    //   'beat_saber.jpg',
+    //   'cyberpunk.png',
+    //   'halo.png',
+    //   'overwatch.jpg',
+    //   'starwars.jpg',
+    //   'MapleStory2.jpg'
+    // ]
     
     // for determining the length of slider interms of percentage compared to 
     // container width
@@ -73,10 +76,6 @@ export default class Slider extends React.Component {
     let delta;
     if (index < this.sources.length - 5) delta = 0 - this.shift * index;
     else delta = 100 - this.conLen;
-    
-
-
-    // if (delta > )
 
     this.setState({ index, delta });
   }
@@ -118,11 +117,9 @@ export default class Slider extends React.Component {
         className='sliderDiv'
         style={{ width: `${this.containerWidth}px` }}
       >
-        <h2>Slider Goes Here!!!</h2>
-
         <img 
           className='main-image'
-          src={`/assets/test_images/${mainImg}`} 
+          src={`${mainImg}`} 
           alt="mainImage"/>
 
         <div 
@@ -139,13 +136,6 @@ export default class Slider extends React.Component {
           <span className='goLeft material-icons' onClick={this.goLeft}>
             arrow_left
           </span>
-
-          {/* <div className='scrollbar'>
-            <div 
-              className='scroller' 
-              style={scrollerStyle}
-            ></div>
-          </div> */}
 
           <div className='tabsBar'>
             <div className='tabs' style={{width: `${length * 20}px`}}>

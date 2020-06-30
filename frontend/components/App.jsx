@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import Header from './header/header';
 import SessionRoutes from './session/session_routes';
 import GamesIndex from './games_index/games_index';
@@ -13,6 +13,9 @@ const App = () => (
     <Header />
     <SessionRoutes />
     {/* <Route exact path='/' component={GamesIndex} /> */}
+    <Route exact path='/' render={() => (
+      <Link className='test-show' to='/games/1'>Test Show Page</Link>
+    )} />
     <Route path='/games/:id' component={GameShowContainer} />
   </>
 );

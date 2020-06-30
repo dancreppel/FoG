@@ -19,7 +19,7 @@ $button-hover: #2e5788;
 
 .game-info {
   width: 300px;
-  margin: 0px 5px;
+  margin-left: 10px;
   font-size: 14px;
   
   .game-description {
@@ -61,4 +61,9 @@ $button-hover: #2e5788;
       }
     }
   }
+}
+
+.test-show {
+  font-size: 100px;
+  color: red;
 }

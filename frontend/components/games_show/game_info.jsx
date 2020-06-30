@@ -1,6 +1,10 @@
 import React from 'react';
 
-const GameInfo = ({ game }) => {
+const GameInfo = ({ game, genres }) => {
+  let tags = genres.map((genre, index) => 
+    <button key={'genre' + index}>{genre}</button>
+  );
+
   return (
     <div className="game-info">
       <img className="game-cover" src={game.photoUrls[0]} />
@@ -23,6 +27,9 @@ const GameInfo = ({ game }) => {
       </div>
 
       <p className='game-genres'>Genres:</p>
+      <div className='tags'>
+        {tags}
+      </div>
     </div>
   );
 }

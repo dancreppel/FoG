@@ -27939,3 +27939,77 @@ Redirected to https://fog-dev.s3.us-west-1.amazonaws.com/x9aJnLDyMqGH2xi9YppHza7
 Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
 
 
+Started GET "/api/games/1" for ::1 at 2020-06-30 12:42:36 -0700
+Started GET "/api/genres" for ::1 at 2020-06-30 12:42:36 -0700
+Started GET "/api/games_genres" for ::1 at 2020-06-30 12:42:36 -0700
+Processing by Api::GenresController#index as JSON
+Processing by Api::GamesGenresController#index as JSON
+  Rendering api/genres/index.json.jbuilder
+Processing by Api::GamesController#show as JSON
+  Rendering api/games_genres/index.json.jbuilder
+  [1m[36mGenre Load (1.8ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  Parameters: {"id"=>"1"}
+  [1m[36mGamesGenre Load (0.4ms)[0m  [1m[34mSELECT "games_genres".* FROM "games_genres"[0m
+  ↳ app/views/api/genres/index.json.jbuilder:1
+  ↳ app/views/api/games_genres/index.json.jbuilder:1
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/games_genres/index.json.jbuilder (2.5ms)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.4ms)
+
+
+  ↳ app/controllers/api/games_controller.rb:3
+  Rendered api/genres/index.json.jbuilder (3.8ms)
+Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 1.8ms)
+
+
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = $1 AND "active_storage_attachments"."name" = $2 AND "active_storage_attachments"."record_id" = $3[0m  [["record_type", "Game"], ["name", "photos"], ["record_id", 1]]
+  ↳ app/controllers/api/games_controller.rb:3
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)[0m  [["id", 1], ["id", 2], ["id", 3], ["id", 4], ["id", 5], ["id", 6], ["id", 7], ["id", 8], ["id", 9], ["id", 10], ["id", 11]]
+  ↳ app/controllers/api/games_controller.rb:3
+  Rendering api/games/show.json.jbuilder
+  Rendered api/games/show.json.jbuilder (3.5ms)
+Completed 200 OK in 13ms (Views: 5.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2020-06-30 12:42:52 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1lz7fZUE4vsG3-FchC6QYA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+Completed 200 OK in 295ms (Views: 293.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/games/1" for ::1 at 2020-06-30 12:42:53 -0700
+Started GET "/api/genres" for ::1 at 2020-06-30 12:42:53 -0700
+Started GET "/api/games_genres" for ::1 at 2020-06-30 12:42:53 -0700
+Processing by Api::GamesController#show as JSON
+  Parameters: {"id"=>"1"}
+Processing by Api::GenresController#index as JSON
+Processing by Api::GamesGenresController#index as JSON
+  Rendering api/genres/index.json.jbuilder
+  [1m[36mGame Load (4.0ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/games_controller.rb:3
+  [1m[36mGenre Load (1.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  Rendering api/games_genres/index.json.jbuilder
+  ↳ app/views/api/genres/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (1.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = $1 AND "active_storage_attachments"."name" = $2 AND "active_storage_attachments"."record_id" = $3[0m  [["record_type", "Game"], ["name", "photos"], ["record_id", 1]]
+  Rendered api/genres/index.json.jbuilder (4.8ms)
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 1.3ms)
+
+
+  [1m[36mGamesGenre Load (1.1ms)[0m  [1m[34mSELECT "games_genres".* FROM "games_genres"[0m
+  ↳ app/controllers/api/games_controller.rb:3
+  ↳ app/views/api/games_genres/index.json.jbuilder:1
+  Rendered api/games_genres/index.json.jbuilder (5.0ms)
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)[0m  [["id", 1], ["id", 2], ["id", 3], ["id", 4], ["id", 5], ["id", 6], ["id", 7], ["id", 8], ["id", 9], ["id", 10], ["id", 11]]
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 1.1ms)
+
+
+  ↳ app/controllers/api/games_controller.rb:3
+  Rendering api/games/show.json.jbuilder
+  Rendered api/games/show.json.jbuilder (3.9ms)
+Completed 200 OK in 22ms (Views: 6.4ms | ActiveRecord: 6.3ms)
+
+

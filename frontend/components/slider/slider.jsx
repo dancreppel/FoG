@@ -106,7 +106,7 @@ export default class Slider extends React.Component {
         <div
           onClick={this.handleClick}
           className={"tab" + selected}
-          style={{width: `${100 / length - 1}%` }}
+          style={{width: `${100 / length - 0.5}%` }}
           key={"tab" + index}
           data-index={index}
         ></div>

@@ -12,10 +12,7 @@ const App = () => (
   <>
     <Header />
     <SessionRoutes />
-    {/* <Route exact path='/' component={GamesIndex} /> */}
-    <Route exact path='/' render={() => (
-      <Link className='test-show' to='/games/1'>Test Show Page</Link>
-    )} />
+    <Route exact path='/' component={GamesIndex} />
     <Route path='/games/:id' component={GameShowContainer} />
   </>
 );

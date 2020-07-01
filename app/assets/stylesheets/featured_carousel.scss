@@ -1,0 +1,60 @@
+$black: #171a21;
+$button-hover: #2e5788;
+
+.featured-games {
+  width: 1000px;
+  margin: auto;
+}
+
+.featured-carousel {
+  display: flex;
+
+  //  buttons
+  .goLeft, .goRight {
+    width: 50px;
+    height: 110px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: $black;
+    cursor: pointer;
+
+    .material-icons {
+      font-size: 60px;
+      color: lightgrey;
+    }
+
+    &:hover {
+      background-color: $button-hover;
+      .material-icons { color: white; }
+    }
+  }
+
+  // gradients for buttons
+  .goLeft {
+    background: linear-gradient(90deg, rgba(23,26,33,1) 0%, rgba(23,26,33,0.5) 50%, rgba(23,26,33,0) 100%);
+    border-radius: 5px 0px 0px 5px;
+  }
+  .goRight {
+    background: linear-gradient(90deg, rgba(23,26,33,0) 0%, rgba(23,26,33,0.5) 50%, rgba(23,26,33,1) 100%);
+    border-radius: 0px 5px 5px 0px;
+  }
+
+  // apply correct positions of arrows;
+  .goLeft span {
+    position: absolute;
+    left: -5px;
+  }
+  .goRight span {
+    position: absolute;
+    right: -5px;
+  }
+
+  .featured-item {
+    width: 900px;
+    height: 525px;
+    object-fit: cover;
+  }
+}
+

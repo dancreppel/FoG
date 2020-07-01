@@ -2,8 +2,8 @@ import { connect } from 'react-redux';
 import GamesIndex from './games_index';
 import { fetchGames } from '../../actions/games_actions';
 
-const MSP = state => ({
-  games: Object.values(state.games)
+const MSP =({ entities: { games }}) => ({
+  games: Object.values(games)
 });
 
 const MDP = dispatch => ({

@@ -16,6 +16,7 @@ export default class FeaturedCarousel extends React.Component {
       "assets/test_images/doom_eternal.jpg",
       "assets/test_images/eft.jpg",
       "assets/test_images/hearthstone.jpeg",
+      "assets/test_images/typing.gif",
       "assets/test_images/apex_legends.jpg",
       "assets/test_images/beat_saber.jpg",
       "assets/test_images/cyberpunk.png",

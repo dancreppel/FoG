@@ -46,7 +46,7 @@ export default class FeaturedCarousel extends React.Component {
   }
 
   render () {
-    let src = this.sources[this.state.index];
+    let game = this.sources;
 
     let tabs = this.sources.map((_, index) => {
       let selected = this.state.index === index ? " selected" : "";
@@ -64,14 +64,14 @@ export default class FeaturedCarousel extends React.Component {
     return (
       <div className="featured-games">
 
-        <h1>Featured Carousel</h1>
+        <h1>Featured & Recommended</h1>
 
         <div className="featured-carousel">
           <div className="goLeft" onClick={this.goLeft}>
             <span className="material-icons">chevron_left</span>
           </div>
 
-          <FeaturedItem className="featured-item" src={src}/>
+          <FeaturedItem className="featured-item" game={game}/>
 
           <div className="goRight" onClick={this.goRight}>
             <span className="material-icons">chevron_right</span>

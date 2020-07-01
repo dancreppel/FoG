@@ -6,6 +6,14 @@ $button-hover: #2e5788;
   width: 1000px;
   margin: auto;
 
+  h1 {
+    font-size: 20px;
+    font-weight: 10;
+    margin: 10px 0px;
+    margin-left: 50px;
+    text-transform: uppercase;
+  }
+
   .tabs {
     width: 900px;
     height: 30px;
@@ -78,8 +86,55 @@ $button-hover: #2e5788;
 
   .featured-item {
     width: 900px;
-    height: 525px;
-    object-fit: cover;
+    // padding: 10px;
+    // height: 525px;
+    display: flex;
+    box-shadow: 1px 1px 10px 10px #171a21;
+    background: #171a21ab;
+    
+    .main-img {
+      width: 600px;
+      height: 350px;
+      object-fit: cover;
+    }
+    
+    .grid-img {
+      margin: auto;
+      width: 147.6px;
+      height: 86.1px;
+      // width: 150px;
+      // height: 87.5px;
+      object-fit: cover;
+      opacity: .7;
+    }
+
+    .grid-img:hover {
+      opacity: 1;
+    }
+
+    .featured-grid {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    aside {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 300px;
+      height: 350px;
+    }
+
+    .game-title {
+      margin: 10px;
+      font-size: 18px;
+    }
+
+    .game-price {
+      margin: 10px;
+      font-size: 16px;
+      color: lightskyblue;
+    }
   }
 }
 

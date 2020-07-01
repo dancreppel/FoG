@@ -10,5 +10,12 @@ class Api::GamesController < ApplicationController
   end
 
   def index
+    @games = Game.with_attached_photos.all
+
+    if @games 
+      render: index
+    else
+      render json: ['Games not found'], status: 404
+    end
   end
 end

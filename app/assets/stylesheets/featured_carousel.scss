@@ -1,9 +1,34 @@
 $black: #171a21;
+$button: #253c58;
 $button-hover: #2e5788;
 
 .featured-games {
   width: 1000px;
   margin: auto;
+
+  .tabs {
+    width: 900px;
+    height: 30px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+
+    .tab {
+      width: 15px;
+      height: 10px;
+      background: $button;
+      border-radius: 3px;
+      margin: auto 3px;
+
+      &:hover {
+        background-color: #4b88d3;
+      }
+    }
+
+    .selected {
+      background: $button-hover;
+    }
+  }
 }
 
 .featured-carousel {

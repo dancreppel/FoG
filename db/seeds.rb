@@ -174,6 +174,9 @@ bs.photos.attach(io: bs3, filename: 'bs-3.jpg')
 bs4 = open("https://fog-seed.s3-us-west-1.amazonaws.com/Beat+Saber/bs-4.jpg")
 bs.photos.attach(io: bs4, filename: 'bs-4.jpg')
 
+bs5 = open("https://fog-seed.s3-us-west-1.amazonaws.com/Beat+Saber/bs-5.gif")
+bs.photos.attach(io: bs5, filename: 'bs-5.gif')
+
 bs.save!
 
 # Seed for Satisfactory
@@ -200,6 +203,9 @@ sf.photos.attach(io: sf3, filename: 'sf-3.jpg')
 
 sf4 = open("https://fog-seed.s3-us-west-1.amazonaws.com/Satisfactory/sf-4.png")
 sf.photos.attach(io: sf4, filename: 'sf-4.png')
+
+sf5 = open("https://fog-seed.s3-us-west-1.amazonaws.com/Satisfactory/sf-5.jpg")
+sf.photos.attach(io: sf5, filename: 'sf-5.jpg')
 
 sf.save!
 

@@ -1,11 +1,13 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
-export default class FeaturedItem extends React.Component {
+class FeaturedItem extends React.Component {
   constructor (props) {
     super(props);
     this.state = { index: 0 }
     this.handleHoverOn = this.handleHoverOn.bind(this);
     this.handleHoverOff = this.handleHoverOff.bind(this);
+    this.redirect = this.redirect.bind(this);
   }
   
   handleHoverOn (e) {
@@ -17,11 +19,16 @@ export default class FeaturedItem extends React.Component {
     this.setState({ index: 0 });
   }
 
+  redirect () {
+    let id = this.props.game.id;
+    this.props.history.push(`/games/${id}`);
+  }
+
   render () {
     let game = this.props.game;
     let index = this.state.index;
 
-    let images = game.slice(1, 5).map((src, index) => (
+    let images = game.photoUrls.slice(1, 5).map((src, index) => (
       <img 
         onMouseEnter={this.handleHoverOn}
         onMouseLeave={this.handleHoverOff}
@@ -33,21 +40,24 @@ export default class FeaturedItem extends React.Component {
     ));
   
     return (
-      <div className='featured-item'>
-        <img className='main-img' src={game[index]} alt="main"/>
-  
+      <div className="featured-item">
+        <img 
+          className="main-img" 
+          src={game.photoUrls[index]} 
+          onClick={this.redirect}
+          alt="main" />
+
         <aside>
-          <h1 className='game-title'>game.title</h1>
-  
-          <div className='featured-grid' >
-            {images}
-          </div>
-  
-          <p className='game-price'>$69.69</p>
+          <h1 className="game-title">{game.title}</h1>
+
+          <div className="featured-grid">{images}</div>
+
+          <p className="game-price">${game.price}</p>
         </aside>
       </div>
-    )
+    );
   };
 
 }
 
+export default withRouter(FeaturedItem);

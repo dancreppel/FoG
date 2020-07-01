@@ -12,31 +12,31 @@ export default class FeaturedCarousel extends React.Component {
     this.handleClick = this.handleClick.bind(this);
 
     // *for testing
-    this.sources = [
-      "assets/test_images/doom_eternal.jpg",
-      "assets/test_images/eft.jpg",
-      "assets/test_images/hearthstone.jpeg",
-      "assets/test_images/typing.gif",
-      "assets/test_images/apex_legends.jpg",
-      "assets/test_images/beat_saber.jpg",
-      "assets/test_images/cyberpunk.png",
-      "assets/test_images/halo.png",
-      "assets/test_images/overwatch.jpg",
-      "assets/test_images/starwars.jpg",
-      "assets/test_images/MapleStory2.jpg",
-    ];
+    // this.sources = [
+    //   "assets/test_images/doom_eternal.jpg",
+    //   "assets/test_images/eft.jpg",
+    //   "assets/test_images/hearthstone.jpeg",
+    //   "assets/test_images/typing.gif",
+    //   "assets/test_images/apex_legends.jpg",
+    //   "assets/test_images/beat_saber.jpg",
+    //   "assets/test_images/cyberpunk.png",
+    //   "assets/test_images/halo.png",
+    //   "assets/test_images/overwatch.jpg",
+    //   "assets/test_images/starwars.jpg",
+    //   "assets/test_images/MapleStory2.jpg",
+    // ];
   }
 
   goLeft () {
     let index = this.state.index;
-    if (index === 0) index = this.sources.length - 1;
+    if (index === 0) index = this.props.games.length - 1;
     else index -= 1;
     this.setState({ index });
   }
 
   goRight () {
     let index = this.state.index;
-    if (index === this.sources.length - 1) index = 0;
+    if (index === this.props.games.length - 1) index = 0;
     else index += 1;
     this.setState({ index });
   }
@@ -47,9 +47,9 @@ export default class FeaturedCarousel extends React.Component {
   }
 
   render () {
-    let game = this.sources;
+    let game = this.props.games[this.state.index];
 
-    let tabs = this.sources.map((_, index) => {
+    let tabs = this.props.games.map((_, index) => {
       let selected = this.state.index === index ? " selected" : "";
 
       return (

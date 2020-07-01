@@ -13,7 +13,7 @@ class Api::GamesController < ApplicationController
     @games = Game.with_attached_photos.all
 
     if @games 
-      render: index
+      render :index
     else
       render json: ['Games not found'], status: 404
     end

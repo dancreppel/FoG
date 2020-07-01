@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Link } from 'react-router-dom';
 import Header from './header/header';
 import SessionRoutes from './session/session_routes';
-import GamesIndex from './games_index/games_index';
+import GamesIndexContainer from './games_index/games_index_container';
 import GameShowContainer from './games_show/games_show_container';
 
 // Todo test slider
@@ -12,7 +12,7 @@ const App = () => (
   <>
     <Header />
     <SessionRoutes />
-    <Route exact path='/' component={GamesIndex} />
+    <Route exact path='/' component={GamesIndexContainer} />
     <Route path='/games/:id' component={GameShowContainer} />
   </>
 );

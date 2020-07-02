@@ -13,6 +13,7 @@
   * Heroku for hosting the website
   * AWS S3 for storing media content
 #### Game Show Page:
+  ![slider](https://github.com/dancreppel/FoG/blob/master/app/assets/images/readme/games_show_slider.png "Slider")
   * Built a slider from scratch:
     * Translating the slider dependent on the selected photo
       * Challenge: Interpolate the distance for the slider to be translated based on the index of a photo selected.
@@ -22,6 +23,7 @@
       * Failed Solution: The first iteration involved using a point of reference (where a user clicked on the scrollbar) and translate based on the delta +/- away from the point of reference.  This solution produced very buggy results and was very difficult to controll the position of the scrollbar.
       * Alternate Solution: Use a tabsbar to represent the selected photo.  There is one tab per photo on the slider.  The selected tab represents the selected photo.  Selecting a new tab not only selects another photo, but also translates the slider to its appropriate position.  Not only is this implementation much easier, it is also more smooth than the scrollbar solution.
 #### Main Page: 
+  ![carousel](https://github.com/dancreppel/FoG/blob/master/app/assets/images/readme/main_carousel.png "Carousel")
   * Build a carousel from scratch:
     * Showing a selected game:
       * Challenge: Determining which game to show without having to use translations on the horizontal axis like a slider behaves.

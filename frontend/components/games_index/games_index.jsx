@@ -3,7 +3,7 @@ import FeaturedCarousel from './featured_carousel/featured_carousel';
 
 export default class GamesIndex extends React.Component {
   componentDidMount () {
-    this.props.fetchGames();
+    if(!this.props.games.length) this.props.fetchGames();
   }
 
   render () {

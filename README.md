@@ -26,3 +26,8 @@
     * Showing a selected game:
       * Challenge: Determining which game to show without having to use translations on the horizontal axis like a slider behaves.
       * Solution: Make a carousel that only displays one component at a time.  Using an index value to determine a selected game, pass in the selected game into the component to render the game related info.
+#### TODO Features: 
+  * Add reviews for games
+  * Add a user profile page
+  * Add a cart, wishlist, and library for each user
+  * Add search games by genre or name

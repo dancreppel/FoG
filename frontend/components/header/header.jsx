@@ -5,7 +5,10 @@ import { Link } from 'react-router-dom';
 const Header = () => (
   <header>
     <nav>
-      <Link className='logo' to='/'>FoG</Link>
+      <div className='logo'>
+        <div className='logo-picture'></div>
+        <Link className='logo-title' to='/'>FoG</Link>
+      </div>
       <ul className='navItems'>
         {/* <div>Store
           <ul className='store dropdown'>

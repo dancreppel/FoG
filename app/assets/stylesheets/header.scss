@@ -63,8 +63,17 @@ header {
   }
 
   .logo {
+    display: flex;
     margin: auto 0px;
     font-size: 50px;
+
+    div {
+      background: asset-url('FoG-logo.png');
+      width: 65px;
+      height: 65px;
+      background-size: 65px 65px;
+      margin: auto;
+    }
   }
 
   .profilePicture {

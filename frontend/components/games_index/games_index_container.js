@@ -1,9 +1,11 @@
 import { connect } from 'react-redux';
 import GamesIndex from './games_index';
 import { fetchGames } from '../../actions/games_actions';
+import lodash from 'lodash';
 
+// Randomize order of games
 const MSP =({ entities: { games }}) => ({
-  games: Object.values(games)
+  games: lodash.shuffle(Object.values(games))
 });
 
 const MDP = dispatch => ({

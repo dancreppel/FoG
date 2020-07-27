@@ -1,5 +1,4 @@
-# Fans of Gaming (add logo here FoG)
-
+# <img src="https://github.com/dancreppel/FoG/blob/master/app/assets/images/FoG-logo.png" alt="Fog Logo" width="25" height="25"/> FoG
 [Fans of Gaming](https://fans-of-gaming.herokuapp.com/) is a clone of [Steam](https://store.steampowered.com/).  An online store for purchasing and reviewing digital games.
 #### Features Include:
   * User creation and customization

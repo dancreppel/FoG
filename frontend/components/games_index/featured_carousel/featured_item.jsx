@@ -28,16 +28,39 @@ class FeaturedItem extends React.Component {
     let game = this.props.game;
     let index = this.state.index;
 
-    let images = game.photoUrls.slice(1, 5).map((src, index) => (
-      <img 
-        onMouseEnter={this.handleHoverOn}
-        onMouseLeave={this.handleHoverOff}
-        className='grid-img'
-        key={'src' + index} 
-        src={src} 
-        data-index={index + 1}
-        alt="grid-image"/>
-    ));
+    // * Old way: map 4 images after first one.
+    // let images = game.photoUrls.slice(1, 5).map((src, index) => (
+    //   <img 
+    //     onMouseEnter={this.handleHoverOn}
+    //     onMouseLeave={this.handleHoverOff}
+    //     className='grid-img'
+    //     key={'src' + index} 
+    //     src={src} 
+    //     data-index={index + 1}
+    //     alt="grid-image"/>
+    // ));
+    
+    let images = [];
+    game.photoUrls.forEach((src, index) => {
+      // Featured grid supports 4 images at most, therefore do nothing
+      if (images.length >= 4);
+
+      // Filter out any urls that is the cover or a gif
+      else if (!(src.includes("cover") || src.includes("gif")))
+      images.push(
+        <img 
+          onMouseEnter={this.handleHoverOn}
+          onMouseLeave={this.handleHoverOff}
+          className='grid-img'
+          key={'src' + index} 
+          src={src} 
+          data-index={index + 1}
+          alt="grid-image"
+        />
+      )
+    });
+
+    console.log(images);
   
     return (
       <div className="featured-item">

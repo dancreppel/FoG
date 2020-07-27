@@ -36605,3 +36605,82 @@ Completed 200 OK in 7ms (Views: 4.4ms | ActiveRecord: 2.4ms)
 Completed 200 OK in 14ms (Views: 4.8ms | ActiveRecord: 2.8ms)
 
 
+Started GET "/" for ::1 at 2020-07-27 11:49:23 -0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/dcrep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 770ms (Views: 767.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/api/games" for ::1 at 2020-07-27 11:49:25 -0700
+Processing by Api::GamesController#index as JSON
+  Rendering api/games/index.json.jbuilder
+  [1m[36mGame Load (0.8ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/api/games/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (1.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = $1 AND "active_storage_attachments"."name" = $2 AND "active_storage_attachments"."record_id" IN ($3, $4, $5, $6, $7)[0m  [["record_type", "Game"], ["name", "photos"], ["record_id", 1], ["record_id", 2], ["record_id", 3], ["record_id", 4], ["record_id", 5]]
+  ↳ app/views/api/games/index.json.jbuilder:1
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24, $25, $26, $27, $28, $29, $30, $31, $32, $33, $34, $35, $36, $37, $38, $39, $40, $41)[0m  [["id", 1], ["id", 2], ["id", 3], ["id", 4], ["id", 5], ["id", 6], ["id", 7], ["id", 8], ["id", 9], ["id", 10], ["id", 11], ["id", 12], ["id", 13], ["id", 14], ["id", 15], ["id", 16], ["id", 17], ["id", 18], ["id", 19], ["id", 20], ["id", 21], ["id", 22], ["id", 23], ["id", 24], ["id", 25], ["id", 26], ["id", 27], ["id", 28], ["id", 29], ["id", 30], ["id", 31], ["id", 32], ["id", 33], ["id", 34], ["id", 35], ["id", 36], ["id", 37], ["id", 38], ["id", 39], ["id", 40], ["id", 41]]
+  ↳ app/views/api/games/index.json.jbuilder:1
+  Rendered api/games/_game.json.jbuilder (3.1ms)
+  Rendered api/games/_game.json.jbuilder (1.6ms)
+  Rendered api/games/_game.json.jbuilder (1.1ms)
+  Rendered api/games/_game.json.jbuilder (0.9ms)
+  Rendered api/games/_game.json.jbuilder (0.8ms)
+  Rendered api/games/index.json.jbuilder (66.8ms)
+Completed 200 OK in 73ms (Views: 56.3ms | ActiveRecord: 11.8ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b236b5eb033d7a089533724afc8e87ed5a5facdd/eft-cover.jpeg" for ::1 at 2020-07-27 11:49:25 -0700
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b236b5eb033d7a089533724afc8e87ed5a5facdd", "filename"=>"eft-cover"}
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--6f5b836de9a763f1fd23c2d70a10afa31b3b60b6/eft-4.png" for ::1 at 2020-07-27 11:49:25 -0700
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f49d09fee5932eee1b360f3eba4f7d028016ecc3/eft-3.jpg" for ::1 at 2020-07-27 11:49:25 -0700
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1df0e0f69c9b949e3f9ef5c4c57ca556fc009927/eft-2.jpg" for ::1 at 2020-07-27 11:49:25 -0700
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--43c04e2f48050e73276e7213a0860ce986ede598/eft-1.jpg" for ::1 at 2020-07-27 11:49:25 -0700
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f49d09fee5932eee1b360f3eba4f7d028016ecc3", "filename"=>"eft-3"}
+Processing by ActiveStorage::BlobsController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--6f5b836de9a763f1fd23c2d70a10afa31b3b60b6", "filename"=>"eft-4"}
+Processing by ActiveStorage::BlobsController#show as JPEG
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1df0e0f69c9b949e3f9ef5c4c57ca556fc009927", "filename"=>"eft-2"}
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--43c04e2f48050e73276e7213a0860ce986ede598", "filename"=>"eft-1"}
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/dcrep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/dcrep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/dcrep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (0.6ms) [0m[34mGenerated URL for file at key: czBPy4Yuzi5Xs7fukERMwY5c (https://fog-dev.s3.us-west-1.amazonaws.com/czBPy4Yuzi5Xs7fukERMwY5c?response-content-disposition=inline%3B%20filename%3D%22eft-2.jpg%22%3B%20filename%2A%3DUTF-8%27%27eft-2.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQLVLGNOMC36CLTER%2F20200727%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20200727T184925Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=5c42e4f75dc1e4fb1a05edae51719fadffe269a997d8e4a1e9d31998e6ee4fe7)[0m
+[36m  S3 Storage (0.6ms) [0m[34mGenerated URL for file at key: mho7xSXnJBeLVRrwvaZee1Ak (https://fog-dev.s3.us-west-1.amazonaws.com/mho7xSXnJBeLVRrwvaZee1Ak?response-content-disposition=inline%3B%20filename%3D%22eft-4.png%22%3B%20filename%2A%3DUTF-8%27%27eft-4.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQLVLGNOMC36CLTER%2F20200727%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20200727T184925Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=43730e623b0de7d0b2166d6d5e97e1ffca7fbd6947b615ffde46ba6b071a78fb)[0m
+Redirected to https://fog-dev.s3.us-west-1.amazonaws.com/mho7xSXnJBeLVRrwvaZee1Ak?response-content-disposition=inline%3B%20filename%3D%22eft-4.png%22%3B%20filename%2A%3DUTF-8%27%27eft-4.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQLVLGNOMC36CLTER%2F20200727%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20200727T184925Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=43730e623b0de7d0b2166d6d5e97e1ffca7fbd6947b615ffde46ba6b071a78fb
+  [1m[36mActiveStorage::Blob Load (4.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/dcrep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (2.1ms) [0m[34mGenerated URL for file at key: E9ytiSL36c5Bpawd6XhFVwWE (https://fog-dev.s3.us-west-1.amazonaws.com/E9ytiSL36c5Bpawd6XhFVwWE?response-content-disposition=inline%3B%20filename%3D%22eft-cover.jpeg%22%3B%20filename%2A%3DUTF-8%27%27eft-cover.jpeg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQLVLGNOMC36CLTER%2F20200727%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20200727T184925Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=34d203fb351ba87032045fc734666b22c35a6deaa9afd779d87cc615cec955b8)[0m
+Completed 302 Found in 9ms (ActiveRecord: 0.9ms)
+
+
+Redirected to https://fog-dev.s3.us-west-1.amazonaws.com/czBPy4Yuzi5Xs7fukERMwY5c?response-content-disposition=inline%3B%20filename%3D%22eft-2.jpg%22%3B%20filename%2A%3DUTF-8%27%27eft-2.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQLVLGNOMC36CLTER%2F20200727%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20200727T184925Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=5c42e4f75dc1e4fb1a05edae51719fadffe269a997d8e4a1e9d31998e6ee4fe7
+Completed 302 Found in 10ms (ActiveRecord: 1.2ms)
+
+
+[36m  S3 Storage (0.5ms) [0m[34mGenerated URL for file at key: mkQeDj3iRn978QgjiZEDPhPB (https://fog-dev.s3.us-west-1.amazonaws.com/mkQeDj3iRn978QgjiZEDPhPB?response-content-disposition=inline%3B%20filename%3D%22eft-1.jpg%22%3B%20filename%2A%3DUTF-8%27%27eft-1.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQLVLGNOMC36CLTER%2F20200727%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20200727T184925Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=b0a72af4b6a0f06f5c4792354f6b805f9cf7c98663d924a021951338c4779ed1)[0m
+Redirected to https://fog-dev.s3.us-west-1.amazonaws.com/E9ytiSL36c5Bpawd6XhFVwWE?response-content-disposition=inline%3B%20filename%3D%22eft-cover.jpeg%22%3B%20filename%2A%3DUTF-8%27%27eft-cover.jpeg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQLVLGNOMC36CLTER%2F20200727%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20200727T184925Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=34d203fb351ba87032045fc734666b22c35a6deaa9afd779d87cc615cec955b8
+  ↳ /home/dcrep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (0.8ms) [0m[34mGenerated URL for file at key: W3hCyPQw3cwg82LxofVUPayv (https://fog-dev.s3.us-west-1.amazonaws.com/W3hCyPQw3cwg82LxofVUPayv?response-content-disposition=inline%3B%20filename%3D%22eft-3.jpg%22%3B%20filename%2A%3DUTF-8%27%27eft-3.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQLVLGNOMC36CLTER%2F20200727%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20200727T184925Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=7f1f76b552ce98873c45b59cff280dc19f9cec283ec20d0e33adde3f49964f30)[0m
+Completed 302 Found in 16ms (ActiveRecord: 0.4ms)
+
+
+Redirected to https://fog-dev.s3.us-west-1.amazonaws.com/mkQeDj3iRn978QgjiZEDPhPB?response-content-disposition=inline%3B%20filename%3D%22eft-1.jpg%22%3B%20filename%2A%3DUTF-8%27%27eft-1.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQLVLGNOMC36CLTER%2F20200727%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20200727T184925Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=b0a72af4b6a0f06f5c4792354f6b805f9cf7c98663d924a021951338c4779ed1
+Completed 302 Found in 12ms (ActiveRecord: 0.6ms)
+
+
+Redirected to https://fog-dev.s3.us-west-1.amazonaws.com/W3hCyPQw3cwg82LxofVUPayv?response-content-disposition=inline%3B%20filename%3D%22eft-3.jpg%22%3B%20filename%2A%3DUTF-8%27%27eft-3.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQLVLGNOMC36CLTER%2F20200727%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20200727T184925Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=7f1f76b552ce98873c45b59cff280dc19f9cec283ec20d0e33adde3f49964f30
+Completed 302 Found in 14ms (ActiveRecord: 4.8ms)
+
+

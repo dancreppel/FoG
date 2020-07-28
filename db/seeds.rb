@@ -23,6 +23,8 @@ Genre.create(name: 'Music') #6
 Genre.create(name: 'Automation') #7
 Genre.create(name: 'Base Building') #8
 Genre.create(name: 'Open World') #9
+Genre.create(name: 'Tower Defense') #10
+Genre.create(name: 'Strategy') #11
 
 Game.destroy_all
 
@@ -252,6 +254,39 @@ mhw.photos.attach(io: mhw_gameplay, filename: 'mhw-gameplay.jpg')
 
 mhw.save!
 
+# Seed for Bloons TD 6
+bltd = Game.new(
+  title: 'Bloons TD 6', 
+  description: "The Bloons are back and better than ever! Get ready for a massive 3D tower defense game designed to give you hours and hours of the best strategy gaming available.",
+  developer: "Ninja Kiwi",
+  publisher: "Ninja Kiwi",
+  release_date: Date.new(2018, 12, 17),
+  price: 9.99
+)
+
+bltd_cover = open("https://fog-seed.s3-us-west-1.amazonaws.com/Bloons+TD/bltd-cover.jpg")
+bltd.photos.attach(io: bltd_cover, filename: 'bltd-cover.jpg')
+
+bltd1 = open("https://fog-seed.s3-us-west-1.amazonaws.com/Bloons+TD/bltd-1.jpg")
+bltd.photos.attach(io: bltd1, filename: 'bltd-1.jpg')
+
+bltd2 = open("https://fog-seed.s3-us-west-1.amazonaws.com/Bloons+TD/bltd-2.jpg")
+bltd.photos.attach(io: bltd2, filename: 'bltd-2.jpg')
+
+bltd3 = open("https://fog-seed.s3-us-west-1.amazonaws.com/Bloons+TD/bltd-3.jpg")
+bltd.photos.attach(io: bltd3, filename: 'bltd-3.jpg')
+
+bltd4 = open("https://fog-seed.s3-us-west-1.amazonaws.com/Bloons+TD/bltd-4.jpg")
+bltd.photos.attach(io: bltd4, filename: 'bltd-4.jpg')
+
+bltd5 = open("https://fog-seed.s3-us-west-1.amazonaws.com/Bloons+TD/bltd-5.jpg")
+bltd.photos.attach(io: bltd5, filename: 'bltd-5.jpg')
+
+bltd_gameplay = open("https://fog-seed.s3-us-west-1.amazonaws.com/Bloons+TD/bltd-gameplay.gif")
+bltd.photos.attach(io: bltd_gameplay, filename: 'bltd-gameplay.jpg')
+
+bltd.save!
+
 # Seed games genres
 GamesGenre.destroy_all
 
@@ -284,4 +319,6 @@ GamesGenre.create(game_id: 6, genre_id: 1)
 GamesGenre.create(game_id: 6, genre_id: 3)
 GamesGenre.create(game_id: 6, genre_id: 9)
 
-
+# for Bloons TD 6
+GamesGenre.create(game_id: 7, genre_id: 10)
+GamesGenre.create(game_id: 7, genre_id: 11)

@@ -47,9 +47,20 @@ export default class FeaturedCarousel extends React.Component {
   }
 
   render () {
-    let game = this.props.games[this.state.index];
+    // limit carousel to 5 games
+    let games = this.props.games.slice(0,5);
 
-    let tabs = this.props.games.map((_, index) => {
+    // * old
+    // let game = this.props.games[this.state.index];
+
+    // * new
+    let game = games[this.state.index];
+
+    // * old
+    // let tabs = this.props.games.map((_, index) => {
+
+    // * new
+    let tabs = games.map((_, index) => {
       let selected = this.state.index === index ? " selected" : "";
 
       return (

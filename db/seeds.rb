@@ -68,6 +68,9 @@ eft.photos.attach( io: eft9, filename: 'eft-9.jpg' )
 eft10 = open("https://fog-seed.s3-us-west-1.amazonaws.com/Escape+From+Tarkov/eft-10.jpg")
 eft.photos.attach( io: eft10, filename: 'eft-10.jpg' )
 
+eft_gameplay = open("https://fog-seed.s3-us-west-1.amazonaws.com/Escape+From+Tarkov/eft_gameplay.gif")
+eft.photos.attach( io: eft_gameplay, filename: 'eft_gameplay.gif' )
+
 eft.save!
 
 

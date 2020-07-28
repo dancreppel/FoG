@@ -22,6 +22,7 @@ Genre.create(name: 'VR') #5
 Genre.create(name: 'Music') #6
 Genre.create(name: 'Automation') #7
 Genre.create(name: 'Base Building') #8
+Genre.create(name: 'Open World') #9
 
 Game.destroy_all
 
@@ -218,6 +219,39 @@ sf.photos.attach(io: sf_gameplay, filename: 'sf-gameplay.jpg')
 
 sf.save!
 
+# Seed for Monster Hunter World
+mhw = Game.new(
+  title: 'Monster Hunter World', 
+  description: "Welcome to a new world! In Monster Hunter: World, the latest installment in the series, you can enjoy the ultimate hunting experience, using everything at your disposal to hunt monsters in a new world teeming with surprises and excitement.",
+  developer: "CAPCOM Co., Ltd.",
+  publisher: "CAPCOM Co., Ltd.",
+  release_date: Date.new(2018, 8, 9),
+  price: 29.99
+)
+
+mhw_cover = open("https://fog-seed.s3-us-west-1.amazonaws.com/Monster+Hunter+World/mhw-cover.jpeg")
+mhw.photos.attach(io: mhw_cover, filename: 'mhw-cover.jpeg')
+
+mhw1 = open("https://fog-seed.s3-us-west-1.amazonaws.com/Monster+Hunter+World/mhw-1.jpg")
+mhw.photos.attach(io: mhw1, filename: 'mhw-1.jpg')
+
+mhw2 = open("https://fog-seed.s3-us-west-1.amazonaws.com/Monster+Hunter+World/mhw-2.jpg")
+mhw.photos.attach(io: mhw2, filename: 'mhw-2.jpg')
+
+mhw3 = open("https://fog-seed.s3-us-west-1.amazonaws.com/Monster+Hunter+World/mhw-3.jpg")
+mhw.photos.attach(io: mhw3, filename: 'mhw-3.jpg')
+
+mhw4 = open("https://fog-seed.s3-us-west-1.amazonaws.com/Monster+Hunter+World/mhw-4.jpg")
+mhw.photos.attach(io: mhw4, filename: 'mhw-4.jpg')
+
+mhw5 = open("https://fog-seed.s3-us-west-1.amazonaws.com/Monster+Hunter+World/mhw-5.jpg")
+mhw.photos.attach(io: mhw5, filename: 'mhw-5.jpg')
+
+mhw_gameplay = open("https://fog-seed.s3-us-west-1.amazonaws.com/Monster+Hunter+World/mhw-gameplay.gif")
+mhw.photos.attach(io: mhw_gameplay, filename: 'mhw-gameplay.jpg')
+
+mhw.save!
+
 # Seed games genres
 GamesGenre.destroy_all
 
@@ -244,3 +278,10 @@ GamesGenre.create(game_id: 4, genre_id: 6)
 # for Satisfactory
 GamesGenre.create(game_id: 5, genre_id: 7)
 GamesGenre.create(game_id: 5, genre_id: 8)
+
+# for Monster Hunter World
+GamesGenre.create(game_id: 6, genre_id: 1)
+GamesGenre.create(game_id: 6, genre_id: 3)
+GamesGenre.create(game_id: 6, genre_id: 9)
+
+

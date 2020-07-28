@@ -150,6 +150,9 @@ de.photos.attach(io: de6, filename: 'de-6.jpg')
 de7 = open("https://fog-seed.s3-us-west-1.amazonaws.com/Doom+Eternal/de-7.jpg")
 de.photos.attach(io: de7, filename: 'de-7.jpg')
 
+de_gameplay = open("https://fog-seed.s3-us-west-1.amazonaws.com/Doom+Eternal/de-gameplay.gif")
+de.photos.attach(io: de_gameplay, filename: 'de-gameplay.gif')
+
 de.save!
 
 # Seed Beat Saber

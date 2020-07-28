@@ -25,6 +25,7 @@ Genre.create(name: 'Base Building') #8
 Genre.create(name: 'Open World') #9
 Genre.create(name: 'Tower Defense') #10
 Genre.create(name: 'Strategy') #11
+Genre.create(name: 'MOBA') #12
 
 Game.destroy_all
 
@@ -217,7 +218,7 @@ sf5 = open("https://fog-seed.s3-us-west-1.amazonaws.com/Satisfactory/sf-5.jpg")
 sf.photos.attach(io: sf5, filename: 'sf-5.jpg')
 
 sf_gameplay = open("https://fog-seed.s3-us-west-1.amazonaws.com/Satisfactory/sf-gameplay.gif")
-sf.photos.attach(io: sf_gameplay, filename: 'sf-gameplay.jpg')
+sf.photos.attach(io: sf_gameplay, filename: 'sf-gameplay.gif')
 
 sf.save!
 
@@ -250,7 +251,7 @@ mhw5 = open("https://fog-seed.s3-us-west-1.amazonaws.com/Monster+Hunter+World/mh
 mhw.photos.attach(io: mhw5, filename: 'mhw-5.jpg')
 
 mhw_gameplay = open("https://fog-seed.s3-us-west-1.amazonaws.com/Monster+Hunter+World/mhw-gameplay.gif")
-mhw.photos.attach(io: mhw_gameplay, filename: 'mhw-gameplay.jpg')
+mhw.photos.attach(io: mhw_gameplay, filename: 'mhw-gameplay.gif')
 
 mhw.save!
 
@@ -283,9 +284,42 @@ bltd5 = open("https://fog-seed.s3-us-west-1.amazonaws.com/Bloons+TD/bltd-5.jpg")
 bltd.photos.attach(io: bltd5, filename: 'bltd-5.jpg')
 
 bltd_gameplay = open("https://fog-seed.s3-us-west-1.amazonaws.com/Bloons+TD/bltd-gameplay.gif")
-bltd.photos.attach(io: bltd_gameplay, filename: 'bltd-gameplay.jpg')
+bltd.photos.attach(io: bltd_gameplay, filename: 'bltd-gameplay.gif')
 
 bltd.save!
+
+# Seed for Dota 2
+dota = Game.new(
+  title: 'Dota 2', 
+  description: "Every day, millions of players worldwide enter battle as one of over a hundred Dota heroes. And no matter if it's their 10th hour of play or 1,000th, there's always something new to discover.",
+  developer: "Valve",
+  publisher: "Valve",
+  release_date: Date.new(2013, 7, 9),
+  price: 0.00
+)
+
+dota_cover = open("https://fog-seed.s3-us-west-1.amazonaws.com/Dota+2/dota-cover.png")
+dota.photos.attach(io: dota_cover, filename: 'dota-cover.png')
+
+dota1 = open("https://fog-seed.s3-us-west-1.amazonaws.com/Dota+2/dota-1.jpg")
+dota.photos.attach(io: dota1, filename: 'dota-1.jpg')
+
+dota2 = open("https://fog-seed.s3-us-west-1.amazonaws.com/Dota+2/dota-2.jpg")
+dota.photos.attach(io: dota2, filename: 'dota-2.jpg')
+
+dota3 = open("https://fog-seed.s3-us-west-1.amazonaws.com/Dota+2/dota-3.jpg")
+dota.photos.attach(io: dota3, filename: 'dota-3.jpg')
+
+dota4 = open("https://fog-seed.s3-us-west-1.amazonaws.com/Dota+2/dota-4.jpg")
+dota.photos.attach(io: dota4, filename: 'dota-4.jpg')
+
+dota5 = open("https://fog-seed.s3-us-west-1.amazonaws.com/Dota+2/dota-5.jpg")
+dota.photos.attach(io: dota5, filename: 'dota-5.jpg')
+
+dota_gameplay = open("https://fog-seed.s3-us-west-1.amazonaws.com/Dota+2/dota-gameplay.gif")
+dota.photos.attach(io: dota_gameplay, filename: 'dota-gameplay.gif')
+
+dota.save!
 
 # Seed games genres
 GamesGenre.destroy_all
@@ -322,3 +356,7 @@ GamesGenre.create(game_id: 6, genre_id: 9)
 # for Bloons TD 6
 GamesGenre.create(game_id: 7, genre_id: 10)
 GamesGenre.create(game_id: 7, genre_id: 11)
+
+# for Dota 2
+GamesGenre.create(game_id: 8, genre_id: 11)
+GamesGenre.create(game_id: 8, genre_id: 12)

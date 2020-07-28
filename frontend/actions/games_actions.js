@@ -1,5 +1,6 @@
 import * as GameAPIUtil from '../util/games_api_util';
 import { receiveErrors } from './errors_actions';
+import lodash from "lodash";
 
 export const RECEIVE_GAMES = 'RECEIVE_GAMES';
 export const RECEIVE_GAME = 'RECEIVE_GAME';
@@ -14,10 +15,11 @@ export const receiveGame = game => ({
   game
 });
 
+// Shuffle the order of games
 export const fetchGames = () => dispatch => (
   GameAPIUtil.getGames()
     .then(
-      games => dispatch(receiveGames(games)),
+      games => dispatch(receiveGames(lodash.shuffle(games))),
       errors => dispatch(receiveErrors(errors.responseJSON))
     )
 );

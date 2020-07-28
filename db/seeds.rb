@@ -213,6 +213,9 @@ sf.photos.attach(io: sf4, filename: 'sf-4.png')
 sf5 = open("https://fog-seed.s3-us-west-1.amazonaws.com/Satisfactory/sf-5.jpg")
 sf.photos.attach(io: sf5, filename: 'sf-5.jpg')
 
+sf_gameplay = open("https://fog-seed.s3-us-west-1.amazonaws.com/Satisfactory/sf-gameplay.gif")
+sf.photos.attach(io: sf_gameplay, filename: 'sf-gameplay.jpg')
+
 sf.save!
 
 # Seed games genres

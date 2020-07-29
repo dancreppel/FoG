@@ -29,6 +29,8 @@ Genre.create(name: 'MOBA') #12
 Genre.create(name: 'Sports') #13
 Genre.create(name: 'Racing') #14
 Genre.create(name: 'Indie') #15
+Genre.create(name: 'Turn-Based') #16
+Genre.create(name: '4X') #17
 
 Game.destroy_all
 
@@ -357,6 +359,39 @@ rol.photos.attach(io: rol_gameplay, filename: 'rol-gameplay.gif')
 
 rol.save!
 
+# Seed for Civ 6
+civ = Game.new(
+  title: "Sid Meier's Civilization VI", 
+  description: "Civilization VI offers new ways to interact with your world, expand your empire across the map, advance your culture, and compete against history’s greatest leaders to build a civilization that will stand the test of time.",
+  developer: "Firaxis Games",
+  publisher: "2K",
+  release_date: Date.new(2016, 10, 20),
+  price: 59.99
+)
+
+civ_cover = open("https://fog-seed.s3-us-west-1.amazonaws.com/Civ+6/civ-cover.jpg")
+civ.photos.attach(io: civ_cover, filename: 'civ-cover.jpg')
+
+civ1 = open("https://fog-seed.s3-us-west-1.amazonaws.com/Civ+6/civ-1.jpg")
+civ.photos.attach(io: civ1, filename: 'civ-1.jpg')
+
+civ2 = open("https://fog-seed.s3-us-west-1.amazonaws.com/Civ+6/civ-2.jpg")
+civ.photos.attach(io: civ2, filename: 'civ-2.jpg')
+
+civ3 = open("https://fog-seed.s3-us-west-1.amazonaws.com/Civ+6/civ-3.jpg")
+civ.photos.attach(io: civ3, filename: 'civ-3.jpg')
+
+civ4 = open("https://fog-seed.s3-us-west-1.amazonaws.com/Civ+6/civ-4.jpg")
+civ.photos.attach(io: civ4, filename: 'civ-4.jpg')
+
+civ5 = open("https://fog-seed.s3-us-west-1.amazonaws.com/Civ+6/civ-5.jpg")
+civ.photos.attach(io: civ5, filename: 'civ-5.jpg')
+
+civ_gameplay = open("https://fog-seed.s3-us-west-1.amazonaws.com/Civ+6/civ-gameplay.gif")
+civ.photos.attach(io: civ_gameplay, filename: 'civ-gameplay.gif')
+
+civ.save!
+
 # Seed games genres
 GamesGenre.destroy_all
 
@@ -401,3 +436,8 @@ GamesGenre.create(game_id: 8, genre_id: 12)
 GamesGenre.create(game_id: 9, genre_id: 13)
 GamesGenre.create(game_id: 9, genre_id: 14)
 GamesGenre.create(game_id: 9, genre_id: 15)
+
+# for Civ 6
+GamesGenre.create(game_id: 10, genre_id: 11)
+GamesGenre.create(game_id: 10, genre_id: 16)
+GamesGenre.create(game_id: 10, genre_id: 17)

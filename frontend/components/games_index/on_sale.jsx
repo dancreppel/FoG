@@ -13,10 +13,12 @@ export default class OnSale extends React.Component {
     // Limit sale items to 3
     let saleItems = [];
     games.forEach((game, index) => {
+      let discount = Math.random();
       if (saleItems.length < 3) {
         saleItems.push(<OnSaleItem 
           game={game}
           key={'sale item' + index}
+          discount={discount}
         />)
       }
     });

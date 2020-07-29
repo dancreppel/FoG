@@ -54,14 +54,17 @@ class FeaturedItem extends React.Component {
           className='grid-img'
           key={'src' + index} 
           src={src} 
-          data-index={index + 1}
+          data-index={index}
           alt="grid-image"
         />
       )
     });
 
-    console.log(images);
-  
+    let price = <p className="game-price">${game.price}</p>;
+    if (game.price === 0) {
+      price = <p className="game-price">Free to Play</p>;
+    }
+
     return (
       <div className="featured-item">
         <img 
@@ -75,7 +78,7 @@ class FeaturedItem extends React.Component {
 
           <div className="featured-grid">{images}</div>
 
-          <p className="game-price">${game.price}</p>
+          {price}
         </aside>
       </div>
     );

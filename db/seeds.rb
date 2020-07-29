@@ -31,6 +31,7 @@ Genre.create(name: 'Racing') #14
 Genre.create(name: 'Indie') #15
 Genre.create(name: 'Turn-Based') #16
 Genre.create(name: '4X') #17
+Genre.create(name: 'Hack and Slash') #18
 
 Game.destroy_all
 
@@ -392,6 +393,39 @@ civ.photos.attach(io: civ_gameplay, filename: 'civ-gameplay.gif')
 
 civ.save!
 
+# Seed for Path of Exile
+poe = Game.new(
+  title: "Path of Exile", 
+  description: "You are an Exile, struggling to survive on the dark continent of Wraeclast, as you fight to earn power that will allow you to exact your revenge against those who wronged you.",
+  developer: "Grinding Gear Games",
+  publisher: "Grinding Gear Games",
+  release_date: Date.new(2013, 10, 23),
+  price: 0.00
+)
+
+poe_cover = open("https://fog-seed.s3-us-west-1.amazonaws.com/Path+of+Exile/poe-cover.jpg")
+poe.photos.attach(io: poe_cover, filename: 'poe-cover.jpg')
+
+poe1 = open("https://fog-seed.s3-us-west-1.amazonaws.com/Path+of+Exile/poe-1.jpg")
+poe.photos.attach(io: poe1, filename: 'poe-1.jpg')
+
+poe2 = open("https://fog-seed.s3-us-west-1.amazonaws.com/Path+of+Exile/poe-2.jpg")
+poe.photos.attach(io: poe2, filename: 'poe-2.jpg')
+
+poe3 = open("https://fog-seed.s3-us-west-1.amazonaws.com/Path+of+Exile/poe-3.jpg")
+poe.photos.attach(io: poe3, filename: 'poe-3.jpg')
+
+poe4 = open("https://fog-seed.s3-us-west-1.amazonaws.com/Path+of+Exile/poe-4.jpg")
+poe.photos.attach(io: poe4, filename: 'poe-4.jpg')
+
+poe5 = open("https://fog-seed.s3-us-west-1.amazonaws.com/Path+of+Exile/poe-5.jpg")
+poe.photos.attach(io: poe5, filename: 'poe-5.jpg')
+
+poe_gameplay = open("https://fog-seed.s3-us-west-1.amazonaws.com/Path+of+Exile/poe-gameplay.gif")
+poe.photos.attach(io: poe_gameplay, filename: 'poe-gameplay.gif')
+
+poe.save!
+
 # Seed games genres
 GamesGenre.destroy_all
 
@@ -441,3 +475,8 @@ GamesGenre.create(game_id: 9, genre_id: 15)
 GamesGenre.create(game_id: 10, genre_id: 11)
 GamesGenre.create(game_id: 10, genre_id: 16)
 GamesGenre.create(game_id: 10, genre_id: 17)
+
+# for PoE
+GamesGenre.create(game_id: 11, genre_id: 1)
+GamesGenre.create(game_id: 11, genre_id: 3)
+GamesGenre.create(game_id: 11, genre_id: 18)

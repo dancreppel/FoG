@@ -1,5 +1,6 @@
 import React from 'react';
 import FeaturedCarousel from './featured_carousel/featured_carousel';
+import OnSale from './on_sale';
 
 export default class GamesIndex extends React.Component {
   componentDidMount () {
@@ -12,7 +13,9 @@ export default class GamesIndex extends React.Component {
     return (
     <div className='gamesIndex'>
       {/* limit featured carousel games to first 5 */}
-      <FeaturedCarousel games={this.props.games.slice(0,5)}/>
+      <FeaturedCarousel games={this.props.games.slice(0,5)} />
+      {/* pass the rest of the games to OnSale component */}
+      <OnSale games={this.props.games.slice(5)} />
     </div>
     );
   }

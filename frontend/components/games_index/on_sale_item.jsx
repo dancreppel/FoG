@@ -20,17 +20,35 @@ class OnSaleItem extends React.Component {
   }
 
   render () {
-    let src = this.props.game.photoUrls.find(src => src.includes("gif"))
+    // Round down discount
+    let discount = Math.floor( this.props.discount * 100 );
+
+    // Apply discount
+    let unroundedPrice = this.props.game.price * (1 - discount / 100);
+    // Round result to nearest hundredth
+    let price = Math.floor(unroundedPrice * 100)/100;
 
     return (
       <div className="sale-item">
+
         <img 
           className="sale-item"
           src={this.props.game.photoUrls[this.state.index]}
           onMouseEnter={this.handleHoverOn}
           onMouseLeave={this.handleHoverOff}
         />
-        {/* <p>{this.props.game.price * ( 1 - this.state.discount )}</p> */}
+
+        <div className="discount">
+
+          <p className="discount-%">-{discount}%</p>
+
+          <div className="price">
+            <p className="original">${this.props.game.price}</p>
+            <p className="discounted">${price}</p>
+          </div>
+
+        </div>
+        
       </div>
     )
   }

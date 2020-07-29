@@ -26,6 +26,9 @@ Genre.create(name: 'Open World') #9
 Genre.create(name: 'Tower Defense') #10
 Genre.create(name: 'Strategy') #11
 Genre.create(name: 'MOBA') #12
+Genre.create(name: 'Sports') #13
+Genre.create(name: 'Racing') #14
+Genre.create(name: 'Indie') #15
 
 Game.destroy_all
 
@@ -321,6 +324,39 @@ dota.photos.attach(io: dota_gameplay, filename: 'dota-gameplay.gif')
 
 dota.save!
 
+# Seed for Rocket League
+rol = Game.new(
+  title: 'Rocket League', 
+  description: "Rocket League is a high-powered hybrid of arcade-style soccer and vehicular mayhem with easy-to-understand controls and fluid, physics-driven competition.",
+  developer: "Psyonix LLC",
+  publisher: "Psyonix LLC",
+  release_date: Date.new(2015, 7, 7),
+  price: 19.99
+)
+
+rol_cover = open("https://fog-seed.s3-us-west-1.amazonaws.com/Rocket+League/rol-cover.jpg")
+rol.photos.attach(io: rol_cover, filename: 'rol-cover.jpg')
+
+rol1 = open("https://fog-seed.s3-us-west-1.amazonaws.com/Rocket+League/rol-1.jpg")
+rol.photos.attach(io: rol1, filename: 'rol-1.jpg')
+
+rol2 = open("https://fog-seed.s3-us-west-1.amazonaws.com/Rocket+League/rol-2.jpg")
+rol.photos.attach(io: rol2, filename: 'rol-2.jpg')
+
+rol3 = open("https://fog-seed.s3-us-west-1.amazonaws.com/Rocket+League/rol-3.jpg")
+rol.photos.attach(io: rol3, filename: 'rol-3.jpg')
+
+rol4 = open("https://fog-seed.s3-us-west-1.amazonaws.com/Rocket+League/rol-4.jpg")
+rol.photos.attach(io: rol4, filename: 'rol-4.jpg')
+
+rol5 = open("https://fog-seed.s3-us-west-1.amazonaws.com/Rocket+League/rol-5.jpg")
+rol.photos.attach(io: rol5, filename: 'rol-5.jpg')
+
+rol_gameplay = open("https://fog-seed.s3-us-west-1.amazonaws.com/Rocket+League/rol-gameplay.gif")
+rol.photos.attach(io: rol_gameplay, filename: 'rol-gameplay.gif')
+
+rol.save!
+
 # Seed games genres
 GamesGenre.destroy_all
 
@@ -360,3 +396,8 @@ GamesGenre.create(game_id: 7, genre_id: 11)
 # for Dota 2
 GamesGenre.create(game_id: 8, genre_id: 11)
 GamesGenre.create(game_id: 8, genre_id: 12)
+
+# for Rocket Leauge
+GamesGenre.create(game_id: 9, genre_id: 13)
+GamesGenre.create(game_id: 9, genre_id: 14)
+GamesGenre.create(game_id: 9, genre_id: 15)

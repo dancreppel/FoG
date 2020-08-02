@@ -27,6 +27,12 @@ export default class FeaturedCarousel extends React.Component {
     // ];
   }
 
+  componentDidMount () {
+    // reset discount for each game in this carousel
+    let { updateDiscount, games } = this.props;
+    games.forEach(game => updateDiscount(game.id, 0));
+  }
+
   goLeft () {
     let index = this.state.index;
     if (index === 0) index = this.props.games.length - 1;

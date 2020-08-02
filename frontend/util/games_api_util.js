@@ -6,6 +6,14 @@ export const getGames = () => (
 
 export const getGame = gameId => (
   $.ajax({
-    url:` api/games/${gameId}`
+    url:`api/games/${gameId}`
+  })
+)
+
+export const patchDiscount = (gameId, discount) => (
+  $.ajax({
+    url: `api/games/${gameId}`,
+    method: 'patch',
+    data: { game: { discount } }
   })
 )

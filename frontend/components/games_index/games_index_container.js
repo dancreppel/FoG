@@ -1,9 +1,10 @@
 import { connect } from 'react-redux';
 import GamesIndex from './games_index';
 import { fetchGames, updateDiscount } from '../../actions/games_actions';
+import lodash from 'lodash';
 
 const MSP =({ entities: { games }}) => ({
-  games: Object.values(games)
+  games: lodash.shuffle(games)
 });
 
 const MDP = dispatch => ({

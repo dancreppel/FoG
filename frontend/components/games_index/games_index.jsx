@@ -13,9 +13,15 @@ export default class GamesIndex extends React.Component {
     return (
     <div className='gamesIndex'>
       {/* limit featured carousel games to first 5 */}
-      <FeaturedCarousel games={this.props.games.slice(0,5)} />
+      <FeaturedCarousel 
+        games={this.props.games.slice(0,5)} 
+        updateDiscount={this.props.updateDiscount}
+      />
       {/* pass the rest of the games to OnSale component */}
-      <OnSale games={this.props.games.slice(5)} />
+      <OnSale 
+        games={this.props.games.slice(5)} 
+        updateDiscount={this.props.updateDiscount}
+      />
     </div>
     );
   }

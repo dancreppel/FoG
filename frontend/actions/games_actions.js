@@ -1,6 +1,5 @@
 import * as GameAPIUtil from '../util/games_api_util';
 import { receiveErrors } from './errors_actions';
-import lodash from "lodash";
 
 export const RECEIVE_GAMES = 'RECEIVE_GAMES';
 export const RECEIVE_GAME = 'RECEIVE_GAME';
@@ -26,7 +25,7 @@ export const receiveDiscount = (gameId, discount) => ({
 export const fetchGames = () => dispatch => (
   GameAPIUtil.getGames()
     .then(
-      games => dispatch(receiveGames(lodash.shuffle(games))),
+      games => dispatch(receiveGames(games)),
       errors => dispatch(receiveErrors(errors.responseJSON))
     )
 );
@@ -40,7 +39,7 @@ export const fetchGame = gameId => dispatch => (
 );
 
 export const updateDiscount = (gameId, discount) => dispatch => (
-  GameAPIUtil.patchDiscount()
+  GameAPIUtil.patchDiscount(gameId, discount)
     .then(
       () => dispatch(receiveDiscount(gameId, discount)),
       errors => dispatch(receiveErrors(errors.responseJSON))

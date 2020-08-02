@@ -40,7 +40,7 @@ export const fetchGame = gameId => dispatch => (
 );
 
 export const updateDiscount = (gameId, discount) => dispatch => (
-  GameAPIUtil.patchDiscount
+  GameAPIUtil.patchDiscount()
     .then(
       () => dispatch(receiveDiscount(gameId, discount)),
       errors => dispatch(receiveErrors(errors.responseJSON))

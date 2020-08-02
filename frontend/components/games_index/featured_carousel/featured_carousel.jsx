@@ -72,7 +72,11 @@ export default class FeaturedCarousel extends React.Component {
             <span className="material-icons">chevron_left</span>
           </div>
 
-          <FeaturedItem className="featured-item" game={game}/>
+          <FeaturedItem 
+            className="featured-item" 
+            game={game}
+            updateDiscount={this.props.updateDiscount}
+          />
 
           <div className="goRight" onClick={this.goRight}>
             <span className="material-icons">chevron_right</span>

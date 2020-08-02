@@ -21,7 +21,6 @@ class Api::GamesController < ApplicationController
 
   def update
     @game = Game.find_by(id: params[:id])
-    debugger
     @game.discount = game_params['discount'].to_f
 
     if @game.save

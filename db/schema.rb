@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2020_08_02_211722) do
     t.float "price", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.float "discount"
+    t.float "discount", default: 0.0
     t.index ["title"], name: "index_games_on_title"
   end
 

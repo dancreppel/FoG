@@ -17,8 +17,11 @@ export default class OnSale extends React.Component {
     ));
 
     return (
-      <div className="sale-items">
-        {saleItems}
+      <div className="on-sale-component">
+        <h1 className="special-offers">Special Offers</h1>
+        <div className="sale-items">
+          {saleItems}
+        </div>
       </div>
     )
   }

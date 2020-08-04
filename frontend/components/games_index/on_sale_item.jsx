@@ -40,7 +40,7 @@ class OnSaleItem extends React.Component {
 
         <div className="discount">
 
-          <p className="discount-%">-{discount}%</p>
+          <p className="discount-percentage">-{discount}%</p>
 
           <div className="price">
             <p className="original">${this.props.game.price}</p>

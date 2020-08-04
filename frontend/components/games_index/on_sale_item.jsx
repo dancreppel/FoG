@@ -7,6 +7,7 @@ class OnSaleItem extends React.Component {
     this.state = { index: 0 };
     this.handleHoverOn = this.handleHoverOn.bind(this);
     this.handleHoverOff = this.handleHoverOff.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleHoverOn () {
@@ -17,6 +18,11 @@ class OnSaleItem extends React.Component {
 
   handleHoverOff () {
     this.setState({ index: 0 });
+  }
+
+  handleClick () {
+    let { history, game } = this.props;
+    history.push(`games/${game.id}`);
   }
 
   render () {
@@ -36,6 +42,7 @@ class OnSaleItem extends React.Component {
           src={this.props.game.photoUrls[this.state.index]}
           onMouseEnter={this.handleHoverOn}
           onMouseLeave={this.handleHoverOff}
+          onClick={this.handleClick}
         />
 
         <div className="discount">

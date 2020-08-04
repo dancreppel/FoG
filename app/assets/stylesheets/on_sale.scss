@@ -1,0 +1,58 @@
+.on-sale-component {
+  width: 900px;
+  margin: 50px auto;
+}
+
+.special-offers {
+  font-size: 20px;
+  font-weight: 10;
+  text-transform: uppercase;
+  margin: 10px 0px;
+}
+
+.sale-items {
+  // width: 900px;
+  // margin: 50px auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+div.sale-item {
+  width: 32%;
+  box-shadow: 1px 1px 5px 5px #171a21;
+}
+
+.discount {
+  display: flex;
+  // height: 35px;
+  justify-content: flex-end;
+  background: asset-url('brushed-blue-steel.jpg');
+}
+
+.discount-percentage {
+  width: 70px;
+  text-align: center;
+  font-size: 26px;
+  color: #a4d007;
+  background: #4c6b22;
+  margin: 3px 0px;
+}
+
+.price {
+  background-color: #1b2838;
+  margin: 3px 3px 3px 0px;
+  width: 45px;
+
+  .original {
+    font-size: 11px;
+    text-decoration: line-through;
+    text-align: center;
+    color: #7193a6;
+  }
+
+  .discounted {
+    text-align: center;
+    font-size: 13px;
+    color: lightskyblue;
+  }
+}

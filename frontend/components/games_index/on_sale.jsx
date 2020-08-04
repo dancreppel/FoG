@@ -17,9 +17,9 @@ export default class OnSale extends React.Component {
     ));
 
     return (
-      <ul className="sale-items">
+      <div className="sale-items">
         {saleItems}
-      </ul>
+      </div>
     )
   }
 }

@@ -29,7 +29,7 @@ class OnSaleItem extends React.Component {
     let price = Math.floor(unroundedPrice * 100)/100;
 
     return (
-      <li className="sale-item">
+      <div className="sale-item">
 
         <img 
           className="sale-item"
@@ -49,7 +49,7 @@ class OnSaleItem extends React.Component {
 
         </div>
         
-      </li>
+      </div>
     )
   }
 }

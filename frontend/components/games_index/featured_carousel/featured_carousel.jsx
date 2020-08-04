@@ -10,27 +10,6 @@ export default class FeaturedCarousel extends React.Component {
     this.goLeft = this.goLeft.bind(this);
     this.goRight = this.goRight.bind(this);
     this.handleClick = this.handleClick.bind(this);
-
-    // *for testing
-    // this.sources = [
-    //   "assets/test_images/doom_eternal.jpg",
-    //   "assets/test_images/eft.jpg",
-    //   "assets/test_images/hearthstone.jpeg",
-    //   "assets/test_images/typing.gif",
-    //   "assets/test_images/apex_legends.jpg",
-    //   "assets/test_images/beat_saber.jpg",
-    //   "assets/test_images/cyberpunk.png",
-    //   "assets/test_images/halo.png",
-    //   "assets/test_images/overwatch.jpg",
-    //   "assets/test_images/starwars.jpg",
-    //   "assets/test_images/MapleStory2.jpg",
-    // ];
-  }
-
-  componentDidMount () {
-    // reset discount for each game in this carousel
-    let { updateDiscount, games } = this.props;
-    games.forEach(game => updateDiscount(game.id, 0));
   }
 
   goLeft () {

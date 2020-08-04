@@ -18,4 +18,20 @@ class Api::GamesController < ApplicationController
       render json: ['Games not found'], status: 404
     end
   end
+
+  def update
+    @game = Game.find_by(id: params[:id])
+    @game.discount = game_params['discount'].to_f
+
+    if @game.save
+      render json: ['Game updated']
+    else
+      render json: ['Cannot modify game'], status: 400
+    end
+  end
+
+  private
+  def game_params
+    params.require(:game).permit(:discount)
+  end
 end

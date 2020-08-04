@@ -10,18 +10,33 @@ export default class GamesIndex extends React.Component {
   render () {
     if (!this.props.games.length) return null;
     
+    // filter out 4 non-sale games
+    let featuredGames = [];
+    this.props.games.forEach(game => {
+      if (game.discount === 0 && featuredGames.length < 4) {
+        featuredGames.push(game);
+      }
+    });
+    
+    // filter out 3 sale games
+    let onSaleGames = [];
+    this.props.games.forEach(game => {
+      if (game.discount > 0 && onSaleGames.length < 3) {
+        onSaleGames.push(game);
+      }
+    });
+
     return (
     <div className='gamesIndex'>
-      {/* limit featured carousel games to first 5 */}
+
       <FeaturedCarousel 
-        games={this.props.games.slice(0,5)} 
-        updateDiscount={this.props.updateDiscount}
+        games={featuredGames}
       />
-      {/* pass the rest of the games to OnSale component */}
+
       <OnSale 
-        games={this.props.games.slice(5)} 
-        updateDiscount={this.props.updateDiscount}
+        games={onSaleGames}
       />
+
     </div>
     );
   }

@@ -7,21 +7,14 @@ export default class OnSale extends React.Component {
   }
 
   render () {
-    // Only grab games that have a price because you cannot discount a free game
-    let games = this.props.games.filter(game => game.price > 0);
-
-    // Limit sale items to 3
-    let saleItems = [];
-    games.forEach((game, index) => {
-      let discount = Math.random();
-      if (saleItems.length < 3) {
-        saleItems.push(<OnSaleItem 
-          game={game}
-          key={'sale item' + index}
-          discount={discount}
-        />)
-      }
-    });
+    let { games } = this.props;
+    let saleItems = games.map((game, index) => (
+      <OnSaleItem
+        game={game}
+        key={'sale item' + index}
+        discount={game.discount}
+      />
+    ));
 
     return (
       <ul className="sale-items">

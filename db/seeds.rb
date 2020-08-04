@@ -42,7 +42,8 @@ eft = Game.new(
   developer: 'Battlestate Games',
   publisher: 'Battlestate Games',
   release_date: Date.new(2017, 7, 27),
-  price: 44.99
+  price: 44.99,
+  discount: 0
 )
 
 eft_cover = open("https://fog-seed.s3-us-west-1.amazonaws.com/Escape+From+Tarkov/eft-cover.jpeg")
@@ -91,7 +92,8 @@ cp = Game.new(
   developer: 'CD Projekt Red',
   publisher: 'CD Projekt',
   release_date: Date.new(2020, 11, 19),
-  price: 59.99
+  price: 59.99,
+  discount: 0
 )
 
 cp_cover = open('https://fog-seed.s3-us-west-1.amazonaws.com/Cyberpunk+2077/cp-cover.png')
@@ -133,7 +135,8 @@ de = Game.new(
   developer: 'id Software',
   publisher: 'Bethesda Softworks',
   release_date: Date.new(2020, 3, 20),
-  price: 59.99
+  price: 59.99,
+  discount: 0.05
 )
 
 de_cover = open('https://fog-seed.s3-us-west-1.amazonaws.com/Doom+Eternal/de-cover.jpg')
@@ -172,7 +175,8 @@ bs = Game.new(
   developer: 'Beat Games',
   publisher: 'Beat Games',
   release_date: Date.new(2019, 5, 21),
-  price: 29.99
+  price: 29.99,
+  discount: 0.15
 )
 
 bs_cover = open("https://fog-seed.s3-us-west-1.amazonaws.com/Beat+Saber/bs-cover.jpg")
@@ -202,7 +206,8 @@ sf = Game.new(
   developer: 'Coffee Stain Studios',
   publisher: 'Coffee Stain Publishing',
   release_date: Date.new(2020, 6, 8),
-  price: 29.99
+  price: 29.99,
+  discount: 0.25
 )
 
 sf_cover = open("https://fog-seed.s3-us-west-1.amazonaws.com/Satisfactory/sf-cover.jpg")
@@ -235,7 +240,8 @@ mhw = Game.new(
   developer: "CAPCOM Co., Ltd.",
   publisher: "CAPCOM Co., Ltd.",
   release_date: Date.new(2018, 8, 9),
-  price: 29.99
+  price: 29.99,
+  discount: 0.33
 )
 
 mhw_cover = open("https://fog-seed.s3-us-west-1.amazonaws.com/Monster+Hunter+World/mhw-cover.jpeg")
@@ -268,7 +274,8 @@ bltd = Game.new(
   developer: "Ninja Kiwi",
   publisher: "Ninja Kiwi",
   release_date: Date.new(2018, 12, 17),
-  price: 9.99
+  price: 9.99,
+  discount: 0
 )
 
 bltd_cover = open("https://fog-seed.s3-us-west-1.amazonaws.com/Bloons+TD/bltd-cover.jpg")
@@ -301,7 +308,8 @@ dota = Game.new(
   developer: "Valve",
   publisher: "Valve",
   release_date: Date.new(2013, 7, 9),
-  price: 0.00
+  price: 0.00,
+  discount: 0
 )
 
 dota_cover = open("https://fog-seed.s3-us-west-1.amazonaws.com/Dota+2/dota-cover.png")
@@ -334,7 +342,8 @@ rol = Game.new(
   developer: "Psyonix LLC",
   publisher: "Psyonix LLC",
   release_date: Date.new(2015, 7, 7),
-  price: 19.99
+  price: 19.99,
+  discount: 0
 )
 
 rol_cover = open("https://fog-seed.s3-us-west-1.amazonaws.com/Rocket+League/rol-cover.jpg")
@@ -367,7 +376,8 @@ civ = Game.new(
   developer: "Firaxis Games",
   publisher: "2K",
   release_date: Date.new(2016, 10, 20),
-  price: 59.99
+  price: 59.99,
+  discount: 0.50
 )
 
 civ_cover = open("https://fog-seed.s3-us-west-1.amazonaws.com/Civ+6/civ-cover.jpg")
@@ -400,7 +410,8 @@ poe = Game.new(
   developer: "Grinding Gear Games",
   publisher: "Grinding Gear Games",
   release_date: Date.new(2013, 10, 23),
-  price: 0.00
+  price: 0.00,
+  discount: 0
 )
 
 poe_cover = open("https://fog-seed.s3-us-west-1.amazonaws.com/Path+of+Exile/poe-cover.jpg")

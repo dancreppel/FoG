@@ -177,21 +177,21 @@ header {
 
   // nav items store, community, about, support
   .navItems {
-    width: 350px;
+    // width: 350px;
     height: 45px;
     display: flex;
     justify-content: space-between;
     align-self: flex-end;
     position: relative;
     
-    div, li {
-      // margin: 10px 0px;
+    div, .nav-item {
+      margin: 0px 20px;
       color: lightgray;
       font-size: 20px;
       cursor: pointer;
     }
 
-    div:hover, li:hover {
+    div:hover, .nav-item:hover {
       color: whitesmoke;
     }
 

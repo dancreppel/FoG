@@ -10,28 +10,10 @@ const Header = () => (
         <Link className='logo-title' to='/'>FoG</Link>
       </div>
       <ul className='navItems'>
-        {/* <div>Store
-          <ul className='store dropdown'>
-            <li>Featured</li>
-            <li>Wishlist</li>
-            <li>News</li>
-            <li>Stats</li>
-          </ul>
-        </div>
-        <div>Community
-          <ul className='community dropdown'>
-            <li>Home</li>
-            <li>Discussions</li>
-            <li>Workshop</li>
-            <li>Market</li>
-            <li>Broadcasts</li>
-          </ul>
-        </div>
-        <li>About</li>
-        <li>Support</li> */}
-        <li>Github</li>
-        <li>LinkedIn</li>
-        <li>Resume</li>
+        <a className="nav-item" href="https://github.com/dancreppel/FoG">Github</a>
+        <a className="nav-item" href="https://www.linkedin.com/in/daniel-creppel-7b289318a/">LinkedIn</a>
+        {/* <a className="nav-item" href="https://angel.co/u/daniel-creppel">AngelList</a> */}
+        <a className="nav-item" href="#">Personal Site</a>
       </ul>
       <HeaderUserContainer />
     </nav>

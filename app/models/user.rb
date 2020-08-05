@@ -18,6 +18,11 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
 
   has_one_attached :photo
+  has_many :cart_items
+  has_many :cart_games,
+    through: :cart_items,
+    foreign_key: "game_id",
+    class_name: "Game"
 
   def self.find_by_credentials(username, password)
     user = self.find_by(username: username)

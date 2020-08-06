@@ -8,7 +8,7 @@ class Api::CartItemsController < ApplicationController
       # render :index
       render json: @cart_games
     else
-      render json: "No games found", status: 404
+      render json: ["No games found"], status: 404
     end
   end
 
@@ -32,7 +32,7 @@ class Api::CartItemsController < ApplicationController
       @cart_item.destroy
       render json: 'Deleted game from cart'
     else
-      render json: 'Cannot delete game from cart', status: 400
+      render json: ['Cannot delete game from cart'], status: 400
     end
 
   end

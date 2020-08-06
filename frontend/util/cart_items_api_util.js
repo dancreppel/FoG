@@ -11,3 +11,10 @@ export const postCartItem = gameId => (
     data: { cart: { game_id: gameId }}
   })
 );
+
+export const deleteCartItem = cartItemId => (
+  $.ajax({
+    url: `api/cart_items/${cartItemId}`,
+    method: "delete"
+  })
+);

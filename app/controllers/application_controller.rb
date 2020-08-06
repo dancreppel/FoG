@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   # for testing purposes DO NOT FORGET TO REMOVE
-  # skip_before_action :verify_authenticity_token
+  skip_before_action :verify_authenticity_token
   helper_method :current_user, :logged_in?
 
   def current_user
@@ -19,6 +19,12 @@ class ApplicationController < ActionController::Base
     current_user.reset_session_token!
     session[:session_token] = nil
     @current_user = nil
+  end
+
+  def require_login
+    unless current_user
+      render json: ["Must be logged in"], status: 401
+    end
   end
 
   private 

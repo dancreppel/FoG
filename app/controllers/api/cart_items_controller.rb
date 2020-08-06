@@ -15,7 +15,7 @@ class Api::CartItemsController < ApplicationController
   def create
     @cart_item = CartItem.new(
       user_id: current_user.id, 
-      game_id: cart_params['game_id']
+      game_id: cart_params[:game_id]
     )
 
     if @cart_item.save
@@ -24,6 +24,17 @@ class Api::CartItemsController < ApplicationController
     else
       render json: @cart_item.errors.full_messages, status: 422
     end
+  end
+
+  def destroy
+    @cart_item = CartItem.find_by(id: params[:id])
+    if @cart_item
+      @cart_item.destroy
+      render json: 'Deleted game from cart'
+    else
+      render json: 'Cannot delete game from cart', status: 400
+    end
+
   end
 
   def cart_params 

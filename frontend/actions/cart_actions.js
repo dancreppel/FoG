@@ -27,3 +27,11 @@ export const fetchCartItems = () => dispatch => (
       errors => dispatch(receiveErrors(errors.responseJSON))
     )
 )
+
+export const createCartItem = gameId => dispatch => (
+  CartApiUtil.postCartItem(gameId)
+    .then(
+      cartItem => dispatch(receiveCartItem(cartItem)),
+      errors => dispatch(receiveErrors(errors.responseJSON))
+    )
+)

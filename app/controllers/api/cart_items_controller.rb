@@ -1,5 +1,5 @@
 class Api::CartItemsController < ApplicationController
-  :before_action :require_login
+  before_action :require_login
 
   def index
     @cart_games = User.find_by(id: current_user.id).includes(:cart_games)

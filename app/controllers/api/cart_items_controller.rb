@@ -29,7 +29,7 @@ class Api::CartItemsController < ApplicationController
     @cart_item = CartItem.find_by(id: params[:id])
     if @cart_item
       @cart_item.destroy
-      render json: 'Deleted game from cart'
+      render json: ['Deleted game from cart']
     else
       render json: ['Cannot delete game from cart'], status: 400
     end

@@ -123,7 +123,6 @@ export default class Slider extends React.Component {
         <div
           className="slider"
           onClick={this.handleClick}
-          style={{ transform: `translate(${delta}px)` }}
           style={{ transform: `translate(${delta}%)` }}
         >
           {items}
@@ -135,7 +134,6 @@ export default class Slider extends React.Component {
           </span>
 
           <div className="tabsBar">
-            {/* style={{ width: `${length * 20}px` }} */}
             <div className="tabs">{tabs}</div>
           </div>
 

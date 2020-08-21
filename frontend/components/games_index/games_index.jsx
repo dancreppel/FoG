@@ -4,7 +4,9 @@ import OnSale from './on_sale';
 
 export default class GamesIndex extends React.Component {
   componentDidMount () {
-    if(!this.props.games.length) this.props.fetchGames();
+    // fetchGames regardless
+    this.props.fetchGames();
+    // if(!this.props.games.length) this.props.fetchGames();
   }
 
   render () {

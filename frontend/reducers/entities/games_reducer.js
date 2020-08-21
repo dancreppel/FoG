@@ -4,6 +4,8 @@ import {
   RECIEVE_DISCOUNT
 } from '../../actions/games_actions';
 
+import { RECEIVE_CART_ITEMS } from "../../actions/cart_actions"
+
 const gamesReducer = (state = {}, action) => {
   Object.freeze(state);
   let newState = Object.assign({}, state);
@@ -17,6 +19,15 @@ const gamesReducer = (state = {}, action) => {
     case RECIEVE_DISCOUNT:
       newState[action.gameId].discount = action.discount;
       return newState;
+    case RECEIVE_CART_ITEMS:
+      // Format
+      // cart: { 
+      //   cartItems: { 1: { gameId: 3, id: 1 } },
+      //   games: { 3: { id: 3, title: "Doom Eternal", ...}}
+      // }
+
+      // replace slice of state with the cart games
+      return action.cart.games;
     default:
       return state;
   }

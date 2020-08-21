@@ -6,8 +6,8 @@ import {
 } from "../../actions/cart_actions";
 
 const MSP = ({ entities: { cart, games } }) => ({
-  cart: Object.values(cart),
-  games: Object.values(games)
+  cart,
+  games
 });
 
 const MDP = (dispatch) => ({

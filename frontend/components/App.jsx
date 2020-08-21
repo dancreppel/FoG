@@ -4,9 +4,8 @@ import Header from './header/header';
 import SessionRoutes from './session/session_routes';
 import GamesIndexContainer from './games_index/games_index_container';
 import GameShowContainer from './games_show/games_show_container';
-
-// Todo test slider
-import Slider from './slider/slider';
+import ProtectedRoute from './routes/protected_route';
+import CartContainer from './cart/cart_container';
 
 const App = () => (
   <>
@@ -14,6 +13,7 @@ const App = () => (
     <SessionRoutes />
     <Route exact path='/' component={GamesIndexContainer} />
     <Route path='/games/:id' component={GameShowContainer} />
+    <ProtectedRoute path='/cart' component={CartContainer} />
   </>
 );
 

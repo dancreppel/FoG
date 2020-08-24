@@ -3,7 +3,9 @@ import CartItem from './cart_item';
 
 export default class Cart extends React.Component {
   componentDidMount () {
-    this.props.getUserCart();
+    this.props.getUserCart()
+      .then(this.props.fetchGenres)
+      .then(this.props.fetchGamesGenres);
   }
 
   render () {

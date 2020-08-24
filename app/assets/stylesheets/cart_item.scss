@@ -1,4 +1,4 @@
-$black: #171a2185; 
+$black: #171a2185;
 $light: #1b2838;
 $button: #253c58;
 $button-hover: #2e5788;
@@ -8,17 +8,14 @@ $button-hover: #2e5788;
   justify-content: space-between;
   background-color: $black;
   box-shadow: 1px 1px 3px black;
+  position: relative;
   margin: 5px;
   padding: 10px;
 
   img {
     width: 120px;
-    margin-right: 30px
+    margin-right: 30px;
   }
-}
-
-.cart-item-left {
-  display: flex;
 
   h1 {
     display: flex;
@@ -28,8 +25,14 @@ $button-hover: #2e5788;
   }
 }
 
+.cart-item-left {
+  display: flex;
+
+}
+
 .cart-item-right {
   display: flex;
+  margin: 0;
   justify-content: center;
   flex-direction: column;
   text-align: right;
@@ -56,4 +59,45 @@ $button-hover: #2e5788;
   font-size: 11px;
   color: #7193a6;
   text-decoration: line-through;
+}
+
+.game-details {
+  width: 290px;
+  padding: 5px;
+  position: relative;
+  background-color: silver;
+  box-shadow: 1px 1px 3px 1px black;
+  position: absolute;
+  right: -305px;
+  top: 0px;
+  color: black;
+  
+  .material-icons {
+    position: absolute;
+    z-index: 10;
+    left: -28px;
+    top: 20px;
+    color: silver;
+    font-size: 50px;
+  }
+
+  img {
+    width: 290px;
+    margin: 3px 0px;
+  }
+
+  h2, .game-tags {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 10;
+  }
+
+  .game-tag {
+    margin-right: 3px;
+    font-size: 12px;
+    padding: 1px 3px;
+    background-color: rgb(151, 151, 151);
+    border-radius: 3px;
+  }
 }

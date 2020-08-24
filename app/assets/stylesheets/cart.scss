@@ -1,3 +1,5 @@
+$black: #171a2185;
+
 .cart {
   width: 900px;
   margin: auto;
@@ -8,9 +10,48 @@
   // margin: auto;
 }
 
-  .page-title {
-    font-size: 30px;
+.page-title {
+  font-size: 30px;
+  font-weight: 10;
+  text-transform: uppercase;
+  margin: 10px 5px;
+}
+
+.payment {
+  display: flex;
+  flex-direction: column;
+  background-color: $black;
+  box-shadow: 1px 1px 3px black;
+  margin: 5px;
+  padding: 10px;
+
+  h2 {
+    font-size: 20px;
     font-weight: 10;
-    text-transform: uppercase;
-    margin: 10px 5px;
   }
+}
+
+.total-price {
+  display: flex;
+  justify-content: space-between;
+}
+
+.purchase-div {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 5px;
+}
+
+.purchase {
+  width: 80px;
+  border-radius: 3px;
+  color: #D2E885;
+  background: rgba(121,153,5,1);
+  background: -webkit-linear-gradient( top, rgba(121,153,5,1) 5%, rgba(83,105,4,1) 95%);
+  background: linear-gradient( to bottom, rgba(121,153,5,1) 5%, rgba(83,105,4,1) 95%);
+  opacity: 80%;
+
+  &:hover {
+    opacity: 100%;
+  }
+}

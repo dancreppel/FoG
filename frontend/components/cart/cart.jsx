@@ -1,5 +1,5 @@
 import React from 'react';
-import CartItem from './cart_item';
+import CartItemContainer from './cart_item_container';
 
 export default class Cart extends React.Component {
   componentDidMount () {
@@ -10,12 +10,12 @@ export default class Cart extends React.Component {
 
   render () {
     let cart = Object.values(this.props.cart);
-    let games = this.props.games;
+    let { games } = this.props;
 
     let cartItems = cart.map((cartItem, index) => (
-      <CartItem 
+      <CartItemContainer 
         key={'cart item ' + index}
-        game={games[cartItem.gameId]} 
+        game={games[cartItem.gameId]}
         cartId={cartItem.id}
       />
     ));

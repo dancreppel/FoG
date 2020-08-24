@@ -13,7 +13,7 @@ const Header = () => (
         <a className="nav-item" href="https://github.com/dancreppel/FoG">Github</a>
         <a className="nav-item" href="https://www.linkedin.com/in/daniel-creppel-7b289318a/">LinkedIn</a>
         {/* <a className="nav-item" href="https://angel.co/u/daniel-creppel">AngelList</a> */}
-        <a className="nav-item" href="#">Personal Site</a>
+        <a className="nav-item" href="https://www.dancreppel.com">Personal Site</a>
       </ul>
       <HeaderUserContainer />
     </nav>

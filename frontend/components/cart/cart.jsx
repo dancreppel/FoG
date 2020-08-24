@@ -12,13 +12,26 @@ export default class Cart extends React.Component {
     let cart = Object.values(this.props.cart);
     let { games } = this.props;
 
-    let cartItems = cart.map((cartItem, index) => (
-      <CartItemContainer 
-        key={'cart item ' + index}
-        game={games[cartItem.gameId]}
-        cartId={cartItem.id}
-      />
-    ));
+    let totalPrice = 0;
+    let cartItems = cart.map((cartItem, index) => {
+      let game = games[cartItem.gameId];
+      totalPrice += Math.round(game.price * (1 - game.discount) * 100) / 100;
+
+      return (
+        <CartItemContainer 
+          key={'cart item ' + index}
+          game={game}
+          cartId={cartItem.id}
+        />
+      )
+    });
+
+    // let totalPrice = 0;
+    // cartItems.forEach(item => {
+    //   debugger;
+    //   totalPrice += item.data
+
+    // });
 
     return (
       <div className="cart">
@@ -32,10 +45,12 @@ export default class Cart extends React.Component {
 
           <div className="payment">
             <div className="total-price">
-
+              <h2>Total Price:</h2>
+              <h2>${totalPrice}</h2>
             </div>
-
-            <button className="purchase">Purchase</button>
+            <div className="purchase-div">
+              <button className="purchase">Purchase</button>
+            </div>
           </div>
           
         </div>

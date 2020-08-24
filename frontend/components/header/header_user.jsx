@@ -38,7 +38,7 @@ export default class HeaderUser extends React.Component {
           </i>
 
           <ul className={classVal}>
-            <li>Your Cart</li>
+            <li><Link to="/cart">Your Cart</Link></li>
             <li>Your Wishlist</li>
             <li>Your Library</li>
             <li className="logoutLi">

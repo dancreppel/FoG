@@ -23,7 +23,7 @@ export default class CartItem extends React.Component {
         this.setState({ index });
       }
       else this.setState({ index: 0 });
-    }, 500);
+    }, 750);
   }
 
   render () {

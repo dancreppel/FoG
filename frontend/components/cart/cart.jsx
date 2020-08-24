@@ -17,7 +17,6 @@ export default class Cart extends React.Component {
         key={'cart item ' + index}
         game={games[cartItem.gameId]} 
         cartId={cartItem.id}
-        removeCartItem={this.props.removeCartItem}
       />
     ));
 

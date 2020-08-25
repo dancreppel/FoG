@@ -74,6 +74,7 @@ select {
 // remove borders for buttons
 button {
   border: none;
+  outline: none;
 
   &:active {
     border: none;

@@ -20,6 +20,10 @@
 div.sale-item {
   width: 32%;
   box-shadow: 1px 1px 5px 5px #171a21;
+
+  img {
+    cursor: pointer;
+  }
 }
 
 .discount {

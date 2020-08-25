@@ -1,8 +1,9 @@
 import React from 'react';
+import {withRouter} from 'react-router-dom';
 import { genresForGame } from "../../selectors/games_genres";
-import lodash, { set } from 'lodash'
+import lodash from 'lodash'
 
-export default class CartItem extends React.Component {
+class CartItem extends React.Component {
   constructor (props) {
     super(props);
     this.state = { 
@@ -24,6 +25,10 @@ export default class CartItem extends React.Component {
       }
       else this.setState({ index: 0 });
     }, 750);
+  }
+
+  componentWillUnmount () {
+    clearTimeout(this.timeout);
   }
 
   render () {
@@ -83,7 +88,11 @@ export default class CartItem extends React.Component {
       >
 
         <div className="cart-item-left">
-          <img src={cover} alt="game-cover" />
+          <img 
+            src={cover} 
+            alt="game-cover" 
+            onClick={() => this.props.history.push(`/games/${game.id}`)}
+          />
           <h1>{game.title}</h1>
         </div>
 
@@ -102,3 +111,5 @@ export default class CartItem extends React.Component {
     )
   }
 };
+
+export default withRouter(CartItem);

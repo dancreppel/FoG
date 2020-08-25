@@ -3,14 +3,20 @@ import FeaturedCarousel from './featured_carousel/featured_carousel';
 import OnSale from './on_sale';
 
 export default class GamesIndex extends React.Component {
+  constructor (props) {
+    super(props);
+    this.state = { didFetch: false }
+  }
+
   componentDidMount () {
     // fetchGames regardless
-    this.props.fetchGames();
+    this.props.fetchGames()
+      .then(() => this.setState({ didFetch: true}));
     // if(!this.props.games.length) this.props.fetchGames();
   }
 
   render () {
-    if (!this.props.games.length) return null;
+    if (!this.state.didFetch) return null;
     
     // filter out 4 non-sale games
     let featuredGames = [];

@@ -26,9 +26,10 @@ const gamesReducer = (state = {}, action) => {
       //   games: { 3: { id: 3, title: "Doom Eternal", ...}}
       // }
 
-      // replace slice of state with the cart games
-      if (action.cart.games) return action.cart.games;
-      else return state;
+      // do not replace slice of state otherwise other pages will not work
+      let games = Object.values(action.cart.games);
+      games.forEach(game => newState[game.id] = game)
+      return newState;
     default:
       return state;
   }

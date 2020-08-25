@@ -1,6 +1,7 @@
 import React from 'react';
 import Slider from '../slider/slider';
 import GameInfo from './game_info';
+import PurchaseGameContainer from './purchase_game_container';
 
 export default class GamesShow extends React.Component {
   constructor (props) {
@@ -8,7 +9,8 @@ export default class GamesShow extends React.Component {
   }
 
   componentDidMount () {
-    this.props.fetchGame(this.props.match.params.id);
+    this.props.fetchCartItems()
+    this.props.fetchGame(this.props.match.params.id)
     this.props.fetchGenres();
     this.props.fetchGamesGenres();
   }
@@ -24,6 +26,7 @@ export default class GamesShow extends React.Component {
           <Slider photoUrls={this.props.game.photoUrls}/>
           <GameInfo game={this.props.game} genres={this.props.genres}/>
         </div>
+        <PurchaseGameContainer game={this.props.game}/>
       </div>
     )
   }

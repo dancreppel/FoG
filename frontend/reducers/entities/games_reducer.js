@@ -27,7 +27,8 @@ const gamesReducer = (state = {}, action) => {
       // }
 
       // replace slice of state with the cart games
-      return action.cart.games;
+      if (action.cart.games) return action.cart.games;
+      else return state;
     default:
       return state;
   }

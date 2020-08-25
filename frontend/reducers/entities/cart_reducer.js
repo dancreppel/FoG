@@ -15,7 +15,8 @@ const cartReducer = (state = {}, action) => {
       //   cartItems: { 1: { gameId: 3, id: 1 } },
       //   games: { 3: { id: 3, title: "Doom Eternal", ...}}
       // }
-      return action.cart.cartItems;
+      if (action.cart.cartItems) return action.cart.cartItems;
+      else return state;
     case RECEIVE_CART_ITEM:
       // Do it this way be cause the format of the cartItem is as follows:
       // action.cartItem: { 39: { gameId: 3, id: 39 }}
@@ -23,7 +24,7 @@ const cartReducer = (state = {}, action) => {
       return newState;
     case REMOVE_CART_ITEM: 
       if (action.cartItemId === "all") return {};
-      
+
       delete newState[action.cartItemId]
       return newState;
     default:

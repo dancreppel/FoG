@@ -37,18 +37,34 @@ export default class Cart extends React.Component {
       )
     });
 
-    // let totalPrice = 0;
-    // cartItems.forEach(item => {
-    //   debugger;
-    //   totalPrice += item.data
+    let removeAll;
+    let purchaseButton;
+    let pageTitle;
+    if (cart.length === 0) {
+      pageTitle = <h1 className="page-title">Your Cart is Empty!</h1>
+      removeAll = <div></div>;
+    } else {
+      pageTitle = <h1 className="page-title">Your Shopping Cart</h1>
+      removeAll = (
+        <a
+          onClick={() => removeCartItem('all')}
+          className="remove-all"
+        >Remove all items</a>
+      )
+      purchaseButton = (
+        <button
+          onClick={this.handlePurchase}
+          className="purchase"
+        >Purchase</button>
+      )
+    }
 
-    // });
 
     return (
       <div className="cart">
         <div className="cart-component">
 
-          <h1 className="page-title">Your Shopping Cart</h1>
+          {pageTitle}
 
           <ul className="cart-items">
             {cartItems}
@@ -60,19 +76,13 @@ export default class Cart extends React.Component {
               <h2>${totalPrice}</h2>
             </div>
             <div className="purchase-div">
-              <button 
-                onClick={this.handlePurchase} 
-                className="purchase"
-              >Purchase</button>
+              {purchaseButton}
             </div>
           </div>
           
           <div className="cart-misc">
             <Link to="/" className="continue-shopping">Continue Shopping</Link>
-            <a 
-              onClick={() => removeCartItem('all')}
-              className="remove-all"
-            >Remove all items</a>
+            {removeAll}
           </div>
         </div>
 

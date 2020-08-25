@@ -1,16 +1,27 @@
 import React from 'react';
 import CartItemContainer from './cart_item_container';
+import { Link } from "react-router-dom";
 
 export default class Cart extends React.Component {
+  constructor (props) {
+    super(props);
+    this.handlePurchase = this.handlePurchase.bind(this);
+  }
+
   componentDidMount () {
     this.props.getUserCart()
       .then(this.props.fetchGenres)
       .then(this.props.fetchGamesGenres);
   }
 
+  handlePurchase (e) {
+    e.preventDefault();
+    this.props.removeCartItem('all');
+  }
+
   render () {
     let cart = Object.values(this.props.cart);
-    let { games } = this.props;
+    let { games, removeCartItem } = this.props;
 
     let totalPrice = 0;
     let cartItems = cart.map((cartItem, index) => {
@@ -49,10 +60,20 @@ export default class Cart extends React.Component {
               <h2>${totalPrice}</h2>
             </div>
             <div className="purchase-div">
-              <button className="purchase">Purchase</button>
+              <button 
+                onClick={this.handlePurchase} 
+                className="purchase"
+              >Purchase</button>
             </div>
           </div>
           
+          <div className="cart-misc">
+            <Link to="/" className="continue-shopping">Continue Shopping</Link>
+            <a 
+              onClick={() => removeCartItem('all')}
+              className="remove-all"
+            >Remove all items</a>
+          </div>
         </div>
 
       </div>

@@ -22,6 +22,8 @@ const cartReducer = (state = {}, action) => {
       newState = Object.assign(newState, action.cartItem)
       return newState;
     case REMOVE_CART_ITEM: 
+      if (action.cartItemId === "all") return {};
+      
       delete newState[action.cartItemId]
       return newState;
     default:

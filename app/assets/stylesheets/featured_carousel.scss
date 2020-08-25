@@ -27,6 +27,7 @@ $button-hover: #2e5788;
       background: $button;
       border-radius: 3px;
       margin: auto 3px;
+      cursor: pointer;
 
       &:hover {
         background-color: #4b88d3;
@@ -96,6 +97,7 @@ $button-hover: #2e5788;
       width: 600px;
       height: 350px;
       object-fit: cover;
+      cursor: pointer;
     }
     
     .grid-img {
@@ -106,6 +108,7 @@ $button-hover: #2e5788;
       // height: 87.5px;
       object-fit: cover;
       opacity: .7;
+      cursor: pointer;
     }
 
     .grid-img:hover {

@@ -1,4 +1,6 @@
 $black: #171a2185;
+$button: #253c58;
+$button-hover: #2e5788;
 
 .cart {
   width: 900px;
@@ -26,7 +28,7 @@ $black: #171a2185;
   padding: 10px;
 
   h2 {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 10;
   }
 }
@@ -44,6 +46,7 @@ $black: #171a2185;
 
 .purchase {
   width: 80px;
+  font-size: 16px;
   border-radius: 3px;
   color: #D2E885;
   background: rgba(121,153,5,1);
@@ -53,5 +56,40 @@ $black: #171a2185;
 
   &:hover {
     opacity: 100%;
+  }
+}
+
+.cart-misc {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px;
+  padding: 10px;
+  
+  
+}
+
+.continue-shopping {
+  border-radius: 3px;
+  color: lightblue;
+  background: $button;
+  text-decoration: none;
+  padding: 3px 5px;
+
+  &:hover {
+    color: whitesmoke;
+    background: $button-hover;
+  }
+}
+
+.remove-all {
+  font-size: 11px;
+  color: #7193a6;
+  text-decoration: underline;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    color: lightskyblue;
+    cursor: pointer;
   }
 }

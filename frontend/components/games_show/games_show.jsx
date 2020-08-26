@@ -13,20 +13,23 @@ export default class GamesShow extends React.Component {
     this.props.fetchGame(this.props.match.params.id)
     this.props.fetchGenres();
     this.props.fetchGamesGenres();
+    this.props.fetchLibrary();
   }
 
   render () {
     // prevent render if game info hasn't been retrieved
-    if (!this.props.game || !this.props.genres) return null;
+    let { game, genres, library } = this.props;
+
+    if (!game || !genres) return null;
     
     return (
       <div className='games-show'>
-        <h2 className='game-title'>{this.props.game.title}</h2>
+        <h2 className='game-title'>{game.title}</h2>
         <div className='show'>
-          <Slider photoUrls={this.props.game.photoUrls}/>
-          <GameInfo game={this.props.game} genres={this.props.genres}/>
+          <Slider photoUrls={game.photoUrls}/>
+          <GameInfo game={game} genres={genres}/>
         </div>
-        <PurchaseGameContainer game={this.props.game}/>
+        <PurchaseGameContainer game={game} library={library}/>
       </div>
     )
   }

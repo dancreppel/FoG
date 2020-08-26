@@ -39,8 +39,8 @@ export default class HeaderUser extends React.Component {
 
           <ul className={classVal}>
             <li><Link to="/cart">Your Cart</Link></li>
-            <li>Your Wishlist</li>
-            <li>Your Library</li>
+            <li><Link to='/wishlist'>Your Wishlist</Link></li>
+            <li><Link to='/library'>Your Library</Link></li>
             <li className="logoutLi">
               <a onClick={logout} href="#">
                 Logout:

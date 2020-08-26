@@ -26,7 +26,7 @@ export default class Cart extends React.Component {
     let totalPrice = 0;
     let cartItems = cart.map((cartItem, index) => {
       let game = games[cartItem.gameId];
-      totalPrice += Math.round(game.price * (1 - game.discount) * 100) / 100;
+      totalPrice += game.price * (1 - game.discount);
 
       return (
         <CartItemContainer 
@@ -36,6 +36,9 @@ export default class Cart extends React.Component {
         />
       )
     });
+
+    // round total price after it has been tallied
+    totalPrice = Math.round(totalPrice * 100) / 100;
 
     let removeAll;
     let purchaseButton;

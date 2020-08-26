@@ -1,0 +1,13 @@
+// styles for wishlist
+
+.library-wishlist-component {
+  display: flex;
+  flex-direction: column;
+  width: 900px;
+  margin: auto;
+
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+}

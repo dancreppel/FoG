@@ -23,6 +23,15 @@ class User < ApplicationRecord
     through: :cart_items,
     source: :game
 
+  # associations for library
+  has_many :library_items,
+    foreign_key: :user_id,
+    class_name: :Library
+
+  has_many :libarary_games,
+    through: :library_items,
+    source: :game
+
   def self.find_by_credentials(username, password)
     user = self.find_by(username: username)
     return user if user && user.is_password?(password)

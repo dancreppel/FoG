@@ -5,9 +5,8 @@ class Api::LibrariesController < ApplicationController
     @library_items = current_user.library_items
     @library_games = current_user.library_games.with_attached_photos
 
-    debugger;
-    if @library_items && @library_games
-      render json: [@library_items, @library_games]
+    unless @library_items.empty?
+      render :index
     else
       render json: ["Library is empty"], status: 404
     end
@@ -21,9 +20,24 @@ class Api::LibrariesController < ApplicationController
     )
 
     if @library_item.save
-      render json: @library_item
+      render :create
     else
       render json: @library_item.errors.full_messages, status: 422
+    end
+  end
+
+  def destroy
+    if params[:id] == "all"
+      @library = current_user.library_items
+    else
+      @library = Library.where(id: params[:id])
+    end
+
+    unless @library.empty?
+      @library.destroy_all
+      render json: ['Deleted from library']
+    else
+      render json: ['Cannot delete from library'], status: 400
     end
   end
 

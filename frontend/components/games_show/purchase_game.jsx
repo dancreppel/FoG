@@ -7,19 +7,26 @@ class PurchaseGame extends React.Component {
   }
 
   handlePurchase (inCart) {
-    let { addToCart, game, sessionUser } = this.props;
-    debugger;
-    if (!sessionUser) this.props.history.push("/login");
+    let { addToCart, game, sessionUser, history } = this.props;
+    if (!sessionUser) history.push("/login");
     else {
       if (!inCart) addToCart(game.id);
       this.props.history.push("/cart");
     }
   }
+
+  handleWishlisting (inWishlist) {
+    let { addToWishlist, game, history } = this.props;
+    if (inWishlist) history.push('/wishlist');
+    else addToWishlist(game.id, false);
+  }
   
   render () {
-    let { game, cart } = this.props;
+    let { game, cart, library } = this.props;
 
     let inCart = cart.some(cartItem => cartItem.gameId === game.id);
+    let inWishlist = library.some(item => 
+      item.gameId === game.id && item.owned === false);
 
     // default add to cart otherwise in cart
     let purchaseButtonText = "Add to Cart";
@@ -71,11 +78,23 @@ class PurchaseGame extends React.Component {
       );
     }
 
+    let wishlistButtonText = "Add to your wishlist";
+    if (inWishlist) wishlistButtonText = (
+      <div className="in-wishlist">
+        <div className="material-icons">check_box</div>
+        <div className='in-wishlist-text'>On Wishlist</div>
+      </div>
+    )
+
     return (
       <div className="show-purchase-wishlist">
         {title}
         <div className="wishlist-or-add">
-          <button className="wishlist">Add to your wishlist</button>
+          <button
+            onClick={() => this.handleWishlisting(inWishlist)}
+            className="wishlist"
+          >{wishlistButtonText}</button>
+
           {purchaseButton}
         </div>
       </div>

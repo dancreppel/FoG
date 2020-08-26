@@ -9,5 +9,6 @@ Rails.application.routes.draw do
     resources :genres, only: :index
     resources :games_genres, only: :index
     resources :cart_items, only: [:index, :create, :destroy]
+    resources :libraries, only: [:index, :create, :destroy]
   end
 end

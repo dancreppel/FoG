@@ -78,6 +78,7 @@ $button-hover: #4b88d3;
 .wishlist {
   height: 35px;
   width: 160px;
+  position: relative;
   display: flex;
   align-items: center;
   border-radius: 3px;
@@ -97,6 +98,7 @@ $button-hover: #4b88d3;
   background-color: black;
   border: 2px solid black;
   width: 160px;
+  height: 35px;
 
   .price {
     display: flex;
@@ -127,4 +129,16 @@ $button-hover: #4b88d3;
     justify-content: center;
     font-size: 13px;
   }
+}
+
+// styles for wishlist button when game is in wishlist
+.in-wishlist {
+  position: absolute;
+  left: 25px;
+  display: flex;
+}
+
+.in-wishlist-text {
+  padding-left: 3px;
+  padding-top: 1px;
 }

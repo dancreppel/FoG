@@ -28,7 +28,7 @@ class User < ApplicationRecord
     foreign_key: :user_id,
     class_name: :Library
 
-  has_many :libarary_games,
+  has_many :library_games,
     through: :library_items,
     source: :game
 

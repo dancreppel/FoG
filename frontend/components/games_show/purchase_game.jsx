@@ -7,9 +7,13 @@ class PurchaseGame extends React.Component {
   }
 
   handlePurchase (inCart) {
-    let { addToCart, game } = this.props;
-    if (!inCart) addToCart(game.id);
-    this.props.history.push("/cart");
+    let { addToCart, game, sessionUser } = this.props;
+    debugger;
+    if (!sessionUser) this.props.history.push("/login");
+    else {
+      if (!inCart) addToCart(game.id);
+      this.props.history.push("/cart");
+    }
   }
   
   render () {

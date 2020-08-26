@@ -28,9 +28,11 @@ const gamesReducer = (state = {}, action) => {
       // }
 
       // do not replace slice of state otherwise other pages will not work
-      let cartGames = Object.values(action.cart.games);
-      cartGames.forEach(game => newState[game.id] = game)
-      return newState;
+      if (action.cart.games) {
+        let cartGames = Object.values(action.cart.games);
+        cartGames.forEach(game => newState[game.id] = game)
+        return newState;
+      } else return state;
     case RECEIVE_LIBRARY:
       let libraryGames = Object.values(action.library.games);
       libraryGames.forEach(game => newState[game.id] = game)

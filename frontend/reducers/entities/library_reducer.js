@@ -24,4 +24,4 @@ const libraryReducer = ( state = {}, action ) => {
   }
 }
 
-export default libraryReducer
+export default libraryReducer;

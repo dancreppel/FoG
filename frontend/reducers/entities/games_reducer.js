@@ -4,7 +4,8 @@ import {
   RECIEVE_DISCOUNT
 } from '../../actions/games_actions';
 
-import { RECEIVE_CART_ITEMS } from "../../actions/cart_actions"
+import { RECEIVE_CART_ITEMS } from "../../actions/cart_actions";
+import { RECEIVE_LIBRARY } from '../../actions/library_actions';
 
 const gamesReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -28,6 +29,10 @@ const gamesReducer = (state = {}, action) => {
 
       // do not replace slice of state otherwise other pages will not work
       let games = Object.values(action.cart.games);
+      games.forEach(game => newState[game.id] = game)
+      return newState;
+    case RECEIVE_LIBRARY:
+      let games = Object.values(action.library.games);
       games.forEach(game => newState[game.id] = game)
       return newState;
     default:

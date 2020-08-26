@@ -1,7 +1,9 @@
+import lodash from 'lodash';
+
 // search for all genres that belong to a game
 export const genresForGame = (genres, gamesGenres, gameId) => {
   // prevent logic if genres and gamesGenres have not been fetched yet
-  if (!genres[1] || !gamesGenres[1]) return null;
+  if (lodash.isEmpty(genres) || lodash.isEmpty(gamesGenres)) return null;
 
   let genresIds = [];
   for(let i = 1; i <= Object.keys(gamesGenres).length; i++) {

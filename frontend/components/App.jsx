@@ -7,7 +7,7 @@ import GameShowContainer from './games_show/games_show_container';
 import ProtectedRoute from './routes/protected_route';
 import CartContainer from './cart/cart_container';
 import LibraryContainer from './library-wishlist/library_container';
-import WishlistContainer from './library-wishlist/wishlist_container';
+import LibraryWishlistContainer from './library-wishlist/library_wishlist_container';
 
 const App = () => (
   <>
@@ -16,8 +16,8 @@ const App = () => (
     <Route exact path='/' component={GamesIndexContainer} />
     <Route path='/games/:id' component={GameShowContainer} />
     <ProtectedRoute path='/cart' component={CartContainer} />
-    <ProtectedRoute path='/library' component={LibraryContainer} />
-    <ProtectedRoute path='/wishlist' component={WishlistContainer} />
+    <ProtectedRoute path='/library' component={LibraryWishlistContainer} />
+    <ProtectedRoute path='/wishlist' component={LibraryWishlistContainer} />
   </>
 );
 

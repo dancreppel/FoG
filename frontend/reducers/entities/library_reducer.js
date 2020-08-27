@@ -10,7 +10,8 @@ const libraryReducer = ( state = {}, action ) => {
 
   switch(action.type) {
     case RECEIVE_LIBRARY:
-      return action.library.libraryItems;
+      if (action.library.libraryItems) return action.library.libraryItems;
+      else return state;
     case RECEIVE_LIBRARY_ITEM:
       newState[action.libraryItem.id] = action.libraryItem;
       return newState;

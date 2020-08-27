@@ -34,9 +34,11 @@ const gamesReducer = (state = {}, action) => {
         return newState;
       } else return state;
     case RECEIVE_LIBRARY:
-      let libraryGames = Object.values(action.library.games);
-      libraryGames.forEach(game => newState[game.id] = game)
-      return newState;
+      if (action.library.games) {
+        let libraryGames = Object.values(action.library.games);
+        libraryGames.forEach(game => newState[game.id] = game)
+        return newState;
+      } else return state;
     default:
       return state;
   }

@@ -21,6 +21,19 @@ export default class GamesShow extends React.Component {
     let { game, genres, library } = this.props;
 
     if (!game || !genres) return null;
+
+    let owned = library.some(item => 
+        item.gameId === game.id && item.owned === true
+      )
+
+    let ownedGame;
+    if (owned) {
+      ownedGame = (
+        <div className="already-owned">
+            {game.title} is already in your FoG library
+        </div>
+      )
+    } else ownedGame = <PurchaseGameContainer game={game} />
     
     return (
       <div className='games-show'>
@@ -29,7 +42,7 @@ export default class GamesShow extends React.Component {
           <Slider photoUrls={game.photoUrls}/>
           <GameInfo game={game} genres={genres}/>
         </div>
-        <PurchaseGameContainer game={game} library={library}/>
+        {ownedGame}
       </div>
     )
   }

@@ -2,7 +2,7 @@ $button: #253c58;
 $button-hover: #2e5788;
 
 // styles for wishlist item
-.library-item {
+.wishlist-item, .library-item {
   display: flex;
   justify-content: space-between;
   background-color: #171a2185;
@@ -89,5 +89,23 @@ $button-hover: #2e5788;
 
   &:hover {
     color: lightskyblue;
+  }
+}
+
+.library-buttons {
+  position: relative;
+}
+
+.remove-from-library {
+  position: absolute;
+  top: 135px;
+  right: 10px;
+  padding: 2px;
+  color: rgb(153, 3, 3);
+  text-decoration: underline;
+  cursor: pointer;
+
+  &:hover {
+    color: red;
   }
 }

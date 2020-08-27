@@ -113,7 +113,10 @@ class ItemInfo extends React.Component {
     return (
       <div className={itemType}>
 
-        <img src={game.photoUrls.find(url => url.includes('cover'))} />
+        <img 
+          src={game.photoUrls.find(url => url.includes('cover'))} 
+          onClick={() => this.props.history.push(`/games/${game.id}`)}
+        />
 
         <div className='item-details'>
           <h1 className='item-title'>{game.title}</h1>

@@ -16,13 +16,15 @@ class PurchaseGame extends React.Component {
   }
 
   handleWishlisting (inWishlist) {
-    let { addToWishlist, game, history } = this.props;
-    if (inWishlist) history.push('/wishlist');
+    let { addToWishlist, game, history, sessionUser } = this.props;
+
+    if (!sessionUser) history.push('/login');
+    else if (inWishlist) history.push('/wishlist');
     else addToWishlist(game.id, false);
   }
   
   render () {
-    let { game, cart, library } = this.props;
+    let { game, cart, library, sessionUser } = this.props;
     let addToLibrary = this.props.addToWishlist;
 
     let inCart = cart.some(cartItem => cartItem.gameId === game.id);
@@ -64,7 +66,10 @@ class PurchaseGame extends React.Component {
           <div>Free to Play</div>
           <button 
             className="purchase"
-            onClick={() => addToLibrary(game.id, true)}
+            onClick={() => {
+              if (!sessionUser) this.props.history.push('/login')
+              else addToLibrary(game.id, true)
+            }}
           >Play Game</button>
         </div>
       );

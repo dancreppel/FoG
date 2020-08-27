@@ -14,11 +14,21 @@ class Api::LibrariesController < ApplicationController
   end
 
   def create 
-    @library_item = Library.new(
-      user_id: current_user.id,
-      game_id: library_params[:game_id],
-      owned: library_params[:owned]
+    @library_item = Library.find_by(
+      game_id: library_params[:game_id], 
+      user_id: current_user.id
     )
+
+    # if the library item already exists, update item
+    if @library_item
+      @library_item.owned = library_params[:owned]
+    else
+      @library_item = Library.new(
+        user_id: current_user.id,
+        game_id: library_params[:game_id],
+        owned: library_params[:owned]
+      )
+    end
 
     if @library_item.save
       render :create

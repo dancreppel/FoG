@@ -6,7 +6,6 @@ import GamesIndexContainer from './games_index/games_index_container';
 import GameShowContainer from './games_show/games_show_container';
 import ProtectedRoute from './routes/protected_route';
 import CartContainer from './cart/cart_container';
-import LibraryContainer from './library-wishlist/library_container';
 import LibraryWishlistContainer from './library-wishlist/library_wishlist_container';
 
 const App = () => (

@@ -23,6 +23,7 @@ class PurchaseGame extends React.Component {
   
   render () {
     let { game, cart, library } = this.props;
+    let addToLibrary = this.props.addToWishlist;
 
     let inCart = cart.some(cartItem => cartItem.gameId === game.id);
     let inWishlist = library.some(item => 
@@ -61,7 +62,10 @@ class PurchaseGame extends React.Component {
       purchaseButton = (
         <div className="free-to-play">
           <div>Free to Play</div>
-          <button className="purchase">Play Game</button>
+          <button 
+            className="purchase"
+            onClick={() => addToLibrary(game.id, true)}
+          >Play Game</button>
         </div>
       );
     } else {

@@ -39,8 +39,11 @@ class ItemInfo extends React.Component {
     let discount;
     let className;
     let purchaseButton;
-    let wishlistButtons;
-    if (type === 'wishlist') {
+    let itemButtons;
+    let itemType;
+    if (type === '/wishlist') {
+
+      itemType = "wishlist-item";
 
       // default add to cart otherwise in cart
       if (inCart) purchaseButtonText = "In Cart"
@@ -85,7 +88,7 @@ class ItemInfo extends React.Component {
       }
 
       // wishlist buttons exist if type wishlist
-      wishlistButtons = (
+      itemButtons = (
         <div className='wishlist-buttons'>
           {purchaseButton}
           <a 
@@ -94,10 +97,21 @@ class ItemInfo extends React.Component {
           >remove</a>
         </div>
       );
-    } 
+    } else {
+      itemType = 'library-item';
+
+      itemButtons = (
+        <div className='library-buttons'>
+          <a
+            onClick={() => deleteLibraryItem(libraryItemId)}
+            className='remove-from-library'
+          >remove</a>
+        </div>
+      )
+    }
 
     return (
-      <div className='library-item'>
+      <div className={itemType}>
 
         <img src={game.photoUrls.find(url => url.includes('cover'))} />
 
@@ -110,7 +124,7 @@ class ItemInfo extends React.Component {
           </ul>
         </div>
 
-        {wishlistButtons}
+        {itemButtons}
 
       </div>
     )

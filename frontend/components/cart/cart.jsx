@@ -15,8 +15,10 @@ export default class Cart extends React.Component {
   }
 
   handlePurchase (e) {
-    e.preventDefault();
-    this.props.removeCartItem('all');
+    let { removeCartItem, addToLibrary, cart } = this.props;
+
+    Object.values(cart).forEach(cartItem => addToLibrary(cartItem.gameId, true));
+    removeCartItem('all');
   }
 
   render () {

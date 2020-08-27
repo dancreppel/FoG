@@ -10,6 +10,12 @@ class OnSaleItem extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
+  componentDidMount () {
+    let gif = new Image();
+    gif.src = this.props.game.photoUrls.find(src => src.includes("gif"));
+    this.gif = gif;
+  }
+
   handleHoverOn () {
     // Find the index of url that contains a gif
     let gifIndex = this.props.game.photoUrls.findIndex(src => src.includes("gif"))

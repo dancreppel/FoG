@@ -7,9 +7,10 @@ class Api::LibrariesController < ApplicationController
 
     unless @library_items.empty?
       render :index
-    else
-      render json: ["Library is empty"], status: 404
     end
+    # else
+    #   render json: ["Library is empty"], status: 404
+    # end
   end
 
   def create 

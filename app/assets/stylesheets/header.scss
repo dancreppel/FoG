@@ -178,11 +178,9 @@ header {
 
   // nav items store, community, about, support
   .navItems {
-    // width: 350px;
-    height: 45px;
     display: flex;
     justify-content: space-between;
-    align-self: flex-end;
+    align-self: center;
     position: relative;
     
     div, .nav-item {

@@ -60,8 +60,9 @@ $button-hover: #2e5788;
       background: $button;
 
       &:hover {
-        background: $button-hover;
-        color: lightcyan;
+        // background: $button-hover;
+        cursor: default;
+        // color: lightcyan;
       }
     }
   }

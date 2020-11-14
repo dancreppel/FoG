@@ -89,10 +89,10 @@ header {
   }
 
   .username {
-    // margin: auto 0px;
+    margin: auto 0px;
     color: lightgrey;
     font-size: 18px;
-    vertical-align: middle;
+    // vertical-align: middle;
     cursor: pointer;
   }
 
@@ -106,7 +106,9 @@ header {
   .headerDiv {
     // width: 50px;
     height: 35px;
-    margin-top: 3px;
+    // margin-top: 3px;
+    align-self: center;
+    align-content: center;
     display: flex;
     justify-content: space-between;
   }
@@ -127,11 +129,11 @@ header {
       }
     }
 
-    // margin: auto;
-
+    
     .material-icons {
       color: lightgrey;
-      margin-top: 3px;
+      margin: auto;
+      font-size: 20px;
       cursor: pointer;
     }
   
